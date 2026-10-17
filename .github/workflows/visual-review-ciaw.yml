@@ -1,0 +1,55 @@
+name: One-time visual verification of CIAW
+on:
+  push:
+    paths: ['.github/workflows/visual-review-ciaw.yml']
+permissions:
+  contents: write
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check published content, links and illustrations
+        run: |
+          python -m pip -q install requests beautifulsoup4 pillow
+          python - <<'PY'
+          from bs4 import BeautifulSoup
+          import requests, io
+          from PIL import Image
+          base='https://ciaw.es'
+          r=requests.get(base+'/?verify=20261017',timeout=35)
+          r.raise_for_status()
+          soup=BeautifulSoup(r.text,'html.parser')
+          assert 'Research, publishing, exchange.' in r.text
+          assert 'Different Minds.' in r.text
+          assert 'Arturo Galindo García' in r.text
+          assert 'ai-antiquity-vol2-issue2.webp' in r.text
+          for path in ('assets/arturo-galindo-neurodiversity.webp','assets/ai-antiquity-vol2-issue2.webp','assets/playing-antiquity-banner.webp'):
+            res=requests.get(base+'/'+path,timeout=35)
+            res.raise_for_status()
+            img=Image.open(io.BytesIO(res.content))
+            print('VERIFIED IMAGE',path,img.format,img.size,len(res.content),res.headers.get('Content-Type'))
+          ids={el['id'] for el in soup.find_all(id=True)}
+          missing=[a.get('href') for a in soup.select('a[href^="#"]') if a.get('href')[1:] not in ids]
+          assert not missing,missing
+          print('VERIFIED PUBLISHED SITE',r.status_code,'TITLE',soup.title.string, 'IDS',len(ids))
+          PY
+      - name: Capture desktop journal and neurodiversity views
+        run: |
+          mkdir -p .preview-ciaw
+          which google-chrome || which chromium || true
+          google-chrome --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --window-size=1400,1100 --virtual-time-budget=2500 --screenshot=/tmp/journal.png 'https://ciaw.es/#journal' 2>/dev/null
+          google-chrome --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --window-size=1400,1100 --virtual-time-budget=2500 --screenshot=/tmp/neuro.png 'https://ciaw.es/#neurodiversity' 2>/dev/null
+          python - <<'PY'
+          from PIL import Image
+          for name in ('journal','neuro'):
+            im=Image.open('/tmp/'+name+'.png').convert('RGB')
+            im.save('.preview-ciaw/'+name+'.jpg',quality=67,optimize=True)
+            print(name,im.size)
+          PY
+      - name: Save previews for one-time visual check
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .preview-ciaw
+          git diff --cached --quiet || (git commit -m 'Capture one-time CIAW redesign visual QA screenshots' && git push)
