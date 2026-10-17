@@ -1,0 +1,40 @@
+name: Prepare tighter CIAW navigation wordmark
+on:
+  push:
+    paths:
+      - ".github/workflows/trim-ciaw-logo.yml"
+permissions:
+  contents: write
+jobs:
+  trim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip -q install pillow
+      - name: Crop excess transparent margins while keeping original colors
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          src=Image.open('logo.png').convert('RGBA')
+          a=src.getchannel('A')
+          threshold=a.point(lambda v:255 if v>=24 else 0)
+          bbox=threshold.getbbox()
+          print('SOURCE',src.size,'NONTRANSPARENT',bbox)
+          assert bbox is not None
+          left,top,right,bottom=bbox
+          pad_x=round((right-left)*.017)
+          pad_y=round((bottom-top)*.07)
+          rect=(max(0,left-pad_x),max(0,top-pad_y),min(src.width,right+pad_x),min(src.height,bottom+pad_y))
+          dest=src.crop(rect)
+          assert dest.width>dest.height*3, f'Unexpected logo crop ratio {dest.size}'
+          Path('assets').mkdir(exist_ok=True)
+          dest.save('assets/ciaw-header-logo.png',optimize=True)
+          print('CROPPED',dest.size,'ORIGINAL_UNCHANGED',src.size)
+          PY
+      - name: Save header asset
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/ciaw-header-logo.png
+          git diff --cached --quiet || (git commit -m 'Add tightly cropped original CIAW navigation wordmark' && git push)
