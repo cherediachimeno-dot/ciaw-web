@@ -1,0 +1,283 @@
+#!/usr/bin/env python3
+"""Build full Catalan and Spanish CIAW websites from exact English HTML sources.
+
+Source of truth: English pages. Every section, asset and script is retained.
+Human-authored translations are stored in locales/translations.json.
+Run: python scripts/localize_ciaw.py
+"""
+import json
+import re
+from pathlib import Path
+from html import unescape
+from collections import Counter
+
+ROOT = Path(__file__).resolve().parents[1]
+TRANSLATIONS = json.loads((ROOT / 'locales/translations.json').read_text('utf-8'))
+PAGE_NAMES = {
+    'index.html': {'es': 'es.html', 'ca': 'ca.html'},
+    'game-studies.html': {'es': 'game-studies-es.html', 'ca': 'game-studies-ca.html'},
+    'research.html': {'es': 'research-es.html', 'ca': 'research-ca.html'},
+    'resources.html': {'es': 'resources-es.html', 'ca': 'resources-ca.html'},
+    'privacy.html': {'es': 'privacy-es.html', 'ca': 'privacy-ca.html'},
+}
+TITLES = {
+    'index.html': ('CIAW | Center for Innovation in Ancient Worlds', 'CIAW | Center for Innovation in Ancient Worlds'),
+    'game-studies.html': ('Game Studies y mundos antiguos | CIAW', 'Game Studies i mons antics | CIAW'),
+    'research.html': ('Investigación y resultados | CIAW', 'Recerca i resultats | CIAW'),
+    'resources.html': ('Recursos docentes | CIAW', 'Recursos docents | CIAW'),
+    'privacy.html': ('Privacidad e información del sitio web | CIAW', 'Privacitat i informació del lloc web | CIAW'),
+}
+DESCRIPTIONS = {
+    'index.html': (
+        'CIAW es una iniciativa académica independiente con sede en Cataluña dedicada a la investigación sobre la Antigüedad, la publicación en abierto, los Game Studies y la docencia inclusiva.',
+        'El CIAW és una iniciativa acadèmica independent amb seu a Catalunya dedicada a la recerca sobre l’Antiguitat, la publicació en obert, els Game Studies i la docència inclusiva.',
+    ),
+    'game-studies.html': (
+        'Cómo analizan los Game Studies en CIAW la autoridad histórica, las simulaciones sociales, la recepción clásica y los videojuegos como interpretaciones del pasado.',
+        'Com analitzen els Game Studies al CIAW l’autoritat històrica, les simulacions socials, la recepció clàssica i els videojocs com a interpretacions del passat.',
+    ),
+    'research.html': (
+        'Investigaciones, publicaciones y proyectos docentes vinculados a CIAW y sus colaboradores.',
+        'Recerques, publicacions i projectes docents vinculats al CIAW i als seus col·laboradors.',
+    ),
+    'resources.html': (
+        'Infografías docentes abiertas de CIAW sobre enseñanza inclusiva, Historia Antigua y alfabetización crítica en IA.',
+        'Infografies docents obertes del CIAW sobre docència inclusiva, Història Antiga i alfabetització crítica en IA.',
+    ),
+    'privacy.html': (
+        'Información sobre privacidad y contacto del sitio web de CIAW.',
+        'Informació sobre privacitat i contacte del lloc web del CIAW.',
+    ),
+}
+ALT = {
+    'en': {},
+    'es': {
+        'Open navigation menu': 'Abrir el menú de navegación',
+        'Close navigation menu': 'Cerrar el menú de navegación',
+        'Main navigation': 'Navegación principal',
+        'On this page': 'En esta página',
+        'CIAW — Back to top': 'CIAW — Volver arriba',
+        'CIAW home': 'Inicio de CIAW',
+        'A preview of CIAW\'s inclusive teaching infographics': 'Vista previa de las infografías docentes inclusivas de CIAW',
+        'Explore CIAW teaching resources': 'Explorar los recursos docentes de CIAW',
+        'Explore CIAW\'s Game Studies research area': 'Explorar la línea de Game Studies de CIAW',
+        'Panoramic Playing Antiquity artwork featuring historical and fantasy game worlds': 'Ilustración panorámica de Playing Antiquity con mundos de videojuegos históricos y fantásticos',
+        'Original artwork by Arturo Galindo García: an ancient-style helmet made from contrasting golden, pale pink and blue sections, against delicate circular geometric patterns': 'Ilustración original de Arturo Galindo García: casco de inspiración antigua formado por secciones doradas, rosas y azules sobre motivos geométricos',
+        'See the original illustration in AI & Antiquity': 'Ver la ilustración original en AI & Antiquity',
+        'Open the original seminar poster': 'Abrir el cartel original de las jornadas',
+        'Poster for the 24 November 2026 seminar on Antiquity, the far right and social networks': 'Cartel de las jornadas del 24 de noviembre de 2026 sobre Antigüedad, extrema derecha y redes sociales',
+        'Read AI & Antiquity volume 2 issue 2': 'Leer AI & Antiquity, volumen 2, número 2',
+        'Events & Resources': 'Actividades y recursos',
+    },
+    'ca': {
+        'Open navigation menu': 'Obrir el menú de navegació',
+        'Close navigation menu': 'Tancar el menú de navegació',
+        'Main navigation': 'Navegació principal',
+        'On this page': 'En aquesta pàgina',
+        'CIAW — Back to top': 'CIAW — Tornar a dalt',
+        'CIAW home': 'Inici del CIAW',
+        'A preview of CIAW\'s inclusive teaching infographics': 'Vista prèvia de les infografies docents inclusives del CIAW',
+        'Explore CIAW teaching resources': 'Explorar els recursos docents del CIAW',
+        'Explore CIAW\'s Game Studies research area': 'Explorar la línia de Game Studies del CIAW',
+        'Panoramic Playing Antiquity artwork featuring historical and fantasy game worlds': 'Il·lustració panoràmica de Playing Antiquity amb mons de videojocs històrics i fantàstics',
+        'Original artwork by Arturo Galindo García: an ancient-style helmet made from contrasting golden, pale pink and blue sections, against delicate circular geometric patterns': 'Il·lustració original d’Arturo Galindo García: casc d’inspiració antiga format per seccions daurades, roses i blaves sobre motius geomètrics',
+        'See the original illustration in AI & Antiquity': 'Veure la il·lustració original a AI & Antiquity',
+        'Open the original seminar poster': 'Obrir el cartell original de les jornades',
+        'Poster for the 24 November 2026 seminar on Antiquity, the far right and social networks': 'Cartell de les jornades del 24 de novembre de 2026 sobre Antiguitat, extrema dreta i xarxes socials',
+        'Read AI & Antiquity volume 2 issue 2': 'Llegir AI & Antiquity, volum 2, número 2',
+        'Events & Resources': 'Activitats i recursos',
+    },
+}
+BLOB = {}
+SCRIPT_STYLE = re.compile(r'(<(?:script|style)\b[^>]*>)(.*?)(</(?:script|style)>)', re.I | re.S)
+TEXT_NODE = re.compile(r'(?<=>)([^<>]+)(?=<)')
+TRANSLATABLE_ATTRIBUTE = re.compile(r'(\s(?:alt|aria-label|title|placeholder)=)(["\'])(.*?)\2', re.I | re.S)
+PRESERVED = {
+    'AI &amp; Antiquity', 'Game Studies', 'EN', 'CA', 'ES', '☰', 'EN ·', 'Català', '·',
+    'Center for Innovation in', 'Ancient Worlds', 'The Center for Innovation in Ancient Worlds (CIAW)',
+    'Playing Antiquity', '↗', '↘', 'Antiguitat, extrema dreta i xarxes socials',
+    'L’Antiguitat al món actual II · UAB, 10.30–13.15 h',
+    'ISSN 3081-4553', '01', '02', '03', '04', '24', '06', '2026', '⌄',
+    'Arturo Galindo García', '(2026) ·', 'Same Standards, Different Pathways',
+    'Isaías Arrayás Morales &amp; Carlos Heredia Chimeno ·',
+    'Isaías Arrayás Morales &amp; Carlos Heredia Chimeno,',
+    'Carlos Heredia Chimeno,',
+    'Forgotten Voices in Antiquity', 'Universitat Autònoma de Barcelona (UAB)',
+    'Universidad Europea de Madrid', 'CH', 'IA', 'SS', 'Sílvia Swan',
+    'Carlos Heredia Chimeno', 'Isaías Arrayás Morales', 'ORCID ↗',
+    '24 November 2026 · 10.30–13.15 h',
+    'Sala de Graus · Facultat de Filosofia i Lletres (UAB)', 'UOC · UAB · CIAW',
+    '10.30–10.45', '10.45–11.25', '11.25–12.05', '12.05–12.45', '12.45–13.15',
+    'Presentació de les jornades', 'Carlos Heredia i Marc Mendoza (UAB)',
+    'De Roma al', 'feed', ': com l’extrema dreta resignifica l’Antiguitat a les xarxes socials',
+    'Laura Pérez Altabe (UPF)', 'Apropiaciones de la Antigüedad en el contexto actual de auge de las ultraderechas y de la IA generativa',
+    'Oskar Aguado (EHU)', 'Iosephus Maria ad portas',
+    ': l’extrema dreta catalana més enllà d’Ítaca', 'Marc Mendoza (UAB)', 'Debat final',
+    'Journal of Classics Teaching', 'Archeion', 'ciaw.es', 'carlos.heredia@uab.cat',
+    '.', ').', 'View original ↗', '© CIAW · Independent academic initiative based in Catalonia, Spain',
+    'AI &amp; Antiquity →', 'Playing Antiquity ↓',
+    'Video Games, Teaching and Historical Knowledge.',
+    'Visit the journal ↗', 'Issue archive ↗',
+    'Centre for Innovation in Ancient Worlds',
+}
+# A final small set of UI translations that also occurs in child pages.
+SUPPLEMENT = {
+    'es': {
+        'Visit the journal ↗': 'Visitar la revista ↗',
+        'Issue archive ↗': 'Archivo de números ↗',
+        'Video Games, Teaching and Historical Knowledge.': 'Videojuegos, docencia y conocimiento histórico.',
+        'Debat final': 'Debate final',
+        'Playing Antiquity ↓': 'Playing Antiquity ↓',
+        '← Return to CIAW': '← Volver a CIAW',
+    },
+    'ca': {
+        'Visit the journal ↗': 'Visitar la revista ↗',
+        'Issue archive ↗': 'Arxiu de números ↗',
+        'Video Games, Teaching and Historical Knowledge.': 'Videojocs, docència i coneixement històric.',
+        'Debat final': 'Debat final',
+        'Playing Antiquity ↓': 'Playing Antiquity ↓',
+        '← Return to CIAW': '← Tornar al CIAW',
+    },
+}
+
+
+def full_dictionary(lang):
+    return {**TRANSLATIONS[lang], **SUPPLEMENT[lang]}
+
+
+def translate_body(source: str, translations: dict) -> tuple[str, list[str]]:
+    placeholders = []
+    def protect(match):
+        token = f'__CIAW_SCRIPT_STYLE_{len(placeholders)}__'
+        placeholders.append(match.group(2))
+        return match.group(1) + token + match.group(3)
+    html = SCRIPT_STYLE.sub(protect, source)
+    missing = set()
+    def translate_node(match):
+        string = match.group(1)
+        before = string[:len(string) - len(string.lstrip())]
+        after = string[len(string.rstrip()):]
+        content = string.strip()
+        if not content or content.startswith('__CIAW_SCRIPT_STYLE_'):
+            return match.group(0)
+        key = re.sub(r'\s+', ' ', content)
+        value = translations.get(key)
+        if value is None:
+            if key not in PRESERVED and not key.isnumeric():
+                missing.add(key)
+            return match.group(0)
+        return '>' + before + value + after + '<'
+    html = TEXT_NODE.sub(translate_node, html)
+    for i, blob in enumerate(placeholders):
+        html = html.replace(f'__CIAW_SCRIPT_STYLE_{i}__', blob)
+    return html, sorted(missing)
+
+
+def replace_local_links(html, lang):
+    for src, destinations in PAGE_NAMES.items():
+        html = html.replace('href="' + src + '"', 'href="' + destinations[lang] + '"')
+        html = html.replace('href="' + src + '#', 'href="' + destinations[lang] + '#')
+    # The language menu must always link to the correct language.
+    english_home = PAGE_NAMES['index.html'][lang]
+    html = html.replace('href="' + english_home + '" lang="en"', 'href="index.html" lang="en"')
+    if 'href="index.html" lang="en"' not in html:
+        # English home uses a non-interactive current-language span instead.
+        html = html.replace('<span class="current" aria-label="English version">EN</span>',
+                            '<a href="index.html" lang="en">EN</a>')
+        html = html.replace('EN · <a href="ca.html"', '<a href="index.html" lang="en">EN</a> · <a href="ca.html"')
+        html = html.replace('<span>EN</span> · <a href="ca.html"', '<a href="index.html" lang="en">EN</a> · <a href="ca.html"')
+    # Active local-language control.
+    target = 'ca' if lang == 'ca' else 'es'
+    current = '<a href="' + target + '.html" lang="' + target + '">' + target.upper() + '</a>'
+    # Preserve all other links and use the same structure/CSS.
+    html = html.replace(current, '<span aria-current="page">' + target.upper() + '</span>')
+    # English-only menu line in the mobile version.
+    html = html.replace('href="index.html" lang="en">EN</a> ·', 'href="index.html" lang="en">EN</a> ·')
+    return html
+
+
+def translate_attributes(html, lang):
+    attrs = ALT[lang]
+    def sub(m):
+        original = unescape(m.group(3))
+        translated = attrs.get(original)
+        if translated is None:
+            return m.group(0)
+        import html as esc
+        return m.group(1) + m.group(2) + esc.escape(translated, quote=True) + m.group(2)
+    return TRANSLATABLE_ATTRIBUTE.sub(sub, html)
+
+
+def localize(source, page, lang):
+    translations = full_dictionary(lang)
+    html, missing = translate_body(source, translations)
+    if missing:
+        raise ValueError(f'{page} [{lang}] has {len(missing)} untranslated visible strings:\n' + '\n'.join(missing))
+    html = translate_attributes(html, lang)
+    html = replace_local_links(html, lang)
+    html = html.replace('<html lang="en">', '<html lang="' + lang + '">', 1)
+    # Localised metadata and discoverable alternate versions.
+    html = re.sub(r'(<title>).*?(</title>)', lambda m:m.group(1) + TITLES[page][lang=='ca'] + m.group(2), html, count=1, flags=re.S)
+    import html as escape_html
+    desc = escape_html.escape(DESCRIPTIONS[page][lang=='ca'], quote=True)
+    html = re.sub(r'(<meta name="description" content=")[^"]*("/>)', lambda m:m.group(1) + desc + m.group(2), html, count=1)
+    destination = PAGE_NAMES[page][lang]
+    html = re.sub(r'(<link rel="canonical" href=")[^"]*("/>)',lambda m:m.group(1)+'https://ciaw.es/'+destination+m.group(2), html,count=1)
+    if page == 'index.html':
+        # Homepage social URLs, otherwise the EN and ES shares duplicate.
+        html = html.replace('property="og:url" content="https://ciaw.es/"',
+                            'property="og:url" content="https://ciaw.es/'+destination+'"')
+        html = html.replace('property="og:title" content="CIAW | Center for Innovation in Ancient Worlds"',
+                            'property="og:title" content="'+TITLES[page][lang=='ca']+'"')
+        html = html.replace('const seminarState=document.getElementById(\'seminar-state\');',
+                            "const seminarState=document.getElementById('seminar-state');")
+        html = html.replace("seminarState.textContent='PAST SEMINAR · L’ANTIGUITAT AL MÓN ACTUAL II'",
+                            "seminarState.textContent='"+('SEMINARIO CELEBRADO' if lang=='es' else 'SEMINARI CELEBRAT')+" · L’ANTIGUITAT AL MÓN ACTUAL II'")
+    elif page == 'game-studies.html':
+        html = html.replace('property="og:url" content="https://ciaw.es/game-studies.html"',
+                            'property="og:url" content="https://ciaw.es/'+destination+'"')
+    if page in ('index.html', 'game-studies.html', 'privacy.html'):
+        opens, closes = ('Open navigation menu', 'Close navigation menu')
+        html = html.replace("'"+opens+"'", "'"+ALT[lang][opens]+"'")
+        html = html.replace("'"+closes+"'", "'"+ALT[lang][closes]+"'")
+    # Hreflang for all five types of page, so translators and search engines see parity.
+    en = 'https://ciaw.es/' if page=='index.html' else 'https://ciaw.es/'+page
+    ca = 'https://ciaw.es/'+PAGE_NAMES[page]['ca']
+    es = 'https://ciaw.es/'+PAGE_NAMES[page]['es']
+    hreflang = ('\n<link rel="alternate" hreflang="en" href="'+en+'"/>'
+                '\n<link rel="alternate" hreflang="ca" href="'+ca+'"/>'
+                '\n<link rel="alternate" hreflang="es" href="'+es+'"/>')
+    html = re.sub(r'<link rel="alternate" hreflang="(?:en|es|ca|x-default)"[^>]*>\s*', '', html)
+    html = html.replace('</head>', hreflang+'\n</head>',1)
+    return html
+
+
+def structure_signature(html):
+    # No parser rewrite: exactly the same section and image structures.
+    sections = re.findall(r'<section\b[^>]*\bid="([^"]+)"', html)
+    images = re.findall(r'<img\b', html)
+    return sections, len(images), len(re.findall(r'<article\b',html)),len(re.findall(r'<details\b',html))
+
+
+def main():
+    total = 0
+    for page, targets in PAGE_NAMES.items():
+        source = (ROOT / page).read_text('utf-8')
+        sig = structure_signature(source)
+        for lang, dest in targets.items():
+            html = localize(source, page, lang)
+            parity = structure_signature(html)
+            if sig != parity:
+                raise AssertionError(f'Structure mismatch {page} → {dest}: {sig} vs {parity}')
+            if re.findall(r'<a\b[^>]*href="#([^"]+)"', html):
+                ids = set(re.findall(r'\bid="([^"]+)"',html))
+                broken = set(re.findall(r'<a\b[^>]*href="#([^"]+)"',html)) - ids
+                if broken: raise AssertionError(f'Broken anchors {dest}: {broken}')
+            (ROOT / dest).write_text(html,'utf-8')
+            print(f'BUILT {dest}: {len(html)} characters · {len(sig[0])} sections · {sig[1]} images · {sig[2]} articles')
+            total+=1
+    print('OK: all',total,'localized pages have structural parity with their English originals.')
+
+
+if __name__=='__main__':
+    main()
