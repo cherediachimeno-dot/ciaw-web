@@ -1403,6 +1403,19 @@ section[id]{scroll-margin-top:95px}
 @media(max-width:650px){.games-landing-preview{padding:56px 0}.games-landing-text .section-actions .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){.games-landing-image img{transition:none}}
 
+
+/* Full seminar programme remains on the homepage, not a separate HTML link */
+.event-programme-hint{display:block;color:#64748b;font-size:.79rem;font-weight:650;margin-top:8px}
+.event-programme-details{margin-top:19px;border:1px solid #dbe3ef;border-radius:13px;background:#fff;overflow:hidden}
+.event-programme-details>summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 16px;font-size:.89rem;font-weight:800;color:#1e40af;list-style:none}
+.event-programme-details>summary::-webkit-details-marker{display:none}
+.event-programme-details>summary:hover{background:#f1f5ff}
+.event-programme-details>summary:focus-visible{outline:3px solid #2563eb;outline-offset:-3px}
+.event-programme-details[open]>summary{border-bottom:1px solid #e2e8f0}
+.event-programme-details[open]>summary span{transform:rotate(180deg)}
+.event-programme-content{padding:5px 16px 16px}
+.event-programme-support{font-size:.77rem!important;line-height:1.7;color:#64748b;margin-top:14px!important}
+
 </style>
 </head>
 
@@ -1637,17 +1650,30 @@ section[id]{scroll-margin-top:95px}
       <h3 lang="ca">Antiguitat, extrema dreta i xarxes socials</h3>
       <p>Classical reception, social media, far-right movements and generative AI.</p>
       <div class="event-seminar-feature event-compact">
-       <a class="event-poster-thumb" href="seminar-2026.html" aria-label="Read the programme of the seminar">
+       <a class="event-poster-thumb" href="1000002037_cleaned.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the original seminar poster">
         <img src="1000002037_cleaned.webp" loading="lazy" decoding="async" width="1024" height="1449" alt="Poster for the 24 November 2026 seminar on Antiquity, the far right and social networks"/>
-        <span>Programme ↗</span>
+        <span>View poster ↗</span>
        </a>
        <div class="event-seminar-facts">
         <p><strong>Date &amp; time</strong><span>24 November 2026 · 10.30–13.15 h</span></p>
         <p><strong>Venue</strong><span>Sala de Graus · Facultat de Filosofia i Lletres (UAB)</span></p>
         <p><strong>Organisers</strong><span>UOC · UAB · CIAW</span></p>
-        <a class="event-programme-link" href="seminar-2026.html">Full programme &amp; poster →</a>
+        <span class="event-programme-hint">Full programme available below ↓</span>
        </div>
       </div>
+      <details class="event-programme-details">
+       <summary>View full programme <span aria-hidden="true">⌄</span></summary>
+       <div class="event-programme-content">
+        <ol class="event-sessions">
+         <li><time datetime="10:30">10.30–10.45</time><div><strong lang="ca">Presentació de les jornades</strong><span>Carlos Heredia i Marc Mendoza (UAB)</span></div></li>
+         <li><time datetime="10:45">10.45–11.25</time><div><strong lang="ca">De Roma al <em>feed</em>: com l’extrema dreta resignifica l’Antiguitat a les xarxes socials</strong><span>Laura Pérez Altabe (UPF)</span></div></li>
+         <li><time datetime="11:25">11.25–12.05</time><div><strong lang="es">Apropiaciones de la Antigüedad en el contexto actual de auge de las ultraderechas y de la IA generativa</strong><span>Oskar Aguado (EHU)</span></div></li>
+         <li><time datetime="12:05">12.05–12.45</time><div><strong lang="ca"><em>Iosephus Maria ad portas</em>: l’extrema dreta catalana més enllà d’Ítaca</strong><span>Marc Mendoza (UAB)</span></div></li>
+         <li><time datetime="12:45">12.45–13.15</time><div><strong lang="ca">Debat final</strong></div></li>
+        </ol>
+        <p class="event-programme-support">With support from: Facultat de Filosofia i Lletres (UAB); Màster Universitari de la Mediterrània Antiga (UOC–UAB–UAH); Center for Innovation in Ancient Worlds (CIAW).</p>
+       </div>
+      </details>
      </div>
     </article>
     <article class="event-entry event-past-compact">
@@ -1749,7 +1775,7 @@ section[id]{scroll-margin-top:95px}
   </div>
   <div class="footer-links">
    <a href="#about">About</a><a href="#people">People</a><a href="research.html">Research &amp; Outputs</a>
-   <a href="seminar-2026.html">Seminar programme</a><a href="resources.html">Resources</a>
+   <a href="resources.html">Resources</a>
    <a href="ca.html" lang="ca">Català</a><a href="es.html" lang="es">Castellano</a>
    <a href="#contact">Contact</a><a href="privacy.html">Privacy</a>
   </div>
