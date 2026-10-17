@@ -18,19 +18,15 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "github-pages"
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Descargar sitio
         uses: actions/checkout@v4
-
       - name: Preparar archivos estáticos
         run: |
           mkdir -p _site
@@ -41,15 +37,38 @@ jobs:
           test -f _site/files/info1.webp
           test -f _site/files/info2.webp
           test -f _site/files/info3.webp
-
+      - name: Comprobar configuración de Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          code=$(curl -sS -o /tmp/pages-status.json -w '%{http_code}' -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' "https://api.github.com/repos/$GITHUB_REPOSITORY/pages")
+          echo "GitHub Pages API: HTTP $code"
+          if [ "$code" != "200" ]; then
+            echo "::error::GitHub Pages no está habilitado en este repositorio. En Settings > Pages, elige GitHub Actions como fuente."
+            exit 1
+          fi
+          python - <<'PY'
+          import json
+          data=json.load(open('/tmp/pages-status.json'))
+          print("Pages URL:",data.get('html_url'))
+          print("Build type:",data.get('build_type'))
+          print("Status:",data.get('status'))
+          if data.get('build_type') not in ('workflow',):
+              raise SystemExit("La fuente de Pages no es GitHub Actions. Cambiar Source en Settings > Pages.")
+          PY
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
-
-      - name: Subir artefacto de publicación
+      - name: Subir sitio
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
-
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Publicar sitio
         id: deployment
         uses: actions/deploy-pages@v4
