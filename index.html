@@ -1360,6 +1360,30 @@ nav .menu{gap:19px;font-size:.88rem}
 .skip-link:focus{top:12px}
 .visually-hidden-anchor{position:absolute;width:1px;height:1px;overflow:hidden}
 section[id]{scroll-margin-top:95px}
+
+/* Unified CIAW navigation wordmark: use the original logo with its empty margins removed */
+.site-header{background:rgba(240,243,248,.95);backdrop-filter:blur(14px);height:104px;border-bottom:1px solid #dfe6ee}
+.site-header.scrolled{height:86px;background:rgba(240,243,248,.98)}
+.site-header>.container{width:min(92%,1510px);max-width:1510px}
+.site-header nav{gap:24px}
+.site-header nav>a:first-child{flex:none;display:flex;align-items:center}
+.site-header .logo{width:250px;max-width:250px;height:auto;max-height:none;object-fit:contain;transform:none!important}
+.site-header.scrolled .logo{width:227px;height:auto;max-width:227px}
+.site-header nav .menu{gap:clamp(10px,1.15vw,20px)!important;font-size:.85rem;white-space:nowrap}
+.site-header nav .menu>a{font-size:.84rem}
+.site-header nav .menu .nav-langs{gap:7px}
+@media(max-width:1390px){.site-header nav .menu{display:none}.site-header .mobile-menu-btn{display:block}.site-header .mobile-menu.active{display:flex}}
+@media(min-width:1391px){.site-header nav .menu{display:flex}.site-header .mobile-menu-btn{display:none}}
+@media(max-width:900px){
+ .site-header{height:88px}
+ .site-header.scrolled{height:78px}
+ .site-header .logo{width:226px;max-width:226px;height:auto;transform:none!important}
+ .site-header.scrolled .logo{width:209px;max-width:209px;height:auto}
+}
+@media(max-width:430px){
+ .site-header .logo{width:202px;max-width:202px}
+ .site-header.scrolled .logo{width:191px;max-width:191px}
+}
 </style>
 </head>
 
@@ -1368,7 +1392,7 @@ section[id]{scroll-margin-top:95px}
 <header id="main-header" class="site-header">
  <div class="container">
   <nav aria-label="Main navigation">
-   <a href="#top" aria-label="CIAW — Back to top"><img class="logo" src="logo.png" alt="CIAW logo" width="180"/></a>
+   <a href="#top" aria-label="CIAW — Back to top"><img class="logo" src="assets/ciaw-header-logo.png" alt="CIAW · Center for Innovation in Ancient Worlds" width="250" height="46" fetchpriority="high"/></a>
    <div class="menu">
     <a href="#about">About &amp; People</a>
     <a href="#outputs">Research &amp; Outputs</a>
