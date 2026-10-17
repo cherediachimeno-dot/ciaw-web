@@ -1187,6 +1187,43 @@ nav .menu{gap:19px;font-size:.88rem}
  .highlight-tile,.neuro-figure img{transition:none}
 }
 
+
+/* CIAW contributors: roles and affiliations verified against the journal's editorial pages */
+.about-team-note{font-size:.94rem;line-height:1.75;margin-top:19px;color:#475569;max-width:850px}
+.about-team-note a{font-weight:700;color:#1d4ed8;text-decoration:underline;text-underline-offset:3px}
+.ciaw-people{background:#f8fafc}
+.people-heading{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:28px}
+.people-heading-copy{max-width:780px}
+.people-heading-copy h2{font-size:clamp(2rem,3vw,2.75rem);letter-spacing:-.035em}
+.people-heading-copy p{margin-top:14px;font-size:1rem;line-height:1.82;color:#64748b}
+.people-heading-copy p strong{color:#334155}
+.people-directory{font-size:.87rem;font-weight:700;color:#1d4ed8;white-space:nowrap;border-bottom:1px solid #93c5fd;padding-bottom:5px;margin-bottom:6px}
+.people-directory:hover{color:#1e40af}
+.people-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.person-card{display:flex;flex-direction:column;position:relative;min-width:0;padding:27px 27px 25px;background:#fff;border:1px solid #e2e8f0;border-radius:20px;box-shadow:0 8px 25px rgba(15,23,42,.035)}
+.person-number{position:absolute;top:29px;right:27px;font-size:.78rem;font-weight:800;letter-spacing:.12em;color:#94a3b8}
+.person-monogram{width:52px;height:52px;display:grid;place-items:center;background:#e8edfb;color:#3730a3;border:1px solid #c7d2fe;border-radius:14px;font-weight:800;font-size:.98rem;letter-spacing:.03em;margin-bottom:22px}
+.person-card:nth-child(2) .person-monogram{background:#e8f6f1;color:#065f46;border-color:#a7f3d0}
+.person-card:nth-child(3) .person-monogram{background:#faf1e9;color:#9a3412;border-color:#fed7aa}
+.person-card h3{font-size:1.22rem;letter-spacing:-.026em;color:#0f172a;line-height:1.35;margin-bottom:11px}
+.person-role{font-size:.88rem;line-height:1.7;font-weight:650;color:#334155}
+.person-affiliation{font-size:.86rem;line-height:1.65;color:#64748b;margin-top:11px}
+.person-contact{display:inline-block;align-self:flex-start;color:#2563eb;font-size:.85rem;font-weight:750;margin-top:auto;padding-top:25px;text-decoration:none}
+.person-contact:hover{text-decoration:underline;text-underline-offset:3px}
+.people-note{max-width:910px;color:#64748b;font-size:.81rem;line-height:1.7;margin-top:20px}
+@media(max-width:1050px){
+ .people-heading{display:block}
+ .people-directory{display:inline-block;margin-top:19px;white-space:normal}
+ .people-grid{gap:12px}
+ .person-card{padding:22px}
+}
+@media(max-width:750px){
+ .people-grid{grid-template-columns:1fr;gap:13px}
+ .person-card{min-height:0}
+ .person-monogram{margin-bottom:16px}
+ .person-contact{margin-top:8px;padding-top:8px}
+}
+
 </style>
 </head>
 
@@ -1201,6 +1238,7 @@ nav .menu{gap:19px;font-size:.88rem}
     <a href="#game-studies">Game Studies</a>
     <a href="#neurodiversity">Neurodiversity</a>
     <a href="#projects">Projects</a>
+    <a href="#people">People</a>
     <a href="#teaching-resources">Resources</a>
     <a href="#contact" class="nav-cta">Collaborate</a>
    </div>
@@ -1211,6 +1249,7 @@ nav .menu{gap:19px;font-size:.88rem}
     <a href="#game-studies">Game Studies</a>
     <a href="#neurodiversity">Neurodiversity</a>
     <a href="#projects">Projects</a>
+    <a href="#people">People</a>
     <a href="#teaching-resources">Resources</a>
     <a href="#contact" class="nav-cta">Collaborate</a>
    </div>
@@ -1245,6 +1284,7 @@ nav .menu{gap:19px;font-size:.88rem}
     <p class="about-lead"><strong>The Center for Innovation in Ancient Worlds (CIAW)</strong> is an independent, non-profit academic initiative founded in 2025 and <strong>based in Catalonia, Spain</strong>. Bringing together Ancient History, Classics, Archaeology and Reception Studies, it promotes interdisciplinary research, scholarly publishing, educational innovation and public engagement with the ancient world.</p>
     <p class="about-detail">Rather than operating as a single university department, CIAW provides a collaborative framework open to scholars, educators and cultural practitioners across institutions and countries. It explores not only what we know about Antiquity, but also <strong>how historical knowledge is produced, represented, taught and shared</strong>—from the critical study of ancient evidence to video games, digital humanities and emerging technologies.</p>
     <p class="about-detail">Through its Diamond Open Access journal <em>AI &amp; Antiquity</em>, the <em>Playing Antiquity</em> thematic series and its work on neurodiversity-aware teaching, CIAW is committed to rigorous scholarship, academic independence, accessible learning and the open exchange of ideas.</p>
+    <p class="about-team-note">CIAW is rooted in academic collaboration in Catalonia, with close links to the Universitat Autònoma de Barcelona and colleagues across other institutions. <a href="#people">Meet the people behind CIAW →</a></p>
     <div class="about-focus" aria-label="Areas of work"><span>Ancient Studies</span><span>Open Access Publishing</span><span>Game Studies</span><span>Neurodiversity</span><span>Inclusive Teaching</span><span>Digital Humanities</span></div>
    </div>
   </div>
@@ -1411,6 +1451,46 @@ nav .menu{gap:19px;font-size:.88rem}
   </div>
  </section>
 
+<section id="people" class="ciaw-people" aria-labelledby="people-title">
+ <div class="container">
+  <div class="people-heading">
+   <div class="people-heading-copy">
+    <div class="badge">THE PEOPLE BEHIND CIAW</div>
+    <h2 id="people-title">Who we are</h2>
+    <p>CIAW brings together academic and editorial work rooted in Catalonia and connected to the <strong>Universitat Autònoma de Barcelona (UAB)</strong>, alongside collaborators at other institutions. The centre remains an independent, non-profit initiative.</p>
+   </div>
+   <a class="people-directory" href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer">Explore the journal's editorial team ↗</a>
+  </div>
+  <div class="people-grid">
+   <article class="person-card">
+    <span class="person-number" aria-hidden="true">01</span>
+    <div class="person-monogram" aria-hidden="true">CH</div>
+    <h3>Carlos Heredia Chimeno</h3>
+    <p class="person-role">Founder, CIAW · Editor-in-Chief, <em>AI &amp; Antiquity</em></p>
+    <p class="person-affiliation">Ancient History · Universitat Autònoma de Barcelona</p>
+    <a href="mailto:carlos.heredia@uab.cat" class="person-contact">Academic &amp; institutional enquiries ↗</a>
+   </article>
+   <article class="person-card">
+    <span class="person-number" aria-hidden="true">02</span>
+    <div class="person-monogram" aria-hidden="true">IA</div>
+    <h3>Isaías Arrayás Morales</h3>
+    <p class="person-role">Academic collaboration · Associate Editor, <em>AI &amp; Antiquity</em></p>
+    <p class="person-affiliation">Ancient History · Universitat Autònoma de Barcelona</p>
+    <a href="mailto:isaias.arrayas@uab.cat" class="person-contact">Editorial contact ↗</a>
+   </article>
+   <article class="person-card">
+    <span class="person-number" aria-hidden="true">03</span>
+    <div class="person-monogram" aria-hidden="true">SS</div>
+    <h3>Sílvia Swan</h3>
+    <p class="person-role">Editorial collaboration · Associate Editor, <em>AI &amp; Antiquity</em></p>
+    <p class="person-affiliation">Universidad Europea de Madrid</p>
+    <a href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer" class="person-contact">Editorial team ↗</a>
+   </article>
+  </div>
+  <p class="people-note">The editorial positions and university affiliations shown here are those published by <em>AI &amp; Antiquity</em>. CIAW's independent status is distinct from the institutional affiliations of its collaborators.</p>
+ </div>
+</section>
+
  <section id="teaching-resources" aria-labelledby="resources-title">
   <div class="container">
    <div class="section-intro">
@@ -1467,6 +1547,7 @@ nav .menu{gap:19px;font-size:.88rem}
    <a href="#about">About</a>
    <a href="#game-studies">Game Studies</a>
    <a href="#neurodiversity">Neurodiversity</a>
+   <a href="#people">People</a>
    <a href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer">Playing Antiquity ↗</a>
    <a href="mailto:carlos.heredia@uab.cat">Contact</a>
   </div>
