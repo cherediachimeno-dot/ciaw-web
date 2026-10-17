@@ -119,6 +119,8 @@ PRESERVED = {
     'Video Games, Teaching and Historical Knowledge.',
     'Visit the journal ↗', 'Issue archive ↗',
     'Centre for Innovation in Ancient Worlds',
+    'CIAW | Center for Innovation in Ancient Worlds',
+    'CIAW · Center for Innovation in Ancient Worlds',
 }
 # A final small set of UI translations that also occurs in child pages.
 SUPPLEMENT = {
