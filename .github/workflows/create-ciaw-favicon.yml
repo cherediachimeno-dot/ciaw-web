@@ -1,0 +1,43 @@
+name: Restore user-provided CIAW logo favicon
+on:
+  push:
+    paths:
+      - ".github/workflows/create-ciaw-favicon.yml"
+permissions:
+  contents: write
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate standard multi-resolution favicon from uploaded CIAW logo
+        run: |
+          python -m pip -q install pillow
+          python - <<'PY'
+          from PIL import Image, ImageOps
+          from pathlib import Path
+          import hashlib
+          origin=Path('Captura de pantalla 2026-10-17 115212.png')
+          assert origin.exists(), 'The exact user-uploaded logo was not found'
+          src=Image.open(origin).convert('RGB')
+          print('ORIGINAL',src.size,hashlib.sha256(origin.read_bytes()).hexdigest())
+          print('CORNER',src.getpixel((0,0)))
+          assert src.width>=90 and src.height>=40 and src.width/src.height > 1.3
+          bg=src.getpixel((0,0))
+          # Maintain the supplied artwork's aspect ratio and palette, adding only a square background.
+          canvas=Image.new('RGB',(512,512),bg)
+          art=ImageOps.contain(src,(468,468),Image.Resampling.LANCZOS)
+          canvas.paste(art,((512-art.width)//2,(512-art.height)//2))
+          canvas.save('favicon.ico',format='ICO',sizes=[(16,16),(24,24),(32,32),(48,48),(64,64),(128,128),(256,256)])
+          canvas.resize((32,32),Image.Resampling.LANCZOS).save('favicon-32.png',optimize=True)
+          canvas.resize((180,180),Image.Resampling.LANCZOS).save('apple-touch-icon.png',optimize=True)
+          for path in ('favicon.ico','favicon-32.png','apple-touch-icon.png'):
+            im=Image.open(path)
+            print('GENERATED',path,im.format,im.size,Path(path).stat().st_size)
+          PY
+      - name: Commit authentic image assets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add favicon.ico favicon-32.png apple-touch-icon.png
+          git diff --cached --quiet || (git commit -m 'Use exact CIAW wordmark supplied by user as website favicon' && git push)
