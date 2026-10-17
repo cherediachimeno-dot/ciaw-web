@@ -1,0 +1,40 @@
+{
+  "page": "https://ai-antiquity.org/index.php/ai/gamestudies",
+  "http_status": 200,
+  "title": "Playing Antiquity\n\t\t\t\t\t\t\t| AI & Antiquity",
+  "images": [
+    {
+      "url": "https://ai-antiquity.org/public/journals/1/pageHeaderLogoImage_en.webp",
+      "alt": "header",
+      "title": "",
+      "parent": "",
+      "width": null,
+      "height": null
+    },
+    {
+      "url": "https://i.ibb.co/3yNc8B31/Panorama-de-fantas-a-puertos-y-batallas.webp",
+      "alt": "Panoramic composition featuring World of Warcraft, Age of Empires and Total War",
+      "title": "",
+      "parent": "",
+      "width": null,
+      "height": null
+    },
+    {
+      "url": "https://ai-antiquity.org/templates/images/ojs_brand.png",
+      "alt": "More information about the publishing system, Platform and Workflow by OJS/PKP.",
+      "title": "",
+      "parent": "",
+      "width": null,
+      "height": null
+    }
+  ],
+  "backgrounds": [],
+  "meta": [],
+  "stylesheets": [
+    "https://ai-antiquity.org/plugins/themes/classic/resources/app.min.css?v=3.4.0.8",
+    "https://ai-antiquity.org/index.php/ai/$$$call$$$/page/page/css?name=stylesheet",
+    "https://ai-antiquity.org/plugins/generic/doiInSummary/styles/doi.css?v=3.4.0.8",
+    "https://ai-antiquity.org/plugins/generic/citations/css/citations.css?v=3.4.0.8",
+    "https://ai-antiquity.org/public/journals/1/styleSheet.css?d=2026-09-02+11%3A08%3A24"
+  ]
+}
