@@ -1384,6 +1384,25 @@ section[id]{scroll-margin-top:95px}
  .site-header .logo{width:202px;max-width:202px}
  .site-header.scrolled .logo{width:191px;max-width:191px}
 }
+
+/* Homepage teaser for Game Studies research; full agenda is a separate page */
+.games-landing-preview{background:linear-gradient(135deg,#f6f8ff 0%,#fff 72%);padding:75px 0}
+.games-landing-wrap{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:clamp(26px,5vw,70px);align-items:center}
+.games-landing-image{display:block;overflow:hidden;border:1px solid #dee5ef;background:#fff;border-radius:20px;box-shadow:0 12px 36px rgba(30,41,90,.075)}
+.games-landing-image img{display:block;width:100%;height:auto;object-fit:contain;transition:transform .4s ease}
+.games-landing-image:hover img{transform:scale(1.015)}
+.games-landing-image:focus-visible{outline:3px solid #2563eb;outline-offset:4px}
+.games-landing-text h2{font-size:clamp(1.9rem,3.3vw,2.65rem);line-height:1.16;letter-spacing:-.035em;margin:12px 0 18px}
+.games-landing-text>p{font-size:.99rem;line-height:1.82;color:#526078}
+.games-landing-text strong{color:#312e81}
+.games-focus-keywords{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 22px}
+.games-focus-keywords span{font-size:.76rem;font-weight:800;padding:7px 11px;border-radius:99px;color:#4338ca;background:#eaeafd}
+.games-landing-text .section-actions{display:flex;flex-wrap:wrap;gap:11px}
+.games-landing-note{font-size:.8rem!important;color:#64748b!important;line-height:1.65!important;margin:18px 0 0}
+@media(max-width:990px){.games-landing-wrap{grid-template-columns:1fr}.games-landing-image{max-width:760px}}
+@media(max-width:650px){.games-landing-preview{padding:56px 0}.games-landing-text .section-actions .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.games-landing-image img{transition:none}}
+
 </style>
 </head>
 
@@ -1397,7 +1416,7 @@ section[id]{scroll-margin-top:95px}
     <a href="#about">About &amp; People</a>
     <a href="#outputs">Research &amp; Outputs</a>
     <a href="#journal">AI &amp; Antiquity</a>
-    <a href="#game-studies">Game Studies</a>
+    <a href="game-studies.html">Game Studies</a>
     <a href="#neurodiversity">Neurodiversity</a>
     <a href="#events">Events &amp; Resources</a>
     <span class="nav-langs" aria-label="Language"><span class="current" aria-label="English version">EN</span><a href="ca.html" lang="ca">CA</a><a href="es.html" lang="es">ES</a></span>
@@ -1408,7 +1427,7 @@ section[id]{scroll-margin-top:95px}
     <a href="#about">About &amp; People</a>
     <a href="#outputs">Research &amp; Outputs</a>
     <a href="#journal">AI &amp; Antiquity</a>
-    <a href="#game-studies">Game Studies</a>
+    <a href="game-studies.html">Game Studies</a>
     <a href="#neurodiversity">Neurodiversity</a>
     <a href="#events">Events &amp; Resources</a>
     <a href="#contact" class="nav-cta">Collaborate</a>
@@ -1522,39 +1541,27 @@ section[id]{scroll-margin-top:95px}
  </div>
 </section>
 
- <section id="game-studies" aria-labelledby="games-title">
-  <span id="research" class="anchor-target" aria-hidden="true"></span>
-  <div class="container">
-   <div class="section-intro">
+ <section id="game-studies" class="games-landing-preview" aria-labelledby="games-title">
+ <span id="research" class="anchor-target" aria-hidden="true"></span>
+ <div class="container">
+  <div class="games-landing-wrap">
+   <a class="games-landing-image" href="game-studies.html" aria-label="Explore CIAW's Game Studies research area">
+    <img src="assets/playing-antiquity-banner.webp" loading="lazy" decoding="async" alt="Panoramic Playing Antiquity artwork featuring historical and fantasy game worlds"/>
+   </a>
+   <div class="games-landing-text">
     <div class="badge badge-purple">RESEARCH AREA</div>
     <h2 id="games-title">Game Studies &amp; Antiquity</h2>
-    <p class="game-lead">CIAW studies video games as cultural artefacts and systems of historical interpretation, not merely as teaching aids or tests of factual accuracy. Through rules, maps, narratives, interfaces and player choices, games turn particular versions of Antiquity into playable experiences. This research asks how they shape historical agency, causation, cultural memory and the contemporary reception of the ancient world.</p>
-   </div>
-   <div class="grid grid-3 game-grid">
-    <div class="card"><h3>Classical reception</h3><p>How games reinterpret historical events, societies, identities and cultural memory.</p></div>
-    <div class="card"><h3>Mechanics &amp; historical agency</h3><p>How rules, simulation and player choices construct playable versions of the past.</p></div>
-    <div class="card"><h3>Teaching &amp; public history</h3><p>Critical game literacy, digital heritage, educational practice and historical knowledge.</p></div>
-   </div>
-   <div class="playing">
-    <a class="playing-artwork" href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer" aria-label="Explore the Playing Antiquity thematic series">
-     <img src="assets/playing-antiquity-banner.webp" loading="lazy" decoding="async" alt="Playing Antiquity panoramic artwork featuring World of Warcraft, Age of Empires and Total War"/>
-    </a>
-    <div>
-     <div class="badge badge-purple">ANNUAL THEMATIC SERIES</div>
-     <h3><em>Playing Antiquity</em></h3>
-     <p><strong>Video Games, Teaching and Historical Knowledge.</strong> <em>Playing Antiquity</em> is an annual thematic series within <em>AI &amp; Antiquity</em> devoted to video games and the ancient world. It welcomes research on classical reception, mechanics, historical agency, cultural memory, education and digital technology. Beginning in June 2027, a dedicated issue is planned annually under the journal’s peer-review and Diamond Open Access policies. Contributions need not address AI or classroom use.</p>
-     <div class="section-actions">
-      <a href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Call for Papers &amp; Details ↗</a>
-     </div>
+    <p>Video games are not simply representations of the ancient world: their rules, narratives and interfaces create <strong>playable interpretations of history</strong>. CIAW explores questions of political authority, social structures, classical reception and historical knowledge through the critical study of games.</p>
+    <div class="games-focus-keywords"><span>Historical agency</span><span>Playable systems</span><span>Classical reception</span></div>
+    <div class="section-actions">
+     <a href="game-studies.html" class="btn btn-primary">Explore Game Studies at CIAW →</a>
+     <a href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Playing Antiquity · Call for Papers ↗</a>
     </div>
-    <aside aria-label="Playing Antiquity publication dates">
-     <strong>First issue</strong><span>June 2027</span>
-     <strong>Submission deadline</strong><span><time datetime="2027-02-28">28 February 2027</time></span>
-     <strong>Publication</strong><span>Peer-reviewed · Diamond Open Access</span>
-    </aside>
+    <p class="games-landing-note"><em>Playing Antiquity</em> is the peer-reviewed thematic series published by <em>AI &amp; Antiquity</em>, distinct from CIAW's broader research agenda. First issue planned for June 2027; submissions close on 28 February 2027.</p>
    </div>
   </div>
- </section>
+ </div>
+</section>
 
  <section id="neurodiversity" aria-labelledby="neuro-title">
  <div class="container">
