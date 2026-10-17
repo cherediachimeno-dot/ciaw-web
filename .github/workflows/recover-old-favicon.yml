@@ -1,4 +1,4 @@
-name: Recover legacy CIAW favicon
+name: Restore authentic CIAW favicon
 on:
   push:
     paths:
@@ -6,40 +6,35 @@ on:
 permissions:
   contents: write
 jobs:
-  retrieve:
+  restore:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Try original Netlify domain icon assets
+      - name: Install image inspection
+        run: python -m pip -q install pillow
+      - name: Restore original icon without altering binary
         run: |
-          python -m pip -q install pillow requests
           python - <<'PY'
-          import requests, io, re, hashlib
           from PIL import Image
           from pathlib import Path
-          s=requests.Session()
-          s.headers.update({'User-Agent':'Mozilla/5.0 (compatible; academic website image recovery)'})
-          base='https://ciaw.netlify.app'
-          for path in ['/favicon.ico','/favicon-32.png','/favicon-64.png','/favicon-192.png','/favicon-512.png','/favicon.png','/apple-touch-icon.png','/assets/favicon.ico','/assets/favicon.png','/images/favicon.ico','/index.html']:
-            try:
-              r=s.get(base+path,timeout=17,allow_redirects=True)
-              head=(r.content[:35] if 'text' not in r.headers.get('content-type','') else b'')
-              print('PROBE',path,'STATUS',r.status_code,'URL',r.url,'MIME',r.headers.get('Content-Type'),'BYTES',len(r.content),'HEAD',repr(head))
-              if r.status_code==200 and r.url.startswith('https://ciaw.netlify.app') and 'image' in r.headers.get('content-type','') and path!='/index.html':
-                try:
-                  im=Image.open(io.BytesIO(r.content))
-                  im.verify()
-                  print('VALID ORIGINAL',path,Image.open(io.BytesIO(r.content)).size,'SHA256',hashlib.sha256(r.content).hexdigest())
-                  filename='assets/legacy-'+path.split('/')[-1]
-                  Path(filename).write_bytes(r.content)
-                except Exception as e: print('IMAGE_ERROR',path,repr(e))
-              if path=='/index.html' and r.status_code==200:
-                print('LEGACY HEAD',r.text[:1600])
-            except Exception as e: print('REQUEST_FAILED',path,str(e)[:220])
+          from hashlib import sha256
+          import shutil
+          source=Path('assets/legacy-favicon.ico')
+          assert source.exists()
+          original=source.read_bytes()
+          im=Image.open(source)
+          print('ORIGINAL_ICON_SIZES',sorted(im.info.get('sizes',[])))
+          print('ORIGINAL_ICON_SHA256',sha256(original).hexdigest())
+          shutil.copyfile(source,'favicon.ico')
+          assert Path('favicon.ico').read_bytes()==original
+          preview=Image.open(source)
+          if (256,256) in preview.info.get('sizes',[]):
+            preview.size=(256,256)
+          preview.convert('RGBA').resize((256,256),Image.Resampling.NEAREST).save('assets/legacy-favicon-preview.png')
           PY
-      - name: Save recoverable originals
+      - name: Commit original favicon to webroot and temporary preview
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/legacy-* || true
-          git diff --cached --quiet || (git commit -m 'Recover original CIAW favicon from former Netlify host' && git push)
+          git add favicon.ico assets/legacy-favicon-preview.png
+          git diff --cached --quiet || (git commit -m 'Restore exact original favicon.ico from legacy CIAW Netlify website' && git push)
