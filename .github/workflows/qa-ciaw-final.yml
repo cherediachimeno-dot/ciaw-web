@@ -1,0 +1,86 @@
+name: Verify CIAW final website and domain
+on:
+  push:
+    paths: [".github/workflows/qa-ciaw-final.yml"]
+permissions:
+  contents: write
+  pages: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install page inspection tools
+        run: python -m pip -q install requests beautifulsoup4 pillow playwright
+      - name: Verify files, local links, sitemap and HTTPS
+        run: |
+          python - <<'PY'
+          import requests,ssl,socket,subprocess,json
+          from bs4 import BeautifulSoup
+          root="https://ciaw.es/"
+          s=requests.Session()
+          r=s.get(root,timeout=35,headers={"Cache-Control":"no-cache"})
+          r.raise_for_status()
+          assert r.status_code==200
+          soup=BeautifulSoup(r.text,"html.parser")
+          for marker in ("Research &amp; Outputs","Català","Castellano","Same Standards, Different Pathways","seminar-2026.html"):
+              if marker not in r.text: raise AssertionError(marker)
+          files=("research.html","seminar-2026.html","resources.html","ca.html","es.html","subpages.css","privacy.html","sitemap.xml","assets/ciaw-social.png","1000002037_cleaned.webp")
+          for path in files:
+            z=s.get(root+path,timeout=30);z.raise_for_status()
+            print("PAGE_OR_ASSET",path,z.status_code,len(z.content),z.headers.get("Content-Type"))
+          sitemap=s.get(root+"sitemap.xml").text
+          assert all("https://ciaw.es/"+p in sitemap for p in ("research.html","seminar-2026.html","resources.html","ca.html","es.html"))
+          local=[a['href'] for a in soup.select("a[href]") if not a['href'].startswith(('https:','http:','mailto:','#'))]
+          for path in sorted(set(local)):
+            check=s.get(root+path.split('#')[0],timeout=25);check.raise_for_status()
+          ids={el['id'] for el in soup.select("[id]")}
+          broken=[a.get('href') for a in soup.select("a[href^='#']") if a['href'][1:] not in ids]
+          assert not broken,broken
+          for site in ["https://ciaw.es/","https://www.ciaw.es/"]:
+            try:
+              z=s.get(site,timeout=20)
+              print("HTTPS",site,z.status_code,z.url,"SECURE")
+            except Exception as e: print("HTTPS_ERROR",site,str(e)[:450])
+          out=subprocess.run(["dig","@1.1.1.1","+short","www.ciaw.es","CNAME"],capture_output=True,text=True)
+          print("WWW_CNAME",out.stdout.strip())
+          print("PUBLISHED",root,len(r.content),"internal_links",len(local),"ids",len(ids))
+          PY
+      - name: Review desktop, small screen and menu
+        run: |
+          mkdir -p .qa-ciaw
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from PIL import Image
+          from pathlib import Path
+          with sync_playwright() as p:
+            browser=p.chromium.launch(executable_path="/usr/bin/google-chrome",headless=True,args=["--no-sandbox","--disable-dev-shm-usage"])
+            checks=[("desktop-home","https://ciaw.es/",1400,990,None),("desktop-research","https://ciaw.es/#outputs",1400,900,"outputs"),("desktop-events","https://ciaw.es/#events",1400,950,"events"),("desktop-people","https://ciaw.es/#people",1400,930,"people"),("mobile-home","https://ciaw.es/",390,850,None),("mobile-seminar","https://ciaw.es/seminar-2026.html",390,900,None),("mobile-menu","https://ciaw.es/",390,850,"menu")]
+            for name,url,width,height,target in checks:
+              page=browser.new_page(viewport={"width":width,"height":height},device_scale_factor=1)
+              page.goto(url,wait_until="domcontentloaded",timeout=55000)
+              page.add_style_tag(content="html{scroll-behavior:auto!important}*{animation-duration:0s!important;transition-duration:0s!important}")
+              if target=="menu":
+                page.locator("#mobile-menu-btn").click()
+                assert page.locator("#mobile-menu").evaluate("(e)=>e.classList.contains('active')")
+              elif target:
+                page.locator("#"+target).evaluate("(el)=>window.scrollTo(0,el.getBoundingClientRect().top + window.scrollY - 110)")
+              page.wait_for_timeout(600)
+              overflow=page.evaluate("()=>document.documentElement.scrollWidth - innerWidth")
+              errs=[]
+              page.on("pageerror",lambda e:errs.append(str(e)))
+              print("VIEW",name,"OVERFLOW",overflow,"TITLE",page.title())
+              assert overflow<=1, name+" horizontal overflow "+str(overflow)
+              filename=".qa-ciaw/"+name+".jpg"
+              png="/tmp/"+name+".png"
+              page.screenshot(path=png)
+              Image.open(png).convert("RGB").save(filename,quality=72,optimize=True)
+              page.close()
+            browser.close()
+          PY
+      - name: Save one-time QA captures
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .qa-ciaw
+          git diff --cached --quiet || (git commit -m 'Capture final CIAW website QA images' && git push)
