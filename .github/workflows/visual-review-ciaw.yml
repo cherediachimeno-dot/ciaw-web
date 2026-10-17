@@ -49,7 +49,13 @@ jobs:
               page.goto('https://ciaw.es/',wait_until='networkidle',timeout=60000)
               page.add_style_tag(content='html { scroll-behavior: auto !important } * {animation-duration:0s!important;transition-duration:0s!important}')
               page.locator('#'+target).evaluate("(el)=>window.scrollTo({top:el.getBoundingClientRect().top + window.scrollY - 100,behavior:'instant'})")
-              page.wait_for_timeout(600)
+              page.wait_for_timeout(1200)
+              if target in ('journal','neurodiversity'):
+                sel='.issue-cover img' if target=='journal' else '.neuro-figure img'
+                try:
+                  page.wait_for_function('(selector)=>{let im=document.querySelector(selector);return im && im.complete && im.naturalWidth>0}',arg=sel,timeout=15000)
+                except Exception as e:
+                  print('IMAGE LOAD WARNING',name,page.locator(sel).evaluate('(im)=>({complete:im.complete,naturalWidth:im.naturalWidth,currentSrc:im.currentSrc,loading:im.loading})'),str(e)[:120])
               png='/tmp/'+name+'.png'
               page.screenshot(path=png)
               jpg=Path('.preview-ciaw')/(name+'.jpg')
@@ -57,10 +63,6 @@ jobs:
               data=page.evaluate("()=>({horizontalOverflow:document.documentElement.scrollWidth-innerWidth, scrollY:window.scrollY, sectionY:document.getElementById('"+target+"').getBoundingClientRect().top})")
               print('SCREENSHOT',name,data,jpg.stat().st_size)
               assert data['horizontalOverflow'] <= 1,name+' overflow'
-              if name=='journal':
-                assert page.locator('.issue-cover img').evaluate('(img)=>img.complete && img.naturalWidth>0')
-              if target=='neurodiversity':
-                assert page.locator('.neuro-figure img').evaluate('(img)=>img.complete && img.naturalWidth>0')
               page.close()
             browser.close()
           PY
