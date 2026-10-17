@@ -31,3 +31,6 @@ jobs:
           echo "===== CUSTOM DOMAIN HTTP ====="
           curl -sS -L -m 20 -o /tmp/ciaw-domain.html -w 'status=%{http_code} url=%{url_effective}\n' https://ciaw.es/ || true
           if grep -q 'Different Minds.' /tmp/ciaw-domain.html; then echo 'DOMAIN_NEURO=YES'; else echo 'DOMAIN_NEURO=NO'; fi
+          echo "===== WWW HTTPS ====="
+          curl -sS -L -m 20 -o /tmp/ciaw-www.html -w 'www_status=%{http_code} www_url=%{url_effective} ssl_verify=%{ssl_verify_result}\\n' https://www.ciaw.es/ || true
+          if grep -q 'Different Minds.' /tmp/ciaw-www.html; then echo 'WWW_NEURO=YES'; else echo 'WWW_NEURO=NO'; fi
