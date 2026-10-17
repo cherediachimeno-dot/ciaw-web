@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>CIAW | Center for Innovation in Ancient Worlds</title>
-<meta content="Inclusive innovation, neurodiversity and responsible AI for Ancient Studies." name="description"/>
+<meta content="CIAW is an independent non-profit academic initiative for Ancient Studies, combining open publishing, Game Studies, inclusive pedagogy and critical digital scholarship." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -898,6 +898,38 @@ display:flex;
 
 }
 
+
+/* Institutional overview and Game Studies */
+html{scroll-padding-top:110px}
+#about{background:#fff}
+.identity-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:30px 0 38px}
+.identity-summary div{padding:22px 20px;border:1px solid var(--border);border-radius:16px;background:#f8fafc}
+.identity-summary strong{display:block;color:var(--text);font-size:1rem;line-height:1.3;margin-bottom:7px}
+.identity-summary span{display:block;color:var(--muted);font-size:.88rem;line-height:1.55}
+.identity-note{margin-top:25px;line-height:1.8;font-size:.93rem}
+.identity-note a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+#game-studies{background:linear-gradient(180deg,#eff6ff 0%,#f8fafc 58%,#fff 100%)}
+.game-question{font-size:1.38rem;line-height:1.5;font-weight:700;color:#172554;margin:0 0 26px}
+.games-grid .card{height:100%;border-top:4px solid #6366f1}
+.games-grid h3{margin-bottom:12px;font-size:1.16rem}
+.games-grid p{font-size:.96rem}
+.game-tagline{font-size:.9rem;color:#475569;margin-top:20px}
+.games-feature{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(270px,.7fr);gap:34px;align-items:center;padding:46px;margin-top:38px;border-radius:25px;border:1px solid #c7d2fe;background:linear-gradient(135deg,#fff 0%,#eef2ff 100%);box-shadow:var(--shadow-md)}
+.games-feature h3{font-size:clamp(1.85rem,3vw,2.4rem);margin:3px 0 12px;line-height:1.2}
+.games-feature p{line-height:1.8}
+.games-feature .btn-outline{background:#fff;color:#312e81;border:2px solid #a5b4fc}
+.games-feature .btn-outline:hover{background:#312e81;color:#fff;border-color:#312e81}
+.games-feature-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.games-facts{padding:28px;background:#fff;border:1px solid #c7d2fe;border-radius:18px}
+.games-facts strong{display:block;color:#312e81;margin-bottom:5px}
+.games-facts span{display:block;color:#475569;font-size:.95rem;line-height:1.6}
+.games-facts .fact+.fact{border-top:1px solid #e0e7ff;margin-top:18px;padding-top:18px}
+@media(max-width:1160px){.menu{display:none}.mobile-menu-btn{display:block}.mobile-menu.active{display:flex}}
+@media(min-width:1161px){.menu{gap:15px;font-size:.85rem}}
+@media(max-width:900px){.identity-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.games-feature{grid-template-columns:1fr;padding:32px}}
+@media(max-width:600px){.identity-summary{grid-template-columns:1fr}.hero p{font-size:1.05rem}.hero-glass{padding:24px}.game-question{font-size:1.17rem}.games-feature{padding:24px}.games-feature-cta .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none;transform:none}}
+
 </style>
 </head>
 <body>
@@ -908,21 +940,22 @@ display:flex;
 <img alt="CIAW Logo" class="logo" src="logo.png"/>
 </a>
 <div class="menu">
-<a href="#mission">Mission</a>
+<a href="#about">About CIAW</a>
 <a href="#journal">Journal</a>
+<a href="#game-studies">Game Studies</a>
 <a href="#projects">Projects</a>
 <a href="#teaching-resources">Teaching Guides</a>
 <a href="#research">Research</a>
-<a href="#neurodiversity">Neurodiversity</a>
-<a href="#values">Values</a>
 <a class="nav-cta" href="#contact">Collaborate</a>
 </div>
 <button class="mobile-menu-btn" id="mobile-menu-btn">
     ☰
 </button>
 <div class="mobile-menu" id="mobile-menu">
+<a href="#about">About CIAW</a>
 <a href="#mission">Mission</a>
-<a href="#journal">Journal</a>
+<a href="#journal">AI &amp; Antiquity</a>
+<a href="#game-studies">Game Studies</a>
 <a href="#activities">Activities</a>
 <a href="#projects">Projects</a>
 <a href="#teaching-resources">Teaching Guides</a>
@@ -934,62 +967,46 @@ display:flex;
 </nav>
 </div>
 </header>
-<section class="hero">
-<div class="glow-orb hero-glow-1"></div>
-<div class="glow-orb hero-glow-2"></div>
-<div class="container">
-<div class="hero-content">
-<div class="kicker">
-<span>Innovation</span> • <span>Neurodiversity</span> • <span>Responsible AI</span>
-</div>
-<h1>
-
-Reimagining Ancient Studies
-through <span class="gradient-text">Inclusive Innovation</span>
-</h1>
-<p>
-
-CIAW is an international non-profit centre advancing Ancient Studies through inclusive pedagogy, neurodiversity-aware design, responsible artificial intelligence, and evidence-based academic innovation.
-
-We promote open knowledge, interdisciplinary collaboration, and learning environments that protect academic integrity, academic freedom, and professional dignity. CIAW opposes workplace bullying, harassment, intimidation, defamation, exclusionary practices, coordinated reputational attacks, and the misuse of digital technologies—including artificial intelligence—to marginalise, silence, or discredit members of the scholarly community.
-
-</p>
-<div class="hero-buttons">
-<a class="btn btn-primary" href="#mission">
-
-Explore CIAW →
-
-</a>
-<a class="btn btn-outline" href="#contact">
-
-Get involved
-
-</a>
-</div>
+<section class="hero" aria-labelledby="site-title">
+<div class="glow-orb hero-glow-1"></div><div class="glow-orb hero-glow-2"></div>
+<div class="container"><div class="hero-content">
+<div class="kicker"><span>Independent academic initiative</span> • <span>Founded in 2025</span></div>
+<h1 id="site-title">Center for Innovation in <span class="gradient-text">Ancient Worlds</span></h1>
+<p>CIAW is a non-profit academic initiative dedicated to research, teaching and public engagement in Ancient Studies. We connect open-access scholarship, <strong style="color:white;">Game Studies</strong>, inclusive pedagogy and critical approaches to digital technologies.</p>
+<p style="margin-top:-20px;">Founded in 2025, CIAW provides a collaborative framework for <em>AI &amp; Antiquity</em> and initiatives exploring how the ancient world is studied, represented, taught and experienced today.</p>
+<div class="hero-buttons"><a class="btn btn-primary" href="#about">What is CIAW? →</a><a class="btn btn-outline" href="#game-studies">Explore Game Studies ↓</a></div>
 <div class="hero-glass">
-<div>
-<strong>Inclusive</strong>
-<span>Neurodiversity by Design</span>
-</div>
-<div>
-<strong>Responsible AI</strong>
-<span>Transparent &amp; Ethical</span>
-</div>
-<div>
-<strong>Open Science</strong>
-<span>Accessible Knowledge</span>
-</div>
-<div>
-<strong>Integrity</strong>
-<span>Evidence before Narratives</span>
-</div>
-</div>
-</div>
-</div>
-</section>
+<div><strong>Publishing</strong><span>Diamond Open Access</span></div>
+<div><strong>Game Studies</strong><span>Reception &amp; historical knowledge</span></div>
+<div><strong>Inclusive Teaching</strong><span>Neurodiversity by design</span></div>
+<div><strong>Digital Methods</strong><span>Critical &amp; responsible innovation</span></div>
+</div></div></div></section>
 <!-- =========================
 MISSION
 ========================= -->
+<!-- ABOUT CIAW -->
+<section id="about" aria-labelledby="about-title">
+<div class="container">
+<div class="section-intro reveal">
+<div class="badge">ABOUT THE CENTRE</div>
+<h2 id="about-title">What is CIAW?</h2>
+<p style="font-size:1.16rem;line-height:1.85;"><strong style="color:var(--text);">The Center for Innovation in Ancient Worlds (CIAW)</strong> is an independent, non-profit academic initiative established in 2025. It brings researchers, educators and digital specialists into dialogue around the ancient world. CIAW supports scholarly publishing, research exchange, innovative teaching and public-facing projects, with openness, inclusion and academic rigour at its core.</p>
+</div>
+<div class="identity-summary reveal" aria-label="CIAW at a glance">
+<div><strong>Founded in 2025</strong><span>An independent, non-profit academic framework</span></div>
+<div><strong>Core publication</strong><span><em>AI &amp; Antiquity</em>, an international peer-reviewed Diamond Open Access journal</span></div>
+<div><strong>Research and teaching</strong><span>Ancient Studies, Game Studies, digital humanities and inclusive pedagogy</span></div>
+<div><strong>Collaboration</strong><span>Dialogue across disciplines, institutions and public audiences</span></div>
+</div>
+<div class="grid grid-2">
+<div class="card reveal"><h3>Academic publishing &amp; research</h3><p style="margin-top:12px;">CIAW sustains <em>AI &amp; Antiquity</em> and encourages work on historical evidence, methods, digital scholarship, classical reception and the cultural interpretation of Antiquity, including video games.</p></div>
+<div class="card reveal"><h3>Teaching &amp; accessibility</h3><p style="margin-top:12px;">We develop open resources, workshops and inclusive approaches to teaching Ancient History, Classics and Archaeology, with particular attention to neurodiversity and critical historical literacy.</p></div>
+<div class="card reveal"><h3>Digital culture &amp; Game Studies</h3><p style="margin-top:12px;">We study how playable media and technologies construct understandings of the past, and how rules, narratives, images and interfaces shape historical interpretation.</p></div>
+<div class="card reveal"><h3>Collaboration &amp; public engagement</h3><p style="margin-top:12px;">CIAW connects disciplinary perspectives and supports open discussion, methodological transparency, public history and scholarly exchange.</p></div>
+</div>
+<p class="identity-note reveal">CIAW brings together experience across academic environments without representing a single university department. Learn more about its <a href="#foundation">background</a>, <a href="#projects">projects</a> and <a href="#values">academic commitments</a>.</p>
+</div>
+</section>
 <section id="mission">
 <div class="container">
 <div class="section-intro reveal">
