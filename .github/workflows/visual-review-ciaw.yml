@@ -24,6 +24,19 @@ jobs:
           assert 'Different Minds.' in r.text
           assert 'Arturo Galindo García' in r.text
           assert 'ai-antiquity-vol2-issue2.webp' in r.text
+          assert 'Selected Outputs' in r.text and 'Events &amp; Exchange' in r.text
+          assert 'Same Standards, Different Pathways' in r.text
+          assert '24 November 2026' not in r.text or 'NOV' in r.text
+          assert 'privacy.html' in r.text and 'favicon.svg' in r.text
+          for path in ('privacy.html','favicon.svg','sitemap.xml','robots.txt'):
+            res=requests.get(base+'/'+path,timeout=35)
+            res.raise_for_status()
+            print('VERIFIED FILE',path,res.status_code,len(res.content))
+          try:
+            www=requests.get('https://www.ciaw.es/',timeout=20)
+            print('WWW HTTPS',www.status_code,www.url)
+          except Exception as exc:
+            print('WWW HTTPS WARNING',str(exc)[:280])
           for path in ('assets/arturo-galindo-neurodiversity.webp','assets/ai-antiquity-vol2-issue2.webp','assets/playing-antiquity-banner.webp'):
             res=requests.get(base+'/'+path,timeout=35)
             res.raise_for_status()
@@ -44,7 +57,7 @@ jobs:
           from pathlib import Path
           with sync_playwright() as p:
             browser=p.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
-            for name,target,width,height in [('highlights','highlights',1400,1000),('journal','journal',1400,1000),('neuro','neurodiversity',1400,1050),('mobile-neuro','neurodiversity',390,850)]:
+            for name,target,width,height in [('outputs','outputs',1400,1050),('events','events',1400,1000),('mobile-outputs','outputs',390,850),('mobile-events','events',390,850)]:
               page=browser.new_page(viewport={'width':width,'height':height},device_scale_factor=1)
               page.goto('https://ciaw.es/',wait_until='networkidle',timeout=60000)
               page.add_style_tag(content='html { scroll-behavior: auto !important } * {animation-duration:0s!important;transition-duration:0s!important}')
