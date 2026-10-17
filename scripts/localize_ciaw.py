@@ -68,6 +68,20 @@ ALT = {
         'Poster for the 24 November 2026 seminar on Antiquity, the far right and social networks': 'Cartel de las jornadas del 24 de noviembre de 2026 sobre Antigüedad, extrema derecha y redes sociales',
         'Read AI & Antiquity volume 2 issue 2': 'Leer AI & Antiquity, volumen 2, número 2',
         'Events & Resources': 'Actividades y recursos',
+        'Language': 'Idioma',
+        'English version': 'Versión inglesa',
+        'Areas of work': 'Ámbitos de trabajo',
+        'Three key areas': 'Tres áreas principales',
+        'Journal publication details': 'Información de la revista',
+        'Explore CIAW\'s neurodiversity and inclusive teaching work': 'Explorar el trabajo de CIAW sobre neurodiversidad y docencia inclusiva',
+        'Cover of AI &amp; Antiquity, Volume 2, Issue 2 (2026), showing a stylised ancient helmet composition': 'Cubierta de AI & Antiquity, volumen 2, número 2 (2026), con una composición de casco de inspiración antigua',
+        'Playing Antiquity panoramic composition evoking historical and fantasy strategy and role-playing video games': 'Panorama de Playing Antiquity con referencias a videojuegos históricos y fantásticos de estrategia y rol',
+        'Playing Antiquity confirmed publication information': 'Información editorial confirmada de Playing Antiquity',
+        'Academic collaboration': 'Colaboración académica',
+        'Teaching infographic about flipped learning and AI-supported classroom practice': 'Infografía docente sobre aula invertida y prácticas de clase apoyadas en IA',
+        'Teaching infographic about overlooked historical experiences and cognitive diversity': 'Infografía docente sobre experiencias históricas marginadas y diversidad cognitiva',
+        'Teaching infographic on verifying AI-generated historical information': 'Infografía docente sobre la verificación de información histórica generada por IA',
+
     },
     'ca': {
         'Open navigation menu': 'Obrir el menú de navegació',
@@ -86,6 +100,20 @@ ALT = {
         'Poster for the 24 November 2026 seminar on Antiquity, the far right and social networks': 'Cartell de les jornades del 24 de novembre de 2026 sobre Antiguitat, extrema dreta i xarxes socials',
         'Read AI & Antiquity volume 2 issue 2': 'Llegir AI & Antiquity, volum 2, número 2',
         'Events & Resources': 'Activitats i recursos',
+        'Language': 'Llengua',
+        'English version': 'Versió anglesa',
+        'Areas of work': 'Àmbits de treball',
+        'Three key areas': 'Tres àrees principals',
+        'Journal publication details': 'Informació de la revista',
+        'Explore CIAW\'s neurodiversity and inclusive teaching work': 'Explorar la feina del CIAW sobre neurodiversitat i docència inclusiva',
+        'Cover of AI &amp; Antiquity, Volume 2, Issue 2 (2026), showing a stylised ancient helmet composition': 'Coberta d’AI & Antiquity, volum 2, número 2 (2026), amb una composició de casc d’inspiració antiga',
+        'Playing Antiquity panoramic composition evoking historical and fantasy strategy and role-playing video games': 'Panorama de Playing Antiquity amb referències a videojocs històrics i fantàstics d’estratègia i rol',
+        'Playing Antiquity confirmed publication information': 'Informació editorial confirmada de Playing Antiquity',
+        'Academic collaboration': 'Col·laboració acadèmica',
+        'Teaching infographic about flipped learning and AI-supported classroom practice': 'Infografia docent sobre aula invertida i pràctiques de classe assistides per IA',
+        'Teaching infographic about overlooked historical experiences and cognitive diversity': 'Infografia docent sobre experiències històriques marginades i diversitat cognitiva',
+        'Teaching infographic on verifying AI-generated historical information': 'Infografia docent sobre la verificació d’informació històrica generada per IA',
+
     },
 }
 BLOB = {}
@@ -247,7 +275,7 @@ def localize(source, page, lang):
     elif page == 'game-studies.html':
         html = html.replace('property="og:url" content="https://ciaw.es/game-studies.html"',
                             'property="og:url" content="https://ciaw.es/'+destination+'"')
-    if page in ('index.html', 'game-studies.html', 'privacy.html'):
+    if True:
         opens, closes = ('Open navigation menu', 'Close navigation menu')
         html = html.replace("'"+opens+"'", "'"+ALT[lang][opens]+"'")
         html = html.replace("'"+closes+"'", "'"+ALT[lang][closes]+"'")
