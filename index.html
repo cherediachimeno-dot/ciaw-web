@@ -1353,10 +1353,16 @@ nav .menu{gap:19px;font-size:.88rem}
 }
 @media(max-width:600px){.outputs-grid{grid-template-columns:1fr}}
 
+/* Accessibility: keyboard navigation and clear reading order */
+.skip-link{position:absolute;left:16px;top:-80px;padding:11px 15px;z-index:3000;background:#fff;color:#1d4ed8;border:2px solid #1d4ed8;border-radius:10px;font-weight:800}
+.skip-link:focus{top:12px}
+.visually-hidden-anchor{position:absolute;width:1px;height:1px;overflow:hidden}
+section[id]{scroll-margin-top:95px}
 </style>
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header id="main-header" class="site-header">
  <div class="container">
   <nav aria-label="Main navigation">
@@ -1386,7 +1392,7 @@ nav .menu{gap:19px;font-size:.88rem}
  </div>
 </header>
 
-<main id="top">
+<main id="top"><span id="main-content" tabindex="-1" class="visually-hidden-anchor"></span>
  <section class="hero" aria-labelledby="site-title">
   <div class="glow-orb hero-glow-1"></div><div class="glow-orb hero-glow-2"></div>
   <div class="container"><div class="hero-content">
@@ -1693,7 +1699,6 @@ nav .menu{gap:19px;font-size:.88rem}
     <div class="badge">COLLABORATE</div>
     <h2 id="contact-title">Work with CIAW</h2>
     <p>We welcome scholarly partnerships, research collaborations and educational initiatives. For CIAW enquiries, contact Carlos Heredia Chimeno through his <strong>publicly listed UAB academic address</strong>. For manuscripts and editorial enquiries, please use the journal's official contact page.</p>
-    <p class="contact-disclaimer">CIAW does not currently publish a separate verified @ciaw.es mailbox. We will switch to a dedicated institutional address once it has been configured and tested.</p>
     <div class="section-actions">
      <a href="mailto:carlos.heredia@uab.cat" class="btn btn-primary">Contact CIAW →</a>
      <a href="https://ai-antiquity.org/index.php/ai/contact" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Journal editorial contact ↗</a>
