@@ -1,0 +1,55 @@
+name: Publicar CIAW en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "assets/**"
+      - "files/**"
+      - "logo.png"
+      - "banner.png"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "github-pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Descargar sitio
+        uses: actions/checkout@v4
+
+      - name: Preparar archivos estáticos
+        run: |
+          mkdir -p _site
+          cp index.html logo.png banner.png _site/
+          cp -R assets files _site/
+          touch _site/.nojekyll
+          test -f _site/assets/playing-antiquity-banner.webp
+          test -f _site/files/info1.webp
+          test -f _site/files/info2.webp
+          test -f _site/files/info3.webp
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir artefacto de publicación
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Publicar sitio
+        id: deployment
+        uses: actions/deploy-pages@v4
