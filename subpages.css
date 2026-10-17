@@ -18,3 +18,42 @@ h1,h2,h3,h4,p{margin-top:0}h1{font-size:clamp(2rem,4.5vw,3.15rem);letter-spacing
 @media(max-width:750px){.site-head .container{display:block}.site-nav{margin-top:12px}.grid{grid-template-columns:1fr}.poster-layout{grid-template-columns:1fr}.poster-layout figure{max-width:230px}.info-list{grid-template-columns:100px 1fr}.subhero{padding-top:42px}.card{padding:20px}}
 @media(max-width:420px){.container{width:min(calc(100% - 28px),var(--max))}.programme td,.programme th{padding:12px 5px}.programme td:first-child{white-space:normal;width:93px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* Catalan and Spanish institutional landing pages */
+.locale-site{background:#f8fafc}
+.locale-site .subhero.locale-hero{background:linear-gradient(135deg,#eff4ff 0%,#f8f7ff 55%,#fff 100%);padding:62px 0 58px}
+.locale-hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(24px,4vw,54px);align-items:center}
+.locale-hero-copy h1{font-size:clamp(2.1rem,3.85vw,3.15rem);line-height:1.14;margin-bottom:20px;max-width:640px}
+.locale-hero-copy .lead{line-height:1.82;max-width:590px}
+.locale-actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
+.locale-actions .btn{margin-right:0}
+.locale-microfacts{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.locale-microfacts span{background:#e8effc;color:#234572;padding:6px 10px;border:1px solid #d2def6;font-size:.72rem;font-weight:800;border-radius:99px}
+.locale-hero-visual{margin:0;background:#fff;border:1px solid #e0e7ef;border-radius:20px;box-shadow:0 18px 38px rgba(31,41,77,.09);overflow:hidden}
+.locale-hero-visual>a{display:block;background:#f1f4f9}
+.locale-hero-visual img{display:block;width:100%;height:auto;object-fit:contain}
+.locale-hero-visual figcaption{display:grid;gap:9px;padding:22px 23px 24px;color:#475569;font-size:.89rem;line-height:1.58}
+.locale-visual-kicker,.locale-eyebrow{font-size:.72rem;letter-spacing:.095em;font-weight:800;color:#5b21b6}
+.locale-hero-visual figcaption strong{font-size:1.17rem;letter-spacing:-.02em;color:#18243d;line-height:1.32}
+.locale-hero-visual figcaption>a{font-weight:800;font-size:.84rem;margin-top:4px}
+.locale-section-head{padding-top:12px;margin-bottom:24px}
+.locale-section-head h2{font-size:clamp(1.8rem,3vw,2.3rem);margin:8px 0 0;letter-spacing:-.04em}
+.locale-cards .card{border-top:3px solid #8b5cf6;padding:25px 24px}
+.locale-cards .card:nth-child(1){border-top-color:#10b981}
+.locale-cards .card:nth-child(2){border-top-color:#3b82f6}
+.locale-cards .card h3{font-size:1.14rem}
+.locale-feature{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:center;background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:21px;margin-top:40px;margin-bottom:40px}
+.locale-feature-image img{width:100%;height:auto;max-height:270px;object-fit:contain;border-radius:12px;background:#faf8f3}
+.locale-feature-image span{display:block;font-size:.69rem;color:#64748b;margin-top:8px}
+.locale-feature h2{font-size:clamp(1.4rem,2.7vw,2rem);line-height:1.25;margin:9px 0 11px}
+.locale-feature p{color:#475569;line-height:1.75;font-size:.93rem;margin-bottom:12px}
+.locale-text-link{font-weight:800}
+.locale-feature-links{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 4px}
+.locale-feature-links a{border:1px solid #c7d2fe;background:#f7f8ff;border-radius:10px;padding:9px 12px;font-size:.85rem;font-weight:750;text-decoration:none}
+.locale-feature-links a:hover{background:#e9eeff}
+.locale-site .intro{padding-top:37px}
+.locale-site .site-nav strong[aria-current="page"]{color:#fff;font-weight:800}
+@media(max-width:860px){.locale-hero-grid{grid-template-columns:1fr}.locale-hero-visual{max-width:610px}.locale-feature{grid-template-columns:180px minmax(0,1fr)}}
+@media(max-width:600px){.locale-site .subhero.locale-hero{padding:42px 0}.locale-hero-copy h1{font-size:clamp(1.85rem,8vw,2.5rem)}.locale-feature{grid-template-columns:1fr}.locale-feature-image{max-width:220px}.locale-hero-visual figcaption{padding:18px}.locale-feature-links{display:grid}}
+@media(prefers-reduced-motion:reduce){.locale-site *{scroll-behavior:auto}}
