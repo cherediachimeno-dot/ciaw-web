@@ -14,12 +14,17 @@
 <meta property="og:title" content="CIAW | Center for Innovation in Ancient Worlds"/>
 <meta property="og:description" content="Open scholarship, Game Studies and neurodiversity-aware teaching for Ancient Studies. Based in Catalonia."/>
 <meta property="og:url" content="https://ciaw.es/"/>
-<meta property="og:image" content="https://ciaw.es/assets/ai-antiquity-vol2-issue2.webp"/>
-<meta property="og:image:alt" content="AI &amp; Antiquity, volume 2 issue 2: Neurodiversity and Antiquity"/>
+<meta property="og:image" content="https://ciaw.es/assets/ciaw-social.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="CIAW – Center for Innovation in Ancient Worlds, independent academic initiative based in Catalonia"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<meta name="twitter:image" content="https://ciaw.es/assets/ciaw-social.png"/>
+<link rel="alternate" hreflang="en" href="https://ciaw.es/"/>
+<link rel="alternate" hreflang="es" href="https://ciaw.es/es.html"/>
+<link rel="alternate" hreflang="ca" href="https://ciaw.es/ca.html"/>
+<link rel="alternate" hreflang="x-default" href="https://ciaw.es/"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Center for Innovation in Ancient Worlds","alternateName":"CIAW","url":"https://ciaw.es/","logo":"https://ciaw.es/logo.png","description":"Independent non-profit academic initiative for Ancient Studies, open publishing, Game Studies and inclusive teaching, based in Catalonia, Spain.","foundingDate":"2025","location":{"@type":"Place","name":"Catalonia, Spain"},"founder":{"@type":"Person","name":"Carlos Heredia Chimeno","url":"https://portalrecerca.uab.cat/es/persons/carlos-heredia-chimeno/"},"email":"carlos.heredia@uab.cat"}</script>
 <style>
 
 :root{
@@ -73,7 +78,7 @@ body{
 
 body{
 
-font-family:Inter,sans-serif;
+font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 
 background:var(--bg);
 
@@ -1313,6 +1318,41 @@ nav .menu{gap:19px;font-size:.88rem}
  .event-featured .event-body h3{font-size:1.14rem}
 }
 
+
+/* 2026 information architecture refresh: short home and supporting research, event and resource pages */
+.menu{gap:16px!important}.menu>a{font-size:.83rem}
+.nav-langs{display:inline-flex;gap:5px;align-items:center;border-left:1px solid #cbd5e1;padding-left:11px;font-size:.77rem;font-weight:700}
+.nav-langs a{padding:4px!important;color:#1d4ed8!important}.nav-langs .current{color:#64748b;padding-right:3px}
+.nav-langs a:focus-visible,.mobile-langs a:focus-visible{outline:3px solid #2563eb;outline-offset:3px}
+.mobile-langs{padding:16px 0 6px;color:#475569;font-size:.87rem;font-weight:700}
+.mobile-langs a{display:inline!important;padding:3px!important;color:#1d4ed8;text-decoration:underline;text-underline-offset:2px}
+.outputs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.output-card{min-height:240px}
+.research-more{margin-top:19px}
+.ciaw-outputs{padding-block:61px}
+.events-more-secondary{display:block;margin-top:14px}
+.event-compact{grid-template-columns:114px minmax(0,1fr);gap:16px;margin:13px 0 0}
+.event-compact .event-poster-thumb{width:114px;max-width:114px}
+.event-compact .event-seminar-facts{gap:7px}
+.event-programme-link{margin-top:4px;font-size:.86rem;font-weight:800!important;color:#1d4ed8}
+.event-past-compact{padding-bottom:15px}
+.resources-summary{background:linear-gradient(125deg,#f1f5ff,#fafbff);padding:52px 0}
+.resources-teaser{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.4fr);align-items:center;gap:35px}
+.resources-teaser h2{font-size:clamp(1.7rem,2.6vw,2.3rem);letter-spacing:-.035em}
+.resources-teaser p{font-size:.97rem;line-height:1.76;color:#475569;max-width:710px;margin-top:12px}
+.resource-teaser-img{display:block;border-radius:14px;overflow:hidden;border:1px solid #dbe2ed;background:#fff;box-shadow:0 6px 20px rgba(15,23,42,.045);max-height:208px}
+.resource-teaser-img img{display:block;width:100%;height:230px;object-fit:cover;object-position:top}
+.profile-links{display:flex;gap:11px;flex-wrap:wrap;margin-top:auto;padding-top:16px}
+.profile-links a{font-size:.8rem;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+.contact-disclaimer{font-size:.78rem!important;color:#64748b!important;line-height:1.6!important;margin-top:10px!important}
+@media(max-width:1080px){.outputs-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){
+ .resources-teaser{grid-template-columns:1fr;gap:18px}
+ .resource-teaser-img{max-width:250px}
+ .output-card{min-height:auto}
+}
+@media(max-width:600px){.outputs-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 
@@ -1322,25 +1362,25 @@ nav .menu{gap:19px;font-size:.88rem}
   <nav aria-label="Main navigation">
    <a href="#top" aria-label="CIAW — Back to top"><img class="logo" src="logo.png" alt="CIAW logo" width="180"/></a>
    <div class="menu">
-    <a href="#about">About</a>
-    <a href="#journal">Journal</a>
+    <a href="#about">About &amp; People</a>
+    <a href="#outputs">Research &amp; Outputs</a>
+    <a href="#journal">AI &amp; Antiquity</a>
     <a href="#game-studies">Game Studies</a>
     <a href="#neurodiversity">Neurodiversity</a>
-    <a href="#projects">Projects</a>
-    <a href="#people">People</a>
-    <a href="#teaching-resources">Resources</a>
+    <a href="#events">Events &amp; Resources</a>
+    <span class="nav-langs" aria-label="Language"><span class="current" aria-label="English version">EN</span><a href="ca.html" lang="ca">CA</a><a href="es.html" lang="es">ES</a></span>
     <a href="#contact" class="nav-cta">Collaborate</a>
    </div>
    <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">☰</button>
    <div class="mobile-menu" id="mobile-menu">
-    <a href="#about">About CIAW</a>
+    <a href="#about">About &amp; People</a>
+    <a href="#outputs">Research &amp; Outputs</a>
     <a href="#journal">AI &amp; Antiquity</a>
     <a href="#game-studies">Game Studies</a>
     <a href="#neurodiversity">Neurodiversity</a>
-    <a href="#projects">Projects</a>
-    <a href="#people">People</a>
-    <a href="#teaching-resources">Resources</a>
+    <a href="#events">Events &amp; Resources</a>
     <a href="#contact" class="nav-cta">Collaborate</a>
+    <div class="mobile-langs" aria-label="Language">EN · <a href="ca.html" lang="ca">Català</a> · <a href="es.html" lang="es">Castellano</a></div>
    </div>
   </nav>
  </div>
@@ -1354,8 +1394,8 @@ nav .menu{gap:19px;font-size:.88rem}
    <h1 id="site-title">Center for Innovation in <span class="gradient-text">Ancient Worlds</span></h1>
    <p>Based in Catalonia and open to international collaboration, CIAW connects research, academic publishing and educational innovation in Ancient Studies—with particular attention to <strong style="color:#fff">Game Studies and neurodiversity</strong>, inclusive teaching and digital culture.</p>
    <div class="hero-buttons">
-    <a href="#about" class="btn btn-primary">Discover CIAW →</a>
-    <a href="#game-studies" class="btn btn-outline">Explore Game Studies ↓</a>
+    <a href="#outputs" class="btn btn-primary">Explore our work →</a>
+    <a href="#people" class="btn btn-outline">Meet the team ↓</a>
    </div>
    <div class="hero-glass" aria-label="Three key areas">
     <div><strong>Open Scholarship</strong><span>Research &amp; publication</span></div>
@@ -1512,67 +1552,31 @@ nav .menu{gap:19px;font-size:.88rem}
  </div>
 </section>
 
- <section id="projects" aria-labelledby="projects-title">
-  <span id="activities" class="anchor-target" aria-hidden="true"></span>
-  <div class="container">
-   <div class="section-intro">
-    <div class="badge badge-amber">SELECTED INITIATIVES</div>
-    <h2 id="projects-title">Projects &amp; Activities</h2>
-    <p>Initiatives connecting university teaching, inclusive methods and public engagement. See the <a class="work-internal-link" href="#outputs">published results</a> and <a class="work-internal-link" href="#events">academic activities</a> below.</p>
-   </div>
-   <div class="grid grid-3 project-grid">
-    <div class="card">
-     <div class="tag">Teaching innovation · UAB</div>
-     <h3>Forgotten Voices in Antiquity</h3>
-     <p>Project GI517492 (2025–2026): inclusive Ancient History teaching, neurodiversity-aware learning, overlooked historical experiences and critical AI literacy.</p>
-    </div>
-    <div class="card">
-     <div class="tag">Professional development</div>
-     <h3>Inclusive AI Workshops</h3>
-     <p>Workshops and practical resources for accessible assessment, responsible technologies and higher education teaching.</p>
-    </div>
-    <div class="card">
-     <div class="tag">Public engagement</div>
-     <h3>Archeion</h3>
-     <p>Public-facing discussions of Ancient History, archaeology and digital culture. <a href="https://www.instagram.com/archeion.es/" target="_blank" rel="noopener noreferrer">Explore Archeion ↗</a></p>
-    </div>
-   </div>
-  </div>
- </section>
-
-<section id="outputs" class="ciaw-outputs" aria-labelledby="outputs-title">
+ <section id="outputs" class="ciaw-outputs" aria-labelledby="outputs-title">
+ <span id="projects" class="anchor-target" aria-hidden="true"></span><span id="activities" class="anchor-target" aria-hidden="true"></span>
  <div class="container">
   <div class="work-heading">
-   <div class="badge badge-green">RESEARCH &amp; OPEN RESOURCES</div>
-   <h2 id="outputs-title">Selected Outputs</h2>
-   <p>Peer-reviewed scholarship and openly available teaching materials, with links to permanent publication records.</p>
+   <div class="badge badge-green">RESEARCH · PUBLISHING · PROJECTS</div>
+   <h2 id="outputs-title">Research &amp; Outputs</h2>
+   <p>Research-based contributions to Ancient Studies and inclusive pedagogy, with links to the academic record.</p>
   </div>
   <div class="outputs-grid">
    <article class="output-card">
     <div class="output-top"><span class="output-kind">PEER-REVIEWED RESEARCH · 2026</span><span class="output-number">01</span></div>
     <h3>Same Standards, Different Pathways</h3>
-    <p class="output-subtitle">Forgotten Voices, Neurodiversity, and Critical AI Literacy in Ancient History Teaching</p>
+    <p class="output-subtitle">Neurodiversity, Ancient History and Critical AI Literacy</p>
     <p class="output-authors">Isaías Arrayás Morales &amp; Carlos Heredia Chimeno · <em>AI &amp; Antiquity</em> 2.2, pp. 70–94</p>
-    <p class="output-description">The revised classroom model: common historical standards, alternative learning pathways available to all, and critical AI literacy without compulsory AI use.</p>
-    <a class="output-link" href="https://doi.org/10.64946/aiantiquity.v2i2.005" target="_blank" rel="noopener noreferrer">Read the article · DOI ↗</a>
+    <a class="output-link" href="https://doi.org/10.64946/aiantiquity.v2i2.005" target="_blank" rel="noopener noreferrer">Read article · DOI ↗</a>
    </article>
    <article class="output-card">
-    <div class="output-top"><span class="output-kind">PEER-REVIEWED RESEARCH · 2026</span><span class="output-number">02</span></div>
-    <h3>Flipped Learning and AI-Supported Itineraries</h3>
-    <p class="output-subtitle">For Neurodivergent Learners: A Case Study in Ancient History</p>
-    <p class="output-authors">Carlos Heredia Chimeno · <em>Journal of Classics Teaching</em>, Cambridge University Press</p>
-    <p class="output-description">An earlier proposal examining differentiated learning, self-regulation and accessibility in Ancient History teaching.</p>
-    <a class="output-link" href="https://doi.org/10.1017/S2058631026100956" target="_blank" rel="noopener noreferrer">Read the article · DOI ↗</a>
-   </article>
-   <article class="output-card">
-    <div class="output-top"><span class="output-kind">OPEN EDUCATIONAL RESOURCES · 2026</span><span class="output-number">03</span></div>
-    <h3>CIAW Teaching Infographics</h3>
-    <p class="output-subtitle">Inclusive Learning, Critical AI Literacy, and Responsible Knowledge Practices</p>
-    <p class="output-authors">CIAW &amp; Carlos Heredia Chimeno · Zenodo</p>
-    <p class="output-description">Three citable resources documenting an earlier stage of project GI517492. The later study above explains the methodological revisions.</p>
-    <a class="output-link" href="https://doi.org/10.5281/zenodo.21763472" target="_blank" rel="noopener noreferrer">Explore resources · DOI ↗</a>
+    <div class="output-top"><span class="output-kind">INNOVATION PROJECT · 2025–2026</span><span class="output-number">02</span></div>
+    <h3>Forgotten Voices in Antiquity</h3>
+    <p class="output-subtitle">Project GI517492 · Universitat Autònoma de Barcelona</p>
+    <p class="output-authors">Inclusive teaching, marginalised historical experiences, source criticism and responsible AI literacy.</p>
+    <a class="output-link" href="research.html">Research, projects &amp; publications →</a>
    </article>
   </div>
+  <div class="section-actions research-more"><a class="btn btn-outline" href="research.html">Explore all research and resources →</a></div>
  </div>
 </section>
 
@@ -1581,57 +1585,38 @@ nav .menu{gap:19px;font-size:.88rem}
   <div class="events-layout">
    <div class="events-intro">
     <div class="badge badge-amber">ACADEMIC ACTIVITIES</div>
-    <h2 id="events-title">Events &amp; Exchange</h2>
-    <p>Seminars and workshops bringing ancient-world scholarship into conversation with contemporary debates, teaching methods and public communication.</p>
-    <a class="events-more" href="https://ai-antiquity.org/index.php/ai/events" target="_blank" rel="noopener noreferrer">Full events programme ↗</a>
+    <h2 id="events-title">Events &amp; Resources</h2>
+    <p>Seminars, educational materials and scholarly exchange, rooted in Ancient Studies and open to broader public conversations.</p>
+    <a class="events-more" href="resources.html">Browse open teaching resources ↗</a>
+    <a class="events-more events-more-secondary" href="https://ai-antiquity.org/index.php/ai/events" target="_blank" rel="noopener noreferrer">Journal events programme ↗</a>
    </div>
    <div class="event-list">
     <article class="event-entry event-upcoming event-featured">
      <div class="event-date"><span>NOV</span><strong>24</strong><small>2026</small></div>
      <div class="event-body">
-      <span class="event-state">UPCOMING SEMINAR · L’ANTIGUITAT AL MÓN ACTUAL II</span>
+      <span class="event-state" id="seminar-state">UPCOMING SEMINAR · L’ANTIGUITAT AL MÓN ACTUAL II</span>
       <h3 lang="ca">Antiguitat, extrema dreta i xarxes socials</h3>
-      <p>A seminar on the appropriation of Antiquity by far-right movements, social media and generative AI.</p>
-      <div class="event-seminar-feature">
-       <a class="event-poster-thumb" href="1000002037_cleaned.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full seminar poster in a new tab">
-        <img src="1000002037_cleaned.webp" loading="lazy" decoding="async" width="1024" height="1449" alt="Official poster for Antiguitat, extrema dreta i xarxes socials, 24 November 2026, with a classical marble head and social-media imagery"/>
-        <span>View full poster ↗</span>
+      <p>Classical reception, social media, far-right movements and generative AI.</p>
+      <div class="event-seminar-feature event-compact">
+       <a class="event-poster-thumb" href="seminar-2026.html" aria-label="Read the programme of the seminar">
+        <img src="1000002037_cleaned.webp" loading="lazy" decoding="async" width="1024" height="1449" alt="Poster for the 24 November 2026 seminar on Antiquity, the far right and social networks"/>
+        <span>Programme ↗</span>
        </a>
        <div class="event-seminar-facts">
         <p><strong>Date &amp; time</strong><span>24 November 2026 · 10.30–13.15 h</span></p>
-        <p><strong>Venue</strong><span>Sala de Graus, Facultat de Filosofia i Lletres (UAB)</span></p>
-        <p><strong>Organised by</strong><span>UOC · UAB · CIAW</span></p>
+        <p><strong>Venue</strong><span>Sala de Graus · Facultat de Filosofia i Lletres (UAB)</span></p>
+        <p><strong>Organisers</strong><span>UOC · UAB · CIAW</span></p>
+        <a class="event-programme-link" href="seminar-2026.html">Full programme &amp; poster →</a>
        </div>
       </div>
-      <div class="event-programme" aria-labelledby="seminar-programme-title">
-       <h4 id="seminar-programme-title">Programme <span lang="ca">· Programa</span></h4>
-       <ol class="event-sessions">
-        <li><time datetime="10:30">10.30–10.45</time><div><strong lang="ca">Presentació de les jornades</strong><span>Carlos Heredia i Marc Mendoza (UAB)</span></div></li>
-        <li><time datetime="10:45">10.45–11.25</time><div><strong lang="ca">De Roma al <em>feed</em>: com l’extrema dreta resignifica l’Antiguitat a les xarxes socials</strong><span>Laura Pérez Altabe (UPF)</span></div></li>
-        <li><time datetime="11:25">11.25–12.05</time><div><strong lang="es">Apropiaciones de la Antigüedad en el contexto actual de auge de las ultraderechas y de la IA generativa</strong><span>Oskar Aguado (EHU)</span></div></li>
-        <li><time datetime="12:05">12.05–12.45</time><div><strong lang="ca"><em>Iosephus Maria ad portas</em>: l’extrema dreta catalana més enllà d’Ítaca</strong><span>Marc Mendoza (UAB)</span></div></li>
-        <li><time datetime="12:45">12.45–13.15</time><div><strong lang="ca">Debat final</strong></div></li>
-       </ol>
-      </div>
-      <p class="event-organisers"><strong>With the support of:</strong> Facultat de Filosofia i Lletres (UAB); Màster Universitari de la Mediterrània Antiga (UOC–UAB–UAH); Center for Innovation in Ancient Worlds (CIAW).</p>
      </div>
     </article>
-    <article class="event-entry">
+    <article class="event-entry event-past-compact">
      <div class="event-date"><span>MAY</span><strong>06</strong><small>2026</small></div>
      <div class="event-body">
       <span class="event-state event-past">HELD · UAB</span>
-      <h3>International Conference on Innovation and Technology in Ancient History Education</h3>
-      <p>Second edition at the Universitat Autònoma de Barcelona, featuring teaching innovation and critical perspectives on AI.</p>
-      <a href="https://ai-antiquity.org/index.php/ai/events" target="_blank" rel="noopener noreferrer">Programme &amp; background ↗</a>
-     </div>
-    </article>
-    <article class="event-entry">
-     <div class="event-date"><span>MAR</span><strong>05</strong><small>2026</small></div>
-     <div class="event-body">
-      <span class="event-state event-past">HELD · ONLINE</span>
-      <h3>Neurodivergence &amp; Inclusive Ancient Studies</h3>
-      <p>Online symposium connected to the scholarly conversations published in <em>AI &amp; Antiquity</em> volume 2, issue 2.</p>
-      <a href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">Explore the special issue ↗</a>
+      <h3>Innovation and Technology in Ancient History Education</h3>
+      <a href="https://ai-antiquity.org/index.php/ai/events" target="_blank" rel="noopener noreferrer">Conference information ↗</a>
      </div>
     </article>
    </div>
@@ -1656,7 +1641,7 @@ nav .menu{gap:19px;font-size:.88rem}
     <h3>Carlos Heredia Chimeno</h3>
     <p class="person-role">Founder, CIAW · Editor-in-Chief, <em>AI &amp; Antiquity</em></p>
     <p class="person-affiliation">Ancient History · Universitat Autònoma de Barcelona</p>
-    <a href="mailto:carlos.heredia@uab.cat" class="person-contact">Academic &amp; institutional enquiries ↗</a>
+    <div class="profile-links"><a href="https://portalrecerca.uab.cat/es/persons/carlos-heredia-chimeno/" target="_blank" rel="noopener noreferrer">UAB profile ↗</a><a href="https://orcid.org/0000-0003-2866-5883" target="_blank" rel="noopener noreferrer">ORCID ↗</a></div>
    </article>
    <article class="person-card">
     <span class="person-number" aria-hidden="true">02</span>
@@ -1664,7 +1649,7 @@ nav .menu{gap:19px;font-size:.88rem}
     <h3>Isaías Arrayás Morales</h3>
     <p class="person-role">Academic collaboration · Associate Editor, <em>AI &amp; Antiquity</em></p>
     <p class="person-affiliation">Ancient History · Universitat Autònoma de Barcelona</p>
-    <a href="mailto:isaias.arrayas@uab.cat" class="person-contact">Editorial contact ↗</a>
+    <div class="profile-links"><a href="https://portalrecerca.uab.cat/es/persons/isaias-arrayas-morales-3/" target="_blank" rel="noopener noreferrer">UAB profile ↗</a><a href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer">Editorial role ↗</a></div>
    </article>
    <article class="person-card">
     <span class="person-number" aria-hidden="true">03</span>
@@ -1672,57 +1657,46 @@ nav .menu{gap:19px;font-size:.88rem}
     <h3>Sílvia Swan</h3>
     <p class="person-role">Editorial collaboration · Associate Editor, <em>AI &amp; Antiquity</em></p>
     <p class="person-affiliation">Universidad Europea de Madrid</p>
-    <a href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer" class="person-contact">Editorial team ↗</a>
+    <div class="profile-links"><a href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer">Verified editorial profile ↗</a></div>
    </article>
   </div>
   <div class="governance-note">
    <div><span class="governance-label">HOW CIAW OPERATES</span><h3>Independent by design. Collaborative in practice.</h3></div>
    <p>CIAW is an independent, non-profit academic initiative, <strong>not a department of the UAB or another university</strong>. Its collaborators retain their own academic affiliations. Editorial roles, submissions and peer-review decisions belong to <em>AI &amp; Antiquity</em> and follow <a href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer">the journal's published structure ↗</a>. For partnerships and enquiries, <a href="#contact">contact CIAW</a>.</p>
   </div>
-  <p class="people-note">The editorial positions and university affiliations shown above are those published by <em>AI &amp; Antiquity</em>; they do not imply institutional ownership of CIAW.</p>
+
  </div>
 </section>
 
- <section id="teaching-resources" aria-labelledby="resources-title">
-  <div class="container">
-   <div class="section-intro">
+ <section id="teaching-resources" class="resources-summary" aria-labelledby="resources-title">
+ <div class="container">
+  <div class="resources-teaser">
+   <div>
     <div class="badge badge-purple">OPEN EDUCATIONAL RESOURCES</div>
     <h2 id="resources-title">Teaching Resources</h2>
-    <p>Three research-informed infographics on neurodiversity-aware learning, inclusive Ancient History teaching and critical AI literacy. They document an <strong>earlier project phase</strong>; the updated model is explained in <a href="https://doi.org/10.64946/aiantiquity.v2i2.005" target="_blank" rel="noopener noreferrer">the subsequent peer-reviewed study ↗</a>. Open an image to view the guide.</p>
-   </div>
-   <div class="grid grid-3 resources-grid">
-    <div class="card">
-     <a href="files/info1.webp" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="files/info1.webp" alt="Infographic on inclusive flipped learning and AI-supported teaching"/></a>
-     <h3>Inclusive flipped learning</h3>
-     <p>Accessible learning pathways and AI-supported teaching for diverse learners.</p>
-     <a class="resource-link" href="files/info1.webp" target="_blank" rel="noopener noreferrer">View infographic ↗</a>
-    </div>
-    <div class="card">
-     <a href="files/info2.webp" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="files/info2.webp" alt="Infographic on inclusive historical perspectives and neurodiversity-aware teaching"/></a>
-     <h3>Inclusive historical perspectives</h3>
-     <p>Multiple voices, critical engagement and accessible classroom design.</p>
-     <a class="resource-link" href="files/info2.webp" target="_blank" rel="noopener noreferrer">View infographic ↗</a>
-    </div>
-    <div class="card">
-     <a href="files/info3.webp" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="files/info3.webp" alt="Infographic on AI verification and academic integrity"/></a>
-     <h3>AI verification &amp; integrity</h3>
-     <p>Evidence-based verification, academic judgement and responsible AI practice.</p>
-     <a class="resource-link" href="files/info3.webp" target="_blank" rel="noopener noreferrer">View infographic ↗</a>
+    <p>Explore our three research-informed infographics on inclusive learning, historical perspectives and critical AI literacy. The materials document an earlier stage of project GI517492; the revised approach is explained in the subsequent peer-reviewed study.</p>
+    <div class="section-actions">
+     <a class="btn btn-primary" href="resources.html">Browse all guides →</a>
+     <a class="btn btn-outline" href="https://doi.org/10.5281/zenodo.21763472" target="_blank" rel="noopener noreferrer">Cite the resources · DOI ↗</a>
     </div>
    </div>
-   <p class="resource-note">Research background and citation information: <a href="https://doi.org/10.5281/zenodo.21763472" target="_blank" rel="noopener noreferrer">open infographic record ↗</a></p>
+   <a class="resource-teaser-img" href="resources.html" aria-label="Explore CIAW teaching resources">
+    <img loading="lazy" src="files/info2.webp" alt="A preview of CIAW's inclusive teaching infographics"/>
+   </a>
   </div>
- </section>
+ </div>
+</section>
 
  <section id="contact" aria-labelledby="contact-title">
   <div class="container">
    <div class="contact-panel">
     <div class="badge">COLLABORATE</div>
     <h2 id="contact-title">Work with CIAW</h2>
-    <p>We welcome collaboration with researchers, universities, educators and cultural institutions interested in Ancient Studies, Game Studies, neurodiversity and inclusive academic innovation.</p>
+    <p>We welcome scholarly partnerships, research collaborations and educational initiatives. For CIAW enquiries, contact Carlos Heredia Chimeno through his <strong>publicly listed UAB academic address</strong>. For manuscripts and editorial enquiries, please use the journal's official contact page.</p>
+    <p class="contact-disclaimer">CIAW does not currently publish a separate verified @ciaw.es mailbox. We will switch to a dedicated institutional address once it has been configured and tested.</p>
     <div class="section-actions">
      <a href="mailto:carlos.heredia@uab.cat" class="btn btn-primary">Contact CIAW →</a>
-     <a href="https://ai-antiquity.org/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Explore the Journal ↗</a>
+     <a href="https://ai-antiquity.org/index.php/ai/contact" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Journal editorial contact ↗</a>
     </div>
    </div>
   </div>
@@ -1736,20 +1710,17 @@ nav .menu{gap:19px;font-size:.88rem}
    <p>Independent non-profit academic initiative · Based in Catalonia, Spain · Founded 2025 · © <span id="year">2026</span></p>
   </div>
   <div class="footer-links">
-   <a href="#about">About</a>
-   <a href="#game-studies">Game Studies</a>
-   <a href="#neurodiversity">Neurodiversity</a>
-   <a href="#outputs">Outputs</a>
-   <a href="#events">Events</a>
-   <a href="#people">People</a>
-   <a href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer">Playing Antiquity ↗</a>
-   <a href="mailto:carlos.heredia@uab.cat">Contact</a>
-   <a href="privacy.html">Privacy</a>
+   <a href="#about">About</a><a href="#people">People</a><a href="research.html">Research &amp; Outputs</a>
+   <a href="seminar-2026.html">Seminar programme</a><a href="resources.html">Resources</a>
+   <a href="ca.html" lang="ca">Català</a><a href="es.html" lang="es">Castellano</a>
+   <a href="#contact">Contact</a><a href="privacy.html">Privacy</a>
   </div>
  </div>
 </footer>
 
 <script>
+const seminarState=document.getElementById('seminar-state');
+if(seminarState && new Date() >= new Date('2026-11-25T00:00:00+01:00')) seminarState.textContent='PAST SEMINAR · L’ANTIGUITAT AL MÓN ACTUAL II';
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 const header = document.getElementById('main-header');
