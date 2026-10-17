@@ -101,7 +101,7 @@ h1,h2,h3,h4,p{margin-top:0}h1{font-size:clamp(2rem,4.5vw,3.15rem);letter-spacing
 .ciaw-mobile-langs a{color:#2563eb;font-weight:750}
 .ciaw-mobile-langs a[aria-current="page"]{color:#1e293b}
 .ciaw-header-nav a:focus-visible,.ciaw-menu-toggle:focus-visible{outline:3px solid #2563eb;outline-offset:4px}
-@media(max-width:1390px){
+@media(max-width:1550px){
  .ciaw-header-nav{min-height:94px}
  .ciaw-header-brand img{width:235px;max-width:235px}
  .ciaw-header-links{display:none}
