@@ -275,6 +275,12 @@ def localize(source, page, lang):
     elif page == 'game-studies.html':
         html = html.replace('property="og:url" content="https://ciaw.es/game-studies.html"',
                             'property="og:url" content="https://ciaw.es/'+destination+'"')
+    # Keep translated social sharing previews consistent with the visible language.
+    html = re.sub(r'(<meta property="og:description" content=")[^"]*("/>)',
+                  lambda m: m.group(1)+desc+m.group(2), html, count=1)
+    html = re.sub(r'(<meta property="og:title" content=")[^"]*("/>)',
+                  lambda m: m.group(1)+escape_html.escape(TITLES[page][lang=='ca'],quote=True)+m.group(2),
+                  html, count=1)
     if True:
         opens, closes = ('Open navigation menu', 'Close navigation menu')
         html = html.replace("'"+opens+"'", "'"+ALT[lang][opens]+"'")
