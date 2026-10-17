@@ -89,7 +89,7 @@ ALT = {
     },
 }
 BLOB = {}
-SCRIPT_STYLE = re.compile(r'(<(?:script|style)\b[^>]*>)(.*?)(</(?:script|style)>)', re.I | re.S)
+SCRIPT_STYLE = re.compile(r'(<(?:script|style|title)\b[^>]*>)(.*?)(</(?:script|style|title)>)', re.I | re.S)
 TEXT_NODE = re.compile(r'(?<=>)([^<>]+)(?=<)')
 TRANSLATABLE_ATTRIBUTE = re.compile(r'(\s(?:alt|aria-label|title|placeholder)=)(["\'])(.*?)\2', re.I | re.S)
 PRESERVED = {
