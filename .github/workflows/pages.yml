@@ -13,6 +13,7 @@ on:
       - "files/**"
       - "logo.png"
       - "banner.png"
+      - "1000002037_cleaned.webp"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -35,6 +36,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html privacy.html favicon.svg robots.txt sitemap.xml logo.png banner.png _site/
+          cp 1000002037_cleaned.webp _site/
           cp -R assets files _site/
           touch _site/.nojekyll
           test -f _site/assets/playing-antiquity-banner.webp
@@ -44,6 +46,7 @@ jobs:
           test -f _site/favicon.svg
           test -f _site/privacy.html
           test -f _site/sitemap.xml
+          test -f _site/1000002037_cleaned.webp
       - name: Comprobar configuración de Pages
         env:
           GH_TOKEN: ${{ github.token }}
