@@ -1,0 +1,78 @@
+name: Verify Game Studies page layout
+on:
+  push:
+    paths:
+      - ".github/workflows/check-game-studies.yml"
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip -q install requests beautifulsoup4 playwright pillow
+      - name: Test live Game Studies pages and responsive layout
+        run: |
+          mkdir -p .gs-review
+          cat > /tmp/check_games.py <<'PY'
+          import requests
+          from bs4 import BeautifulSoup
+          from PIL import Image
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          root='https://ciaw.es/'
+          s=requests.Session()
+          for path in ('game-studies.html','game-studies.css','assets/playing-antiquity-banner.webp'):
+            r=s.get(root+path,timeout=35)
+            r.raise_for_status()
+            print('ASSET',path,r.status_code,len(r.content))
+          source=s.get(root+'game-studies.html').text
+          assert 'Historical authority &amp; political power' in source
+          assert 'Social worlds &amp; playable systems' in source
+          assert 'Classical reception &amp; cultural memory' in source
+          assert 'Playing Antiquity' in source
+          assert not any(word in source for word in ('Selected Publications','Publications in Preparation','Under Review','Accepted Manuscripts','Featured Publications'))
+          soup=BeautifulSoup(source,'html.parser')
+          ids={x['id'] for x in soup.select('[id]')}
+          assert not [a['href'] for a in soup.select('a[href^="#"]') if a['href'][1:] not in ids]
+          for lang in ('index','es','ca'):
+            page=s.get(root+lang+'.html',timeout=25)
+            page.raise_for_status()
+            assert 'game-studies.html' in page.text,lang+' missing link'
+          with sync_playwright() as p:
+            browser=p.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+            for name,url,width,height in (
+              ('desktop','game-studies.html',1440,1100),
+              ('mobile','game-studies.html',390,850),
+              ('homepage','index.html#game-studies',1440,1050)):
+              page=browser.new_page(viewport={'width':width,'height':height},device_scale_factor=1)
+              page.goto(root+url,wait_until='domcontentloaded',timeout=50000)
+              page.wait_for_timeout(750)
+              if name=='homepage':
+                page.locator('#game-studies').evaluate("(el)=>window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-130,behavior:'instant'})")
+                page.wait_for_timeout(350)
+              metrics=page.evaluate("()=>({width:document.documentElement.scrollWidth,window:innerWidth})")
+              print('VIEW',name,metrics)
+              assert metrics['width']-metrics['window']<=2,name+' horizontal overflow'
+              if name=='mobile':
+                toggle=page.locator('#ciaw-menu-toggle')
+                toggle.click()
+                assert toggle.get_attribute('aria-expanded')=='true'
+                assert page.locator('#ciaw-mobile-menu').evaluate('(x)=>getComputedStyle(x).display')=='flex'
+                toggle.click()
+                assert toggle.get_attribute('aria-expanded')=='false'
+              if name=='desktop':
+                assert page.locator('.gs-hero-art img').evaluate("(el)=>el.complete && el.naturalWidth>0")
+              out='/tmp/'+name+'.png'
+              page.screenshot(path=out)
+              Image.open(out).convert('RGB').save('.gs-review/'+name+'.jpg',quality=73,optimize=True)
+              page.close()
+            browser.close()
+          PY
+          python /tmp/check_games.py
+      - name: Save temporary review images
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .gs-review
+          git diff --cached --quiet || (git commit -m 'Capture one-time Game Studies visual review' && git push)
