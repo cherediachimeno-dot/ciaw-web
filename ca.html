@@ -1,104 +1,1805 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ca">
 <head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>CIAW | Center for Innovation in Ancient Worlds · Presentació institucional</title>
-<meta name="description" content="Coneix el Center for Innovation in Ancient Worlds (CIAW): recerca, accés obert, Game Studies i docència inclusiva des de Catalunya."/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>CIAW | Center for Innovation in Ancient Worlds</title>
+<meta name="description" content="El CIAW és una iniciativa acadèmica independent amb seu a Catalunya dedicada a la recerca sobre l’Antiguitat, la publicació en obert, els Game Studies i la docència inclusiva."/>
 <link rel="canonical" href="https://ciaw.es/ca.html"/>
 <link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
-<link rel="stylesheet" href="subpages.css"/>
-<link rel="alternate" hreflang="en" href="https://ciaw.es/"/><link rel="alternate" hreflang="es" href="https://ciaw.es/es.html"/><link rel="alternate" hreflang="ca" href="https://ciaw.es/ca.html"/>
+<link rel="sitemap" type="application/xml" href="sitemap.xml"/>
+<meta name="theme-color" content="#0f172a"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="CIAW | Center for Innovation in Ancient Worlds"/>
+<meta property="og:description" content="Open scholarship, Game Studies and neurodiversity-aware teaching for Ancient Studies. Based in Catalonia."/>
+<meta property="og:url" content="https://ciaw.es/ca.html"/>
+<meta property="og:image" content="https://ciaw.es/assets/ciaw-social.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="CIAW – Center for Innovation in Ancient Worlds, independent academic initiative based in Catalonia"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ciaw.es/assets/ciaw-social.png"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Center for Innovation in Ancient Worlds","alternateName":"CIAW","url":"https://ciaw.es/","logo":"https://ciaw.es/logo.png","description":"Independent non-profit academic initiative for Ancient Studies, open publishing, Game Studies and inclusive teaching, based in Catalonia, Spain.","foundingDate":"2025","location":{"@type":"Place","name":"Catalonia, Spain"},"founder":{"@type":"Person","name":"Carlos Heredia Chimeno","url":"https://portalrecerca.uab.cat/es/persons/carlos-heredia-chimeno/"},"email":"carlos.heredia@uab.cat"}</script>
+<style>
+
+:root{
+
+--bg:#f8fafc;
+--surface:#ffffff;
+
+--text:#0f172a;
+--muted:#64748b;
+
+--blue:#2563eb;
+--blue-dark:#1d4ed8;
+--blue-light:#eff6ff;
+
+--green:#059669;
+--green-light:#ecfdf5;
+
+--purple:#7c3aed;
+--purple-light:#f5f3ff;
+
+--amber:#d97706;
+--amber-light:#fffbeb;
+
+--border:#e2e8f0;
+
+--radius:20px;
+
+--shadow-sm:0 4px 12px rgba(15,23,42,.03);
+--shadow-md:0 12px 32px rgba(15,23,42,.06);
+--shadow-lg:0 20px 40px rgba(15,23,42,.1);
+
+--max:1200px;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+html,
+body{
+    overflow-x:hidden;
+    width:100%;
+}
+
+body{
+
+font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+background:var(--bg);
+
+color:var(--text);
+
+line-height:1.7;
+
+-webkit-font-smoothing:antialiased;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+.container{
+
+width:min(var(--max),92%);
+
+margin:auto;
+
+}
+
+section{
+
+padding:100px 0;
+position:relative;
+
+}
+
+h1{
+
+font-size:clamp(2.8rem,6.5vw,4.8rem);
+
+line-height:1.1;
+
+font-weight:800;
+
+letter-spacing:-0.03em;
+
+}
+
+h2{
+
+font-size:clamp(2rem,3.8vw,2.8rem);
+
+margin-bottom:18px;
+letter-spacing:-0.02em;
+
+}
+
+p{
+
+color:var(--muted);
+
+}
+
+.gradient-text{
+background:linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+button,.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:14px 28px;
+
+border-radius:999px;
+
+font-weight:600;
+
+transition:all .3s cubic-bezier(0.16, 1, 0.3, 1);
+
+}
+
+.btn-primary{
+
+background:var(--blue);
+
+color:white;
+box-shadow:0 8px 20px rgba(37,99,235,.25);
+
+}
+
+.btn-primary:hover{
+
+background:var(--blue-dark);
+
+transform:translateY(-2px);
+
+box-shadow:0 12px 28px rgba(37,99,235,.38);
+
+}
+
+.btn-outline{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 28px;
+    border-radius:999px;
+    border:2px solid rgba(255,255,255,.6);
+    background:rgba(255,255,255,.05);
+    color:#ffffff;
+    font-weight:600;
+    text-decoration:none;
+    backdrop-filter:blur(8px);
+    transition:all .3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-outline:hover{
+    background:#ffffff;
+    color:#0f172a;
+    border-color:#ffffff;
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+header{
+
+position:fixed;
+top:0;
+width:100%;
+height:90px;
+
+backdrop-filter:blur(20px);
+background:rgba(255,255,255,.85);
+
+border-bottom:1px solid rgba(226,232,240,.7);
+
+z-index:999;
+transition:all .3s ease;
+
+}
+
+header.scrolled{
+height:76px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+nav{
+
+height:100%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+    .logo{
+    height:120px;
+    width:auto;
+    display:block;
+    object-fit:contain;
+    transform-origin:left center;
+    transition:all .3s ease;
+}
+
+header.scrolled .logo{
+    height:75px;
+}
+
+.menu{
+
+display:flex;
+
+align-items:center;
+
+gap:28px;
+
+font-size:.92rem;
+
+font-weight:600;
+
+}
+
+.menu a{
+
+color:#475569;
+position:relative;
+padding:6px 0;
+transition:color .25s ease;
+
+}
+
+.menu a::after{
+content:'';
+position:absolute;
+bottom:0;
+left:0;
+width:0;
+height:2px;
+background:var(--blue);
+border-radius:2px;
+transition:width .25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu a:hover{
+
+color:var(--blue);
+
+}
+
+.menu a:hover::after{
+width:100%;
+}
+
+.menu a.nav-cta{
+background:var(--blue-light);
+color:var(--blue);
+padding:8px 18px;
+border-radius:999px;
+transition:all .25s ease;
+}
+
+.menu a.nav-cta::after{
+display:none;
+}
+
+.menu a.nav-cta:hover{
+background:var(--blue);
+color:white;
+transform:translateY(-1px);
+}
+
+.hero{
+
+position:relative;
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+overflow:hidden;
+
+padding-top:110px;
+
+background:
+
+linear-gradient(rgba(15,23,42,.65),rgba(15,23,42,.75)),
+
+url("banner.png")
+
+center/cover no-repeat;
+
+}
+
+/* Glow Effect */
+.glow-orb{
+position:absolute;
+border-radius:50%;
+filter:blur(90px);
+pointer-events:none;
+z-index:1;
+}
+
+.hero-glow-1{
+width:500px;
+height:500px;
+background:rgba(37,99,235,.25);
+top:-100px;
+right:-100px;
+}
+
+.hero-glow-2{
+width:400px;
+height:400px;
+background:rgba(124,58,237,.2);
+bottom:-50px;
+left:-100px;
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:820px;
+
+color:white;
+
+}
+
+.kicker{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:8px 12px;
+
+padding:8px 20px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(16px);
+
+border:1px solid rgba(255,255,255,.2);
+
+margin-bottom:28px;
+
+font-size:.82rem;
+
+font-weight:700;
+
+letter-spacing:.08em;
+
+text-transform:uppercase;
+
+color:#ffffff;
+
+box-shadow:0 4px 15px rgba(0,0,0,.1);
+
+max-width:100%;
+
+text-align:center;
+
+}
+
+.hero p{
+
+margin:28px 0 42px;
+
+font-size:1.22rem;
+
+color:rgba(241,245,249,.92);
+
+font-weight:400;
+
+line-height:1.8;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+margin-bottom:60px;
+
+}
+
+.hero-glass{
+
+background:rgba(255,255,255,.07);
+
+backdrop-filter:blur(24px);
+
+border:1px solid rgba(255,255,255,.18);
+
+padding:32px;
+
+border-radius:24px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+
+}
+
+.hero-glass div{
+
+text-align:center;
+
+position:relative;
+
+}
+
+.hero-glass div:not(:last-child)::after{
+content:'';
+position:absolute;
+right:-10px;
+top:20%;
+height:60%;
+width:1px;
+background:rgba(255,255,255,.15);
+}
+
+.hero-glass strong{
+
+display:block;
+
+font-size:1.6rem;
+
+color:white;
+
+margin-bottom:6px;
+
+font-weight:700;
+
+}
+
+.hero-glass span{
+
+font-size:.88rem;
+
+color:rgba(255,255,255,.8);
+
+}
+
+.section-intro{
+
+max-width:760px;
+
+margin-bottom:60px;
+
+}
+
+.grid{
+
+display:grid;
+
+gap:28px;
+
+}
+
+.grid-2{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.grid-3{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+.card{
+
+background:var(--surface);
+
+padding:36px;
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow-sm);
+
+border:1px solid var(--border);
+
+transition:all .35s cubic-bezier(0.16, 1, 0.3, 1);
+
+position:relative;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:var(--shadow-lg);
+
+border-color:rgba(37,99,235,.3);
+
+}
+
+.card img{
+transition:transform .5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover img{
+transform:scale(1.03);
+}
+
+/* Badges con Colores por Categorías */
+.badge{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:6px 14px;
+
+border-radius:999px;
+
+background:var(--blue-light);
+
+color:var(--blue);
+
+font-weight:700;
+
+font-size:.78rem;
+
+letter-spacing:.03em;
+
+text-transform:uppercase;
+
+margin-bottom:20px;
+
+}
+
+.badge-purple{
+background:var(--purple-light);
+color:var(--purple);
+}
+
+.badge-green{
+background:var(--green-light);
+color:var(--green);
+}
+
+.badge-amber{
+background:var(--amber-light);
+color:var(--amber);
+}
+
+/* Botón outline sobre fondo claro */
+#contact .btn-outline{
+
+    border:2px solid var(--blue);
+    color:var(--blue);
+    background:transparent;
+
+}
+
+#contact .btn-outline:hover{
+
+    background:var(--blue);
+    color:white;
+    border-color:var(--blue);
+
+}
+
+/* Animaciones Scroll */
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:all .7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:900px){
+
+    #teaching-resources .card > div{
+    grid-template-columns:1fr !important;
+}
+
+#teaching-resources img{
+    height:280px !important;
+}
+    
+.menu{
+
+display:none;
+
+}
+
+.grid-2,
+
+.grid-3,
+
+.hero-glass{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-glass div:not(:last-child)::after{
+display:none;
+}
+
+.hero{
+
+padding-top:120px;
+
+}
+
+#projects .card > div{
+    grid-template-columns:1fr !important;
+    gap:24px !important;
+}
+
+#projects .card img{
+    width:100%;
+    max-width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+#research .grid > .card{
+margin-bottom:35px;
+}
+
+#research img{
+display:block;
+width:100%;
+border-radius:16px;
+height:240px !important;
+}
+
+#research .card > div{
+grid-template-columns:1fr !important;
+}
+
+}
+
+@media(max-width:600px){
+.kicker {
+    padding: 8px 14px;
+    font-size: .75rem;
+    border-radius: 16px;
+    gap: 4px 8px;
+}
+}
+
+    /* Oculto en escritorio */
+.mobile-view-full{
+    display:none;
+}
+
+/* Solo móvil */
+@media (max-width:900px){
+
+.mobile-view-full{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:0 0 14px;
+
+    padding:10px 16px;
+
+    background:var(--blue);
+
+    color:#fff;
+
+    border-radius:999px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.mobile-view-full:hover{
+
+    background:var(--blue-dark);
+
+}
+
+}
+
+    /* ==========================
+ MOBILE MENU
+========================== */
+
+.mobile-menu-btn{
+
+display:none;
+
+background:none;
+
+border:none;
+
+font-size:2rem;
+
+color:var(--text);
+
+cursor:pointer;
+
+padding:5px;
+
+}
+
+
+/* menú móvil oculto */
+
+.mobile-menu{
+
+display:none;
+
+position:absolute;
+
+top:90px;
+
+left:0;
+
+width:100%;
+
+background:white;
+
+border-top:1px solid var(--border);
+
+box-shadow:var(--shadow-md);
+
+padding:25px;
+
+flex-direction:column;
+
+gap:18px;
+
+z-index:998;
+
+}
+
+
+.mobile-menu a{
+
+font-weight:600;
+
+color:#475569;
+
+padding:10px 0;
+
+}
+
+
+/* botón colaborar */
+
+.mobile-menu .nav-cta{
+
+background:var(--blue-light);
+
+color:var(--blue);
+
+padding:12px 20px;
+
+border-radius:999px;
+
+text-align:center;
+
+}
+
+
+/* versión móvil */
+
+@media(max-width:900px){
+
+.mobile-menu-btn{
+
+display:block;
+
+}
+
+
+.menu{
+
+display:none;
+
+}
+
+
+.mobile-menu.active{
+
+display:flex;
+
+}
+
+}
+
+    @media(max-width:900px){
+
+    .logo{
+        height:90px;
+        width:auto;
+    }
+
+    header{
+        height:100px;
+    }
+
+    header.scrolled{
+        height:80px;
+    }
+
+    header.scrolled .logo{
+        height:70px;
+    }
+
+}
+
+    @media(max-width:900px){
+
+.mobile-menu-btn{
+
+    font-size:2.2rem;
+    margin-right:5px;
+
+}
+
+}
+
+    @media(max-width:900px){
+
+.logo{
+    height:120px;
+    transform:scale(1.8);
+    transform-origin:left center;
+}
+
+}
+
+
+/* Institutional overview and Game Studies */
+html{scroll-padding-top:110px}
+#about{background:#fff}
+.identity-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:30px 0 38px}
+.identity-summary div{padding:22px 20px;border:1px solid var(--border);border-radius:16px;background:#f8fafc}
+.identity-summary strong{display:block;color:var(--text);font-size:1rem;line-height:1.3;margin-bottom:7px}
+.identity-summary span{display:block;color:var(--muted);font-size:.88rem;line-height:1.55}
+.identity-note{margin-top:25px;line-height:1.8;font-size:.93rem}
+.identity-note a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+#game-studies{background:linear-gradient(180deg,#eff6ff 0%,#f8fafc 58%,#fff 100%)}
+.game-question{font-size:1.38rem;line-height:1.5;font-weight:700;color:#172554;margin:0 0 26px}
+.games-grid .card{height:100%;border-top:4px solid #6366f1}
+.games-grid h3{margin-bottom:12px;font-size:1.16rem}
+.games-grid p{font-size:.96rem}
+.game-tagline{font-size:.9rem;color:#475569;margin-top:20px}
+.games-feature{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(270px,.7fr);gap:34px;align-items:center;padding:46px;margin-top:38px;border-radius:25px;border:1px solid #c7d2fe;background:linear-gradient(135deg,#fff 0%,#eef2ff 100%);box-shadow:var(--shadow-md)}
+.games-feature h3{font-size:clamp(1.85rem,3vw,2.4rem);margin:3px 0 12px;line-height:1.2}
+.games-feature p{line-height:1.8}
+.games-feature .btn-outline{background:#fff;color:#312e81;border:2px solid #a5b4fc}
+.games-feature .btn-outline:hover{background:#312e81;color:#fff;border-color:#312e81}
+.games-feature-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.games-facts{padding:28px;background:#fff;border:1px solid #c7d2fe;border-radius:18px}
+.games-facts strong{display:block;color:#312e81;margin-bottom:5px}
+.games-facts span{display:block;color:#475569;font-size:.95rem;line-height:1.6}
+.games-facts .fact+.fact{border-top:1px solid #e0e7ff;margin-top:18px;padding-top:18px}
+@media(max-width:1160px){.menu{display:none}.mobile-menu-btn{display:block}.mobile-menu.active{display:flex}}
+@media(min-width:1161px){.menu{gap:15px;font-size:.85rem}}
+@media(max-width:900px){.identity-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.games-feature{grid-template-columns:1fr;padding:32px}}
+@media(max-width:600px){.identity-summary{grid-template-columns:1fr}.hero p{font-size:1.05rem}.hero-glass{padding:24px}.game-question{font-size:1.17rem}.games-feature{padding:24px}.games-feature-cta .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none;transform:none}}
+
+
+/* CIAW — streamlined editorial layout, October 2026 */
+:root{--max:1140px}
+html{scroll-padding-top:110px}
+section{padding:70px 0}
+.section-intro{max-width:820px;margin-bottom:32px}
+h2{font-size:clamp(1.9rem,3.5vw,2.5rem)}
+.card{padding:27px}
+.card:hover{transform:translateY(-3px)}
+.reveal{opacity:1;transform:none}
+nav .menu{gap:19px;font-size:.88rem}
+.site-header .container{height:100%}
+.site-header .logo{height:84px;max-width:180px;object-fit:contain;transform:none}
+.site-header.scrolled .logo{height:73px}
+.hero{min-height:75vh;padding:142px 0 65px}
+.hero-content{max-width:900px}
+.hero h1{font-size:clamp(2.6rem,5.5vw,4.35rem)}
+.hero p{font-size:1.14rem;line-height:1.73;margin:22px 0 30px;max-width:785px}
+.hero-buttons{margin-bottom:32px}
+.hero-glass{grid-template-columns:repeat(3,minmax(0,1fr));padding:24px 24px}
+.hero-glass strong{font-size:1.06rem;margin-bottom:4px}
+.hero-glass span{font-size:.83rem}
+.hero-glass div:not(:last-child)::after{right:-11px}
+.about-lead{font-size:1.17rem;line-height:1.85;max-width:940px;color:#475569}
+.about-lead strong{color:var(--text)}
+.about-focus{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.about-focus span{padding:8px 14px;border-radius:50px;background:#eff6ff;color:#1e40af;font-weight:600;font-size:.85rem}
+#journal{background:#fff}
+.journal-panel{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(245px,.65fr);gap:30px;align-items:center}
+.journal-panel .card{padding:38px}
+.journal-panel h3{font-size:1.55rem;margin-bottom:13px}
+.journal-meta{background:#f1f5f9;border:1px solid #e2e8f0;padding:26px;border-radius:20px}
+.journal-meta p{font-size:.9rem;margin-top:6px}
+.journal-meta p+p{margin-top:17px}
+.journal-meta strong{display:block;color:#0f172a;font-size:.92rem}
+.section-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.section-actions .btn-outline{background:#fff;border:2px solid #cbd5e1;color:#334155}
+.section-actions .btn-outline:hover{background:#334155;color:#fff;border-color:#334155}
+#game-studies{background:linear-gradient(180deg,#eff6ff 0%,#f8fafc 100%)}
+.game-grid{margin-top:28px}
+.game-grid .card{border-top:3px solid #6366f1}
+.game-grid h3{font-size:1.12rem;margin-bottom:9px}
+.game-grid p{font-size:.94rem}
+.game-lead{font-size:1.06rem;line-height:1.85;max-width:850px}
+.playing{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(235px,.6fr);gap:30px;align-items:center;padding:35px;margin-top:25px;border:1px solid #c7d2fe;background:#fff;border-radius:22px;box-shadow:var(--shadow-sm)}
+.playing h3{font-size:1.9rem;margin-bottom:8px}
+.playing p{line-height:1.8}
+.playing aside{padding:23px;background:#eef2ff;border-radius:16px;color:#3730a3}
+.playing aside span{display:block;font-size:.86rem;color:#475569;margin-top:5px}
+.playing aside strong{display:block;margin-top:18px;color:#312e81}
+.playing aside strong:first-child{margin-top:0}
+#projects{background:#fff}
+.project-grid .card h3{font-size:1.17rem;margin:8px 0}
+.project-grid .card{height:100%}
+.project-grid .tag{color:#6d28d9;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.project-grid .card p{font-size:.94rem}
+.project-grid a{color:var(--blue);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+#teaching-resources{background:#f8fafc}
+.resources-grid .card{padding:18px;overflow:hidden}
+.resources-grid img{height:150px;width:100%;border-radius:12px;object-fit:cover;object-position:center 8%;background:#e2e8f0}
+.resources-grid h3{font-size:1.04rem;margin:17px 0 8px}
+.resources-grid p{font-size:.91rem}
+.resources-grid a.resource-link{color:var(--blue);font-size:.92rem;font-weight:700;display:inline-block;margin-top:14px;text-decoration:underline;text-underline-offset:3px}
+.resource-note{font-size:.86rem;margin-top:20px}
+.resource-note a{color:var(--blue);text-decoration:underline}
+#contact{padding:67px 0 80px;background:#fff}
+#contact .contact-panel{padding:45px 32px;text-align:center;border:1px solid #dbeafe;background:linear-gradient(160deg,#f8fafc,#eff6ff);border-radius:25px}
+#contact p{max-width:740px;margin:0 auto}
+#contact .section-actions{justify-content:center}
+#contact .btn-outline{background:transparent;border-color:#2563eb;color:#2563eb}
+#contact .btn-outline:hover{background:#2563eb;color:#fff}
+.anchor-target{position:relative;top:-100px}
+.footer-short{padding:36px 0;background:#0f172a;color:#fff}
+.footer-inner{display:flex;justify-content:space-between;gap:22px;align-items:center;flex-wrap:wrap}
+.footer-inner p{font-size:.86rem;color:#94a3b8}
+.footer-links{display:flex;flex-wrap:wrap;gap:14px;color:#cbd5e1;font-size:.87rem}
+.footer-links a:hover{color:#fff;text-decoration:underline}
+@media(max-width:1160px){nav .menu{display:none}.mobile-menu-btn{display:block}.mobile-menu.active{display:flex}}
+@media(min-width:1161px){nav .menu{display:flex}}
+.mobile-menu{top:100%;max-height:calc(100vh - 85px);overflow:auto}
+@media(max-width:900px){
+ .hero{padding:130px 0 50px;min-height:auto}
+ .hero-glass{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .journal-panel,.playing{grid-template-columns:1fr}
+ .site-header .logo{height:80px;transform:none!important}
+ .site-header.scrolled .logo{height:70px}
+ .playing{padding:28px}
+ .grid-3{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ section{padding:53px 0}
+ .section-intro{margin-bottom:25px}
+ .hero h1{font-size:clamp(2.2rem,11vw,3.2rem)}
+ .hero p{font-size:1rem}
+ .hero-glass{grid-template-columns:1fr;gap:14px;padding:20px}
+ .hero-glass div:not(:last-child)::after{display:none}
+ .hero-buttons{gap:10px}
+ .hero-buttons .btn{width:100%}
+ .journal-panel .card{padding:25px}
+ .playing{padding:23px}
+ .section-actions .btn{width:100%}
+ .footer-inner{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto!important}
+ *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+
+/* CIAW identity and Playing Antiquity artwork */
+.about-detail {font-size:1rem;line-height:1.82;margin-top:18px;max-width:850px}
+.about-detail strong {color:var(--text)}
+.playing-artwork {
+ grid-column:1 / -1;
+ display:block;
+ justify-self:center;
+ width:100%;
+ max-width:950px;
+ overflow:hidden;
+ background:#f1f5f9;
+ border-radius:17px;
+ border:1px solid #cbd5e1;
+ box-shadow:0 8px 24px rgba(15,23,42,.08)
+}
+.playing-artwork img {display:block;width:100%;height:auto;object-fit:contain;transition:transform .35s ease}
+.playing-artwork:hover img {transform:scale(1.015)}
+.playing-artwork:focus-visible {outline:3px solid var(--blue);outline-offset:4px}
+@media(max-width:600px) {
+ .playing {gap:20px}
+ .about-detail {font-size:.98rem}
+}
+
+
+/* Neurodiversity: a core CIAW research and teaching pillar */
+.hero-glass .hero-pillar{display:block;text-align:center;position:relative;border-radius:12px}
+.hero-glass .hero-pillar strong{color:white}
+.hero-glass .hero-pillar:hover span{text-decoration:underline;text-underline-offset:3px}
+.hero-glass .hero-pillar:focus-visible{outline:3px solid #fff;outline-offset:5px}
+#neurodiversity{background:linear-gradient(180deg,#fff 0%,#f7f5ff 100%)}
+.neuro-heading{max-width:860px;margin-bottom:30px}
+.neuro-heading h2{line-height:1.2}
+.neuro-lead{font-size:1.1rem;line-height:1.85;color:#475569}
+.neuro-detail{font-size:.97rem;margin-top:16px;line-height:1.83}
+.neuro-lead strong,.neuro-detail strong{color:#1e293b}
+.neuro-cards .card{border-top:3px solid #8b5cf6}
+.neuro-cards .card h3{font-size:1.15rem;margin-bottom:10px}
+.neuro-cards .card p{font-size:.95rem;line-height:1.78}
+.neuro-support{margin-top:22px;border:1px solid #ddd6fe;border-radius:19px;padding:25px 29px;background:#fff}
+.neuro-support p{font-size:.96rem;line-height:1.8}
+.neuro-support strong{color:#312e81}
+#neurodiversity .section-actions{margin-top:17px}
+#neurodiversity .btn-outline{border:2px solid #a5b4fc;color:#312e81;background:white}
+#neurodiversity .btn-outline:hover{background:#312e81;color:white;border-color:#312e81}
+.journal-issue-link{display:inline-block;color:#1d4ed8;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.journal-issue-link:hover{color:#1e40af}
+@media(max-width:600px){
+ .neuro-heading h2{font-size:clamp(1.9rem,9vw,2.5rem)}
+ .neuro-lead{font-size:1rem}
+ .neuro-support{padding:22px}
+}
+
+
+/* 2026 Editorial refresh: current work, journal, illustrated neurodiversity */
+.ciaw-highlights{padding:48px 0;background:#eef2f8;border-block:1px solid #e2e8f0}
+.highlights-intro{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:22px}
+.highlights-intro h2{font-size:clamp(1.25rem,2.2vw,1.8rem);margin:6px 0 0;letter-spacing:-.025em}
+.highlights-intro p{font-size:.94rem;color:#64748b}
+.highlights-kicker,.feature-eyebrow,.highlight-tag{font-size:.72rem;font-weight:800;letter-spacing:.095em;text-transform:uppercase}
+.highlights-kicker{color:#4338ca}
+.highlights-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.highlight-tile{display:flex;flex-direction:column;gap:10px;position:relative;min-width:0;padding:24px 44px 25px 23px;min-height:170px;background:#fff;border:1px solid #dde5ef;border-radius:17px;box-shadow:0 5px 18px rgba(15,23,42,.035);color:#334155;transition:border-color .2s,transform .2s,box-shadow .2s}
+.highlight-tile .highlight-tag{color:#5b21b6;font-size:.69rem}
+.highlight-tile strong{font-size:1.16rem;color:#17233b;line-height:1.35;letter-spacing:-.015em}
+.highlight-tile > span:not(.highlight-tag):not(.highlight-arrow){font-size:.88rem;color:#64748b;line-height:1.55}
+.highlight-arrow{position:absolute;right:21px;top:24px;font-size:1.35rem;color:#6366f1}
+.highlight-tile:hover{transform:translateY(-3px);border-color:#a5b4fc;box-shadow:0 12px 28px rgba(15,23,42,.07)}
+.highlight-tile:focus-visible,.issue-cover:focus-visible,.issue-read-link:focus-visible,.neuro-figure a:focus-visible{outline:3px solid #4f46e5;outline-offset:4px}
+.journal-heading{max-width:810px}
+.journal-heading strong{color:#065f46}
+.journal-showcase{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:20px;align-items:stretch}
+.journal-about-card,.journal-featured{border:1px solid #e0e7ef;border-radius:22px;overflow:hidden}
+.journal-about-card{background:#fff;padding:34px;display:flex;flex-direction:column}
+.journal-about-card .feature-eyebrow{color:#047857}
+.journal-about-card h3{font-size:1.55rem;letter-spacing:-.028em;line-height:1.28;margin:16px 0}
+.journal-about-card p{color:#475569;line-height:1.78}
+.journal-facts{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
+.journal-facts span{font-size:.74rem;font-weight:700;background:#ecfdf5;color:#047857;padding:6px 10px;border-radius:99px}
+.journal-about-card .section-actions{margin-top:auto;padding-top:30px}
+.journal-featured{display:grid;grid-template-columns:minmax(125px,.72fr) minmax(0,1fr);gap:0;background:linear-gradient(120deg,#fef7ed,#fffaf5 55%,#fff);border-color:#e9ded1}
+.issue-cover{display:flex;align-items:center;justify-content:center;padding:23px 0 23px 23px}
+.issue-cover img{display:block;width:100%;height:auto;max-height:340px;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(68,43,20,.12))}
+.issue-copy{padding:31px 29px 30px 23px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0}
+.issue-copy .feature-eyebrow{color:#9a3412;line-height:1.55}
+.issue-copy h3{font-family:Georgia,serif;color:#292524;font-size:clamp(1.5rem,2.2vw,2.05rem);line-height:1.17;letter-spacing:-.02em;margin:16px 0}
+.issue-copy p{font-size:.92rem;line-height:1.75;color:#57534e}
+.issue-read-link{display:inline-flex;align-items:center;gap:9px;font-size:.92rem;font-weight:800;color:#9a3412;margin-top:22px;text-decoration:none;border-bottom:1px solid #c2410c;padding-bottom:5px}
+.issue-read-link:hover{color:#7c2d12}
+#neurodiversity{background:linear-gradient(145deg,#f6f4ff 0%,#fff 70%);}
+.neuro-editorial{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);align-items:start;gap:clamp(28px,5vw,78px)}
+.neuro-editorial-copy h2{max-width:650px;font-size:clamp(2rem,3.4vw,3.1rem);line-height:1.16;letter-spacing:-.035em}
+.neuro-editorial-copy .neuro-lead{font-size:1.05rem;line-height:1.8;margin-top:18px;max-width:650px}
+.neuro-editorial-copy .neuro-detail{font-size:.98rem;line-height:1.78;margin-top:14px}
+.neuro-principles{margin-top:26px;border-top:1px solid #dcd7f9}
+.neuro-principles > div{display:grid;grid-template-columns:32px 1fr;gap:13px;padding:15px 0;border-bottom:1px solid #e8e5f9}
+.principle-number{font-size:.77rem;font-weight:800;color:#7c3aed;padding-top:2px}
+.neuro-principles p{display:flex;flex-direction:column;gap:4px;margin:0;color:#475569;font-size:.9rem;line-height:1.6}
+.neuro-principles strong{font-size:.96rem;color:#312e81}
+.neuro-editorial-copy .section-actions{margin-top:25px}
+.neuro-figure{margin:0;padding:15px 15px 19px;background:white;border-radius:21px;border:1px solid #ede9fe;box-shadow:0 14px 38px rgba(67,56,202,.075)}
+.neuro-figure > a{display:block;overflow:hidden;background:#f9f6ef;border-radius:13px}
+.neuro-figure img{width:100%;height:auto;display:block;transition:transform .35s ease}
+.neuro-figure a:hover img{transform:scale(1.015)}
+.neuro-figure figcaption{font-size:.78rem;line-height:1.55;color:#64748b;padding:13px 3px 0}
+.neuro-figure figcaption strong{color:#312e81}
+.neuro-figure figcaption a{color:#4338ca;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:1000px){
+ .journal-showcase{grid-template-columns:1fr}
+ .journal-featured{grid-template-columns:230px minmax(0,1fr)}
+ .journal-about-card .section-actions{margin-top:16px;padding:0}
+ .neuro-editorial{gap:28px}
+}
+@media(max-width:740px){
+ .highlights-intro{display:block}
+ .highlights-intro p{margin-top:7px}
+ .highlights-grid{grid-template-columns:1fr}
+ .highlight-tile{min-height:0;padding:18px 45px 19px 20px;gap:5px}
+ .journal-featured{grid-template-columns:minmax(110px,.62fr) minmax(0,1fr)}
+ .journal-about-card{padding:25px}
+ .issue-cover{padding:16px 0 16px 14px}
+ .issue-copy{padding:22px 18px}
+ .issue-copy h3{font-size:1.4rem;margin:9px 0}
+ .issue-copy p{font-size:.85rem;line-height:1.57}
+ .neuro-editorial{grid-template-columns:1fr}
+ .neuro-figure{max-width:400px;margin:auto}
+}
+@media(max-width:440px){
+ .journal-featured{grid-template-columns:minmax(90px,.55fr) minmax(0,1fr)}
+ .issue-cover{padding:12px 0 12px 10px}
+ .issue-copy{padding:18px 12px}
+ .issue-copy .feature-eyebrow{font-size:.63rem}
+ .issue-copy h3{font-size:1.2rem}
+ .issue-copy p{font-size:.78rem;line-height:1.45}
+ .issue-read-link{font-size:.83rem;margin-top:12px}
+ .journal-about-card .section-actions{margin-top:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .highlight-tile,.neuro-figure img{transition:none}
+}
+
+
+/* CIAW contributors: roles and affiliations verified against the journal's editorial pages */
+.about-team-note{font-size:.94rem;line-height:1.75;margin-top:19px;color:#475569;max-width:850px}
+.about-team-note a{font-weight:700;color:#1d4ed8;text-decoration:underline;text-underline-offset:3px}
+.ciaw-people{background:#f8fafc}
+.people-heading{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-bottom:28px}
+.people-heading-copy{max-width:780px}
+.people-heading-copy h2{font-size:clamp(2rem,3vw,2.75rem);letter-spacing:-.035em}
+.people-heading-copy p{margin-top:14px;font-size:1rem;line-height:1.82;color:#64748b}
+.people-heading-copy p strong{color:#334155}
+.people-directory{font-size:.87rem;font-weight:700;color:#1d4ed8;white-space:nowrap;border-bottom:1px solid #93c5fd;padding-bottom:5px;margin-bottom:6px}
+.people-directory:hover{color:#1e40af}
+.people-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.person-card{display:flex;flex-direction:column;position:relative;min-width:0;padding:27px 27px 25px;background:#fff;border:1px solid #e2e8f0;border-radius:20px;box-shadow:0 8px 25px rgba(15,23,42,.035)}
+.person-number{position:absolute;top:29px;right:27px;font-size:.78rem;font-weight:800;letter-spacing:.12em;color:#94a3b8}
+.person-monogram{width:52px;height:52px;display:grid;place-items:center;background:#e8edfb;color:#3730a3;border:1px solid #c7d2fe;border-radius:14px;font-weight:800;font-size:.98rem;letter-spacing:.03em;margin-bottom:22px}
+.person-card:nth-child(2) .person-monogram{background:#e8f6f1;color:#065f46;border-color:#a7f3d0}
+.person-card:nth-child(3) .person-monogram{background:#faf1e9;color:#9a3412;border-color:#fed7aa}
+.person-card h3{font-size:1.22rem;letter-spacing:-.026em;color:#0f172a;line-height:1.35;margin-bottom:11px}
+.person-role{font-size:.88rem;line-height:1.7;font-weight:650;color:#334155}
+.person-affiliation{font-size:.86rem;line-height:1.65;color:#64748b;margin-top:11px}
+.person-contact{display:inline-block;align-self:flex-start;color:#2563eb;font-size:.85rem;font-weight:750;margin-top:auto;padding-top:25px;text-decoration:none}
+.person-contact:hover{text-decoration:underline;text-underline-offset:3px}
+.people-note{max-width:910px;color:#64748b;font-size:.81rem;line-height:1.7;margin-top:20px}
+@media(max-width:1050px){
+ .people-heading{display:block}
+ .people-directory{display:inline-block;margin-top:19px;white-space:normal}
+ .people-grid{gap:12px}
+ .person-card{padding:22px}
+}
+@media(max-width:750px){
+ .people-grid{grid-template-columns:1fr;gap:13px}
+ .person-card{min-height:0}
+ .person-monogram{margin-bottom:16px}
+ .person-contact{margin-top:8px;padding-top:8px}
+}
+
+
+/* Evidence-led academic outputs and events, compact editorial presentation */
+.work-internal-link{color:#1d4ed8;text-decoration:underline;text-underline-offset:3px;font-weight:650}
+.ciaw-outputs{background:#f7fafc}
+.work-heading{max-width:810px;margin-bottom:28px}
+.work-heading h2{font-size:clamp(2rem,3vw,2.7rem);letter-spacing:-.035em}
+.work-heading p{margin-top:11px;line-height:1.75;color:#64748b}
+.outputs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.output-card{display:flex;flex-direction:column;min-width:0;border:1px solid #dce4ef;border-radius:18px;padding:26px 24px 24px;background:#fff;box-shadow:0 7px 25px rgba(15,23,42,.04)}
+.output-top{display:flex;justify-content:space-between;align-items:start;gap:10px;margin-bottom:17px}
+.output-kind{font-size:.7rem;letter-spacing:.06em;line-height:1.5;font-weight:800;color:#047857}
+.output-number{font-size:.77rem;font-weight:800;color:#94a3b8}
+.output-card h3{color:#172554;font-size:1.22rem;line-height:1.35;letter-spacing:-.015em;margin:0 0 5px}
+.output-subtitle{font-size:.9rem;line-height:1.6;color:#334155;font-weight:600}
+.output-authors{font-size:.79rem;line-height:1.6;color:#64748b;margin:16px 0 0}
+.output-description{font-size:.89rem;line-height:1.7;color:#475569;margin:13px 0 20px}
+.output-link{display:inline-block;align-self:flex-start;margin-top:auto;font-size:.86rem;font-weight:750;color:#1d4ed8;text-decoration:none;border-bottom:1px solid #93c5fd;padding-bottom:3px}
+.output-link:hover{text-decoration:underline;text-underline-offset:4px}
+.ciaw-events{background:#fff}
+.events-layout{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(30px,5vw,75px);align-items:start}
+.events-intro h2{font-size:clamp(2rem,3vw,2.7rem);letter-spacing:-.035em}
+.events-intro p{color:#64748b;line-height:1.8;margin-top:17px}
+.events-more{display:inline-block;margin-top:23px;color:#1d4ed8;font-weight:750;font-size:.88rem;border-bottom:1px solid #93c5fd;padding-bottom:3px}
+.event-list{border-top:1px solid #e2e8f0}
+.event-entry{display:grid;grid-template-columns:70px 1fr;gap:25px;padding:21px 0;border-bottom:1px solid #e2e8f0}
+.event-date{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:11px 4px;background:#f1f5f9;border-radius:11px;color:#334155;max-height:100px}
+.event-upcoming .event-date{background:#eff6ff;color:#1e40af}
+.event-date span{font-weight:800;font-size:.66rem;letter-spacing:.08em}
+.event-date strong{font-size:1.58rem;line-height:1.22}
+.event-date small{font-weight:700;font-size:.71rem}
+.event-state{font-size:.67rem;color:#2563eb;letter-spacing:.08em;font-weight:800}
+.event-state.event-past{color:#64748b}
+.event-body h3{font-size:1.09rem;line-height:1.42;letter-spacing:-.012em;margin:5px 0 8px}
+.event-body p{font-size:.85rem;line-height:1.68;color:#64748b}
+.event-body a{display:inline-block;font-weight:730;font-size:.82rem;margin-top:10px;color:#1d4ed8;text-decoration:underline;text-underline-offset:3px}
+.governance-note{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:24px;padding:26px 29px;border:1px solid #cbd5e1;background:#fff;border-radius:18px;margin-top:25px;align-items:start}
+.governance-label{font-size:.7rem;letter-spacing:.08em;font-weight:800;color:#4338ca}
+.governance-note h3{font-size:1.16rem;line-height:1.4;letter-spacing:-.01em;margin-top:7px}
+.governance-note p{font-size:.88rem;line-height:1.74;color:#475569}
+.governance-note p strong{color:#334155}
+.governance-note a{color:#1d4ed8;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:980px){
+ .outputs-grid{grid-template-columns:1fr 1fr}
+ .outputs-grid .output-card:last-child{grid-column:1 / -1}
+ .events-layout{grid-template-columns:1fr;gap:24px}
+}
+@media(max-width:670px){
+ .outputs-grid{grid-template-columns:1fr}
+ .outputs-grid .output-card:last-child{grid-column:auto}
+ .output-card{padding:24px 22px}
+ .event-entry{grid-template-columns:60px 1fr;gap:16px}
+ .governance-note{grid-template-columns:1fr;padding:24px;gap:13px}
+}
+
+
+/* 24 November 2026: poster and original-language academic seminar programme */
+.event-featured .event-body h3{font-size:1.26rem;line-height:1.36;margin-bottom:9px}
+.event-seminar-feature{display:grid;grid-template-columns:148px minmax(0,1fr);align-items:start;gap:19px;margin:18px 0 17px}
+.event-poster-thumb{display:block;overflow:hidden;max-width:148px;border:1px solid #e1d8ca;border-radius:11px;background:#fcf7ef;box-shadow:0 5px 16px rgba(15,23,42,.08);text-decoration:none}
+.event-poster-thumb img{display:block;width:100%;height:auto;aspect-ratio:1024/1449;object-fit:cover}
+.event-poster-thumb span{display:block;text-align:center;background:#fff;color:#1d4ed8;font-size:.75rem;font-weight:800;padding:9px 4px}
+.event-poster-thumb:hover span{text-decoration:underline;text-underline-offset:3px}
+.event-poster-thumb:focus-visible{outline:3px solid #2563eb;outline-offset:4px}
+.event-seminar-facts{display:grid;gap:10px;align-content:start}
+.event-seminar-facts p{display:grid;gap:2px;line-height:1.5}
+.event-seminar-facts strong{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:#64748b}
+.event-seminar-facts span{font-size:.87rem;font-weight:650;color:#334155}
+.event-programme{margin-top:22px}
+.event-programme h4{font-size:1.04rem;letter-spacing:-.01em;margin-bottom:12px;color:#172554}
+.event-programme h4 span{color:#64748b;font-weight:500}
+.event-sessions{list-style:none;padding:0;margin:0;border-top:1px solid #e2e8f0}
+.event-sessions li{display:grid;grid-template-columns:102px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid #e2e8f0}
+.event-sessions time{font-size:.8rem;font-weight:800;color:#1d4ed8;white-space:nowrap;padding-top:2px;font-variant-numeric:tabular-nums}
+.event-sessions li>div{display:grid;gap:4px;min-width:0}
+.event-sessions strong{font-size:.86rem;line-height:1.52;color:#273449}
+.event-sessions li span{font-size:.8rem;line-height:1.42;color:#64748b}
+.event-body .event-organisers{border-left:3px solid #dbeafe;padding-left:12px;margin-top:16px;font-size:.77rem;line-height:1.7;color:#64748b}
+.event-organisers strong{color:#334155}
+@media(max-width:640px){
+ .event-seminar-feature{grid-template-columns:1fr;gap:15px}
+ .event-poster-thumb{width:140px}
+ .event-sessions li{grid-template-columns:1fr;gap:2px}
+ .event-sessions time{padding-top:0}
+ .event-featured .event-body h3{font-size:1.14rem}
+}
+
+
+/* 2026 information architecture refresh: short home and supporting research, event and resource pages */
+.menu{gap:16px!important}.menu>a{font-size:.83rem}
+.nav-langs{display:inline-flex;gap:5px;align-items:center;border-left:1px solid #cbd5e1;padding-left:11px;font-size:.77rem;font-weight:700}
+.nav-langs a{padding:4px!important;color:#1d4ed8!important}.nav-langs .current{color:#64748b;padding-right:3px}
+.nav-langs a:focus-visible,.mobile-langs a:focus-visible{outline:3px solid #2563eb;outline-offset:3px}
+.mobile-langs{padding:16px 0 6px;color:#475569;font-size:.87rem;font-weight:700}
+.mobile-langs a{display:inline!important;padding:3px!important;color:#1d4ed8;text-decoration:underline;text-underline-offset:2px}
+.outputs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.output-card{min-height:240px}
+.research-more{margin-top:19px}
+.ciaw-outputs{padding-block:61px}
+.events-more-secondary{display:block;margin-top:14px}
+.event-compact{grid-template-columns:114px minmax(0,1fr);gap:16px;margin:13px 0 0}
+.event-compact .event-poster-thumb{width:114px;max-width:114px}
+.event-compact .event-seminar-facts{gap:7px}
+.event-programme-link{margin-top:4px;font-size:.86rem;font-weight:800!important;color:#1d4ed8}
+.event-past-compact{padding-bottom:15px}
+.resources-summary{background:linear-gradient(125deg,#f1f5ff,#fafbff);padding:52px 0}
+.resources-teaser{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.4fr);align-items:center;gap:35px}
+.resources-teaser h2{font-size:clamp(1.7rem,2.6vw,2.3rem);letter-spacing:-.035em}
+.resources-teaser p{font-size:.97rem;line-height:1.76;color:#475569;max-width:710px;margin-top:12px}
+.resource-teaser-img{display:block;border-radius:14px;overflow:hidden;border:1px solid #dbe2ed;background:#fff;box-shadow:0 6px 20px rgba(15,23,42,.045);max-height:208px}
+.resource-teaser-img img{display:block;width:100%;height:230px;object-fit:cover;object-position:top}
+.profile-links{display:flex;gap:11px;flex-wrap:wrap;margin-top:auto;padding-top:16px}
+.profile-links a{font-size:.8rem;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+.contact-disclaimer{font-size:.78rem!important;color:#64748b!important;line-height:1.6!important;margin-top:10px!important}
+@media(max-width:1080px){.outputs-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){
+ .resources-teaser{grid-template-columns:1fr;gap:18px}
+ .resource-teaser-img{max-width:250px}
+ .output-card{min-height:auto}
+}
+@media(max-width:600px){.outputs-grid{grid-template-columns:1fr}}
+
+/* Accessibility: keyboard navigation and clear reading order */
+.skip-link{position:absolute;left:16px;top:-80px;padding:11px 15px;z-index:3000;background:#fff;color:#1d4ed8;border:2px solid #1d4ed8;border-radius:10px;font-weight:800}
+.skip-link:focus{top:12px}
+.visually-hidden-anchor{position:absolute;width:1px;height:1px;overflow:hidden}
+section[id]{scroll-margin-top:95px}
+
+/* Unified CIAW navigation wordmark: use the original logo with its empty margins removed */
+.site-header{background:rgba(240,243,248,.95);backdrop-filter:blur(14px);height:104px;border-bottom:1px solid #dfe6ee}
+.site-header.scrolled{height:86px;background:rgba(240,243,248,.98)}
+.site-header>.container{width:min(92%,1510px);max-width:1510px}
+.site-header nav{gap:24px}
+.site-header nav>a:first-child{flex:none;display:flex;align-items:center}
+.site-header .logo{width:250px;max-width:250px;height:auto;max-height:none;object-fit:contain;transform:none!important}
+.site-header.scrolled .logo{width:227px;height:auto;max-width:227px}
+.site-header nav .menu{gap:clamp(10px,1.15vw,20px)!important;font-size:.85rem;white-space:nowrap}
+.site-header nav .menu>a{font-size:.84rem}
+.site-header nav .menu .nav-langs{gap:7px}
+@media(max-width:1390px){.site-header nav .menu{display:none}.site-header .mobile-menu-btn{display:block}.site-header .mobile-menu.active{display:flex}}
+@media(min-width:1391px){.site-header nav .menu{display:flex}.site-header .mobile-menu-btn{display:none}}
+@media(max-width:900px){
+ .site-header{height:88px}
+ .site-header.scrolled{height:78px}
+ .site-header .logo{width:226px;max-width:226px;height:auto;transform:none!important}
+ .site-header.scrolled .logo{width:209px;max-width:209px;height:auto}
+}
+@media(max-width:430px){
+ .site-header .logo{width:202px;max-width:202px}
+ .site-header.scrolled .logo{width:191px;max-width:191px}
+}
+
+/* Homepage teaser for Game Studies research; full agenda is a separate page */
+.games-landing-preview{background:linear-gradient(135deg,#f6f8ff 0%,#fff 72%);padding:75px 0}
+.games-landing-wrap{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:clamp(26px,5vw,70px);align-items:center}
+.games-landing-image{display:block;overflow:hidden;border:1px solid #dee5ef;background:#fff;border-radius:20px;box-shadow:0 12px 36px rgba(30,41,90,.075)}
+.games-landing-image img{display:block;width:100%;height:auto;object-fit:contain;transition:transform .4s ease}
+.games-landing-image:hover img{transform:scale(1.015)}
+.games-landing-image:focus-visible{outline:3px solid #2563eb;outline-offset:4px}
+.games-landing-text h2{font-size:clamp(1.9rem,3.3vw,2.65rem);line-height:1.16;letter-spacing:-.035em;margin:12px 0 18px}
+.games-landing-text>p{font-size:.99rem;line-height:1.82;color:#526078}
+.games-landing-text strong{color:#312e81}
+.games-focus-keywords{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 22px}
+.games-focus-keywords span{font-size:.76rem;font-weight:800;padding:7px 11px;border-radius:99px;color:#4338ca;background:#eaeafd}
+.games-landing-text .section-actions{display:flex;flex-wrap:wrap;gap:11px}
+.games-landing-note{font-size:.8rem!important;color:#64748b!important;line-height:1.65!important;margin:18px 0 0}
+@media(max-width:990px){.games-landing-wrap{grid-template-columns:1fr}.games-landing-image{max-width:760px}}
+@media(max-width:650px){.games-landing-preview{padding:56px 0}.games-landing-text .section-actions .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.games-landing-image img{transition:none}}
+
+
+/* Full seminar programme remains on the homepage, not a separate HTML link */
+.event-programme-hint{display:block;color:#64748b;font-size:.79rem;font-weight:650;margin-top:8px}
+.event-programme-details{margin-top:19px;border:1px solid #dbe3ef;border-radius:13px;background:#fff;overflow:hidden}
+.event-programme-details>summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 16px;font-size:.89rem;font-weight:800;color:#1e40af;list-style:none}
+.event-programme-details>summary::-webkit-details-marker{display:none}
+.event-programme-details>summary:hover{background:#f1f5ff}
+.event-programme-details>summary:focus-visible{outline:3px solid #2563eb;outline-offset:-3px}
+.event-programme-details[open]>summary{border-bottom:1px solid #e2e8f0}
+.event-programme-details[open]>summary span{transform:rotate(180deg)}
+.event-programme-content{padding:5px 16px 16px}
+.event-programme-support{font-size:.77rem!important;line-height:1.7;color:#64748b;margin-top:14px!important}
+
+</style>
+
+<link rel="alternate" hreflang="en" href="https://ciaw.es/"/>
+<link rel="alternate" hreflang="ca" href="https://ciaw.es/ca.html"/>
+<link rel="alternate" hreflang="es" href="https://ciaw.es/es.html"/>
 </head>
-<body class="locale-site">
-<header class="ciaw-shared-header">
+
+<body>
+<a class="skip-link" href="#main-content">>Ves al contingut principal<</a>
+<header id="main-header" class="site-header">
  <div class="container">
-  <nav class="ciaw-header-nav" aria-label="Navegació principal">
-   <a class="ciaw-header-brand" href="index.html" aria-label="CIAW — inici">
-    <img src="assets/ciaw-header-logo.png" alt="CIAW · Center for Innovation in Ancient Worlds" width="250" height="46" fetchpriority="high"/>
-   </a>
-   <div class="ciaw-header-links">
-    <a href="index.html#about">About &amp; People</a>
-    <a href="research.html">Research &amp; Outputs</a>
-    <a href="index.html#journal">AI &amp; Antiquity</a>
-    <a href="game-studies.html">Game Studies</a>
-    <a href="index.html#neurodiversity">Neurodiversity</a>
-    <a href="index.html#events">Events &amp; Resources</a>
-    <span class="ciaw-header-langs" aria-label="Idioma">
-     <a href="index.html" lang="en">EN</a>
-     <span aria-current="page">CA</span>
-     <a href="es.html" lang="es">ES</a>
-    </span>
-    <a class="ciaw-header-cta" href="index.html#contact">Collaborate</a>
+  <nav aria-label="Navegació principal">
+   <a href="#top" aria-label="CIAW — Tornar a dalt"><img class="logo" src="assets/ciaw-header-logo.png" alt="CIAW · Center for Innovation in Ancient Worlds" width="250" height="46" fetchpriority="high"/></a>
+   <div class="menu">
+    <a href="#about">>Qui som<</a>
+    <a href="#outputs">>Recerca i resultats<</a>
+    <a href="#journal">AI &amp; Antiquity</a>
+    <a href="game-studies-ca.html">Game Studies</a>
+    <a href="#neurodiversity">>Neurodiversitat<</a>
+    <a href="#events">>Activitats i recursos<</a>
+    <span class="nav-langs" aria-label="Language"><a href="index.html" lang="en">EN</a><span aria-current="page">CA</span><a href="es.html" lang="es">ES</a></span>
+    <a href="#contact" class="nav-cta">>Col·laborar<</a>
    </div>
-   <button id="ciaw-menu-toggle" type="button" class="ciaw-menu-toggle" aria-expanded="false" aria-controls="ciaw-mobile-menu" aria-label="Obrir el menú de navegació">☰</button>
-   <div id="ciaw-mobile-menu" class="ciaw-mobile-menu">
-    <a href="index.html#about">About &amp; People</a>
-    <a href="research.html">Research &amp; Outputs</a>
-    <a href="index.html#journal">AI &amp; Antiquity</a>
-    <a href="game-studies.html">Game Studies</a>
-    <a href="index.html#neurodiversity">Neurodiversity</a>
-    <a href="index.html#events">Events &amp; Resources</a>
-    <a href="index.html#contact" class="ciaw-header-cta">Collaborate</a>
-    <div class="ciaw-mobile-langs"><a href="index.html" lang="en">English</a> · <a href="ca.html" lang="ca" aria-current="page">Català</a> · <a href="es.html" lang="es">Castellano</a></div>
+   <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Obrir el menú de navegació">☰</button>
+   <div class="mobile-menu" id="mobile-menu">
+    <a href="#about">>Qui som<</a>
+    <a href="#outputs">>Recerca i resultats<</a>
+    <a href="#journal">AI &amp; Antiquity</a>
+    <a href="game-studies-ca.html">Game Studies</a>
+    <a href="#neurodiversity">>Neurodiversitat<</a>
+    <a href="#events">>Activitats i recursos<</a>
+    <a href="#contact" class="nav-cta">>Col·laborar<</a>
+    <div class="mobile-langs" aria-label="Language"><a href="index.html" lang="en">EN</a> · <a href="ca.html" lang="ca">Català</a> · <a href="es.html" lang="es">>Castellà<</a></div>
    </div>
   </nav>
  </div>
 </header>
-<main>
-<section class="subhero locale-hero">
- <div class="container locale-hero-grid">
-  <div class="locale-hero-copy">
-   <span class="eyebrow">INICIATIVA ACADÈMICA INDEPENDENT · CATALUNYA</span>
-   <h1>Center for Innovation in Ancient Worlds</h1>
-   <p class="lead">Fundat el 2025 i amb seu a Catalunya, el CIAW connecta la recerca sobre l’Antiguitat amb la publicació científica en obert, els videojocs, la neurodiversitat i la innovació docent.</p>
-   <div class="locale-actions">
-    <a class="btn btn-primary" href="#areas">Conèixer les nostres línies de treball ↓</a>
-    <a class="btn btn-outline" href="research.html">Explorar publicacions →</a>
+
+<main id="top"><span id="main-content" tabindex="-1" class="visually-hidden-anchor"></span>
+ <section class="hero" aria-labelledby="site-title">
+  <div class="glow-orb hero-glow-1"></div><div class="glow-orb hero-glow-2"></div>
+  <div class="container"><div class="hero-content">
+   <div class="kicker">>Iniciativa acadèmica independent · Amb seu a Catalunya · Fundada el 2025<</div>
+   <h1 id="site-title">Center for Innovation in <span class="gradient-text">Ancient Worlds</span></h1>
+   <p>>Amb seu a Catalunya i oberta a la col·laboració internacional, el CIAW connecta la recerca, la publicació acadèmica i la innovació docent en els estudis sobre l’Antiguitat, amb una atenció especial als <<strong style="color:#fff">>Game Studies i la neurodiversitat<</strong>>, la docència inclusiva i la cultura digital.<</p>
+   <div class="hero-buttons">
+    <a href="#outputs" class="btn btn-primary">>Explorar la nostra activitat →<</a>
+    <a href="#people" class="btn btn-outline">>Conèixer l’equip ↓<</a>
    </div>
-   <div class="locale-microfacts">
-    <span>2025</span><span>Catalunya</span><span>Open Access</span>
+   <div class="hero-glass" aria-label="Three key areas">
+    <div><strong>>Coneixement obert<</strong><span>>Recerca i publicació<</span></div>
+    <div><strong>Game Studies</strong><span>>Recepció i representació jugable de la història<</span></div>
+    <a class="hero-pillar" href="#neurodiversity" aria-label="Explore CIAW's neurodiversity and inclusive teaching work"><strong>>Neurodiversitat<</strong><span>>Docència inclusiva des del disseny ↓<</span></a>
+   </div>
+  </div></div>
+ </section>
+
+ <section id="about" aria-labelledby="about-title">
+  <div class="container">
+   <div class="section-intro">
+    <div class="badge">>INDEPENDENT · AMB SEU A CATALUNYA<</div>
+    <h2 id="about-title">>Què és el CIAW?<</h2>
+    <p class="about-lead"><strong>The Center for Innovation in Ancient Worlds (CIAW)</strong>> és una iniciativa acadèmica independent i sense ànim de lucre fundada el 2025 i <<strong>>amb seu a Catalunya, Espanya<</strong>>. Reuneix la Història Antiga, la Filologia Clàssica, l’Arqueologia i els estudis de recepció, i promou la recerca interdisciplinària, la publicació científica, la innovació docent i la divulgació del món antic.<</p>
+    <p class="about-detail">>En lloc de funcionar com un únic departament universitari, el CIAW ofereix un marc de col·laboració obert a investigadors, docents i professionals de la cultura de diverses institucions i països. Examina no només què sabem de l’Antiguitat, sinó també <<strong>>com es produeix, es representa, s’ensenya i es comparteix el coneixement històric<</strong>>: des de l’anàlisi crítica de les fonts antigues fins als videojocs, les humanitats digitals i les tecnologies emergents.<</p>
+    <p class="about-detail">>A través de la seva revista d’accés obert diamant <<em>AI &amp; Antiquity</em>>, de la sèrie temàtica <<em>Playing Antiquity</em>> i de la seva feina sobre docència atenta a la neurodiversitat, el CIAW defensa el rigor científic, la independència acadèmica, l’aprenentatge accessible i l’intercanvi obert d’idees.<</p>
+    <p class="about-team-note">>El CIAW es fonamenta en la col·laboració acadèmica a Catalunya, amb vincles estrets amb la Universitat Autònoma de Barcelona i investigadors d’altres institucions. <<a href="#people">>Conèixer les persones que hi ha darrere del CIAW →<</a></p>
+    <div class="about-focus" aria-label="Areas of work"><span>>Estudis sobre l’Antiguitat<</span><span>>Publicació en accés obert<</span><span>Game Studies</span><span>>Neurodiversitat<</span><span>>Docència inclusiva<</span><span>>Humanitats digitals<</span></div>
    </div>
   </div>
-  <figure class="locale-hero-visual">
-   <a href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer">
-    <img src="assets/playing-antiquity-banner.webp" alt="Il·lustració panoràmica de Playing Antiquity amb videojocs de temàtica històrica i fantàstica" width="950" loading="eager" decoding="async"/>
+ </section>
+
+<section id="highlights" class="ciaw-highlights" aria-labelledby="highlights-title">
+ <div class="container">
+  <div class="highlights-intro">
+   <div>
+    <span class="highlights-kicker">>ACTUALITAT DEL CIAW<</span>
+    <h2 id="highlights-title">>Recerca, publicacions i trobades.<</h2>
+   </div>
+   <p>>Tres maneres de descobrir la nostra activitat recent.<</p>
+  </div>
+  <div class="highlights-grid">
+   <a class="highlight-tile" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">
+    <span class="highlight-tag">>NOU NÚMERO · SETEMBRE DE 2026<</span>
+    <strong><em>>Neurodiversity and Antiquity<</em></strong>
+    <span>>AI &amp; Antiquity · Vol. 2, núm. 2<</span>
+    <span class="highlight-arrow" aria-hidden="true">↗</span>
    </a>
-   <figcaption>
-    <span class="locale-visual-kicker">GAME STUDIES · PLAYING ANTIQUITY</span>
-    <strong>Videojocs, recepció clàssica i coneixement històric</strong>
-    <span>Un espai per estudiar com els videojocs representen i interpreten l’Antiguitat.</span>
-    <a href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer">Playing Antiquity ↗</a>
-   </figcaption>
-  </figure>
+   <a class="highlight-tile" href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer">
+    <span class="highlight-tag">>CONVOCATÒRIA · FEBRER DE 2027<</span>
+    <strong><em>Playing Antiquity</em></strong>
+    <span>>Videojocs, docència i coneixement històric<</span>
+    <span class="highlight-arrow" aria-hidden="true">↗</span>
+   </a>
+   <a class="highlight-tile" href="#events">
+    <span class="highlight-tag">>SEMINARI ACADÈMIC · 24 DE NOVEMBRE DE 2026<</span>
+    <strong><em>Antiguitat, extrema dreta i xarxes socials</em></strong>
+    <span>L’Antiguitat al món actual II · UAB, 10.30–13.15 h</span>
+    <span class="highlight-arrow" aria-hidden="true">↘</span>
+   </a>
+  </div>
  </div>
-</section><div class="container intro"><div class="prose">
-<div id="areas" class="locale-section-head"><span class="locale-eyebrow">RECERCA, PUBLICACIÓ I DOCÈNCIA</span><h2>Què fem</h2></div><div class="grid locale-cards">
-<article class="card"><h3>Publicació científica</h3><p>Impulsem AI & Antiquity, una revista internacional avaluada per experts en accés obert diamant.</p></article><article class="card"><h3>Videojocs i història</h3><p>Estudiem la recepció de l'Antiguitat, les regles de simulació, la memòria cultural i l'agència històrica en els videojocs.</p></article><article class="card"><h3>Neurodiversitat i docència inclusiva</h3><p>Defensem uns estàndards acadèmics compartits i diferents vies per aprendre, participar i demostrar coneixements.</p></article>
-</div><section class="locale-feature"><div class="locale-feature-image"><img src="assets/arturo-galindo-neurodiversity.webp" alt="Il·lustració original d’Arturo Galindo per a Neurodiversity and Antiquity" loading="lazy" decoding="async"/><span>Arturo Galindo García · AI &amp; Antiquity (2026)</span></div><div><span class="locale-eyebrow">NEURODIVERSITY &amp; ANTIQUITY</span><h2>Neurodiversitat i docència inclusiva</h2><p>Diferents maneres d’aprendre, els mateixos estàndards acadèmics. Una línia de recerca i docència reflectida al volum 2.2 d’AI & Antiquity.</p><a class="locale-text-link" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">Llegir el número especial ↗</a></div></section>
-<h2>Equip i col·laboració</h2><p>CIAW reuneix investigadors i col·laboradors vinculats a la Universitat Autònoma de Barcelona i a altres institucions, sense constituir una unitat orgànica de cap universitat. Carlos Heredia Chimeno va fundar la iniciativa; Isaías Arrayás Morales i Sílvia Swan col·laboren en l'àmbit editorial d'AI & Antiquity.</p>
-<h2>Resultats i activitats recents</h2><p>Articles acadèmics revisats per parells, recursos docents i seminaris públics. A més d’aquesta presentació, el web principal reuneix enllaços a les publicacions i als seus registres permanents.</p><div class="locale-feature-links"><a href="research.html">Veure publicacions i projectes ↗</a><a href="index.html#events">Veure les jornades del 24 de novembre ↗</a><a href="index.html#people">Conèixer l’equip ↗</a></div>
-<h2>Accés als continguts</h2><p>El web principal, les publicacions, els projectes, el programa d'activitats i els recursos docents estan disponibles en anglès. Aquesta pàgina ofereix una presentació institucional en català; no és una traducció íntegra del web.</p>
-<a class="btn btn-primary" href="index.html">Web complet en anglès →</a>
-<a class="btn btn-outline" href="index.html#people">Perfils acadèmics →</a>
-<h2>Contacte i col·laboració</h2><p>Per a consultes acadèmiques o propostes de col·laboració, pots escriure a Carlos Heredia Chimeno a l'adreça institucional indicada a continuació. <a class="locale-text-link" href="mailto:carlos.heredia@uab.cat">Escriure al CIAW ↗</a>.</p></div></div></main>
-<footer class="site-foot"><div class="container"><span>CIAW · Independent academic initiative based in Catalonia, Spain · Founded 2025</span><span><a href="index.html#people">People</a><a href="index.html#contact">Contact</a><a href="privacy.html">Privacy</a></span></div></footer>
+</section>
+
+
+
+ <section id="journal" aria-labelledby="journal-title">
+ <div class="container">
+  <div class="section-intro journal-heading">
+   <div class="badge badge-green">>CIAW · PUBLICACIÓ PRINCIPAL<</div>
+   <h2 id="journal-title"><em>AI &amp; Antiquity</em></h2>
+   <p>>Una revista internacional avaluada per experts i d’ <<strong>>accés obert diamant<</strong>> que connecta els estudis sobre l’Antiguitat amb la docència inclusiva, les humanitats digitals, els Game Studies i els enfocaments crítics de la tecnologia i del coneixement històric.<</p>
+  </div>
+  <div class="journal-showcase">
+   <div class="journal-about-card">
+    <span class="feature-eyebrow">>RECERCA SENSE BARRERES<</span>
+    <h3>>Recerca oberta, perspectives crítiques.<</h3>
+    <p>>Publicada pel CIAW, <<em>AI &amp; Antiquity</em>> reuneix recerca original, reflexió metodològica i debats sobre com s’estudia, s’interpreta i s’ensenya l’Antiguitat.<</p>
+    <div class="journal-facts" aria-label="Journal publication details">
+     <span>>Avaluació per parells<</span>
+     <span>>Sense taxes de publicació<</span>
+     <span>ISSN 3081-4553</span>
+    </div>
+    <div class="section-actions">
+     <a class="btn btn-primary" href="https://ai-antiquity.org/" target="_blank" rel="noopener noreferrer">>Visitar la revista ↗<</a>
+     <a class="btn btn-outline" href="https://ai-antiquity.org/index.php/ai/issue/archive" target="_blank" rel="noopener noreferrer">>Arxiu de números ↗<</a>
+    </div>
+   </div>
+   <article class="journal-featured" aria-labelledby="featured-issue-title">
+    <a class="issue-cover" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer" aria-label="Llegir AI &amp; Antiquity, volum 2, número 2">
+     <img src="assets/ai-antiquity-vol2-issue2.webp" loading="lazy" decoding="async" alt="Cover of AI &amp; Antiquity, Volume 2, Issue 2 (2026), showing a stylised ancient helmet composition"/>
+    </a>
+    <div class="issue-copy">
+     <span class="feature-eyebrow">>NÚMERO DESTACAT · VOLUM 2.2 · 2026<</span>
+     <h3 id="featured-issue-title"><em>>Neurodiversity and Antiquity<</em></h3>
+     <p>>De les adaptacions individuals al disseny inclusiu: noves perspectives sobre la diversitat cognitiva, la participació acadèmica, la docència i l’avaluació en els estudis sobre l’Antiguitat, sense rebaixar l’exigència científica.<</p>
+     <a class="issue-read-link" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">>Explorar el número <<span aria-hidden="true">↗</span></a>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+ <section id="game-studies" class="games-landing-preview" aria-labelledby="games-title">
+ <span id="research" class="anchor-target" aria-hidden="true"></span>
+ <div class="container">
+  <div class="games-landing-wrap">
+   <a class="games-landing-image" href="game-studies-ca.html" aria-label="Explorar la línia de Game Studies del CIAW">
+    <img src="assets/playing-antiquity-banner.webp" loading="lazy" decoding="async" alt="Il·lustració panoràmica de Playing Antiquity amb mons de videojocs històrics i fantàstics"/>
+   </a>
+   <div class="games-landing-text">
+    <div class="badge badge-purple">>LÍNIA DE RECERCA<</div>
+    <h2 id="games-title">>Game Studies i Antiguitat<</h2>
+    <p>>Els videojocs no són simples representacions del món antic: les seves regles, narratives i interfícies creen <<strong>>interpretacions jugables de la història<</strong>>. El CIAW explora qüestions d’autoritat política, estructures socials, recepció clàssica i coneixement històric mitjançant l’estudi crític dels jocs.<</p>
+    <div class="games-focus-keywords"><span>>Agència històrica<</span><span>>Sistemes jugables<</span><span>>Recepció clàssica<</span></div>
+    <div class="section-actions">
+     <a href="game-studies-ca.html" class="btn btn-primary">>Explorar Game Studies al CIAW →<</a>
+     <a href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer" class="btn btn-outline">>Playing Antiquity · Convocatòria ↗<</a>
+    </div>
+    <p class="games-landing-note"><em>Playing Antiquity</em>> és la sèrie temàtica avaluada per parells que publica <<em>AI &amp; Antiquity</em>>, diferenciada de la línia de recerca més àmplia del CIAW. El primer número està previst per al juny de 2027; el termini d’enviament acaba el 28 de febrer de 2027.<</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+ <section id="neurodiversity" aria-labelledby="neuro-title">
+ <div class="container">
+  <div class="neuro-editorial">
+   <div class="neuro-editorial-copy">
+    <div class="badge badge-purple">>NEURODIVERSITAT DES DEL DISSENY<</div>
+    <h2 id="neuro-title">>Ments diferents. <<span class="gradient-text">>Millors humanitats.<</span></h2>
+    <p class="neuro-lead">>L’alumnat, el professorat i els investigadors neurodivergents aporten experiències i perspectives diverses als estudis sobre l’Antiguitat. La inclusió no consisteix simplement a oferir adaptacions individuals, sinó a dissenyar entorns acadèmics que valorin la diversitat cognitiva des del principi.<</p>
+    <p class="neuro-detail"><strong>>Els mateixos estàndards, vies diferents.<</strong>> Mantenim el rigor de l’anàlisi històrica mentre reduïm barreres cognitives, sensorials i socials innecessàries per a la participació.<</p>
+    <div class="neuro-principles">
+     <div><span class="principle-number">01</span><p><strong>>Contribució intel·lectual<</strong><span>>Reconèixer diverses maneres d’abordar les fonts, la interpretació i la feina acadèmica.<</span></p></div>
+     <div><span class="principle-number">02</span><p><strong>>Disseny inclusiu<</strong><span>>Expectatives clares, materials multimodals i vies flexibles per participar i demostrar l’aprenentatge.<</span></p></div>
+     <div><span class="principle-number">03</span><p><strong>>Suport digital responsable<</strong><span>>Fer servir críticament la IA i les tecnologies accessibles, sense renunciar al judici humà ni a la verificació de fonts.<</span></p></div>
+    </div>
+    <div class="section-actions">
+     <a class="btn btn-primary" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">>Llegir el número especial ↗<</a>
+     <a class="btn btn-outline" href="#teaching-resources">>Explorar recursos docents →<</a>
+    </div>
+   </div>
+   <figure class="neuro-figure">
+    <a href="https://ai-antiquity.org/index.php/ai/neurodiversity" target="_blank" rel="noopener noreferrer" aria-label="Veure la il·lustració original a AI &amp; Antiquity">
+     <img src="assets/arturo-galindo-neurodiversity.webp" loading="lazy" decoding="async" alt="Artwork by Arturo Galindo García: an ancient-style helmet made from contrasting golden, pale pink and blue sections, against delicate circular geometric patterns"/>
+    </a>
+    <figcaption>>Il·lustració original de <<strong>Arturo Galindo García</strong> (2026) · <em>AI &amp; Antiquity</em> · <a href="https://ai-antiquity.org/index.php/ai/neurodiversity" target="_blank" rel="noopener noreferrer">>Veure original ↗<</a></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+ <section id="outputs" class="ciaw-outputs" aria-labelledby="outputs-title">
+ <span id="projects" class="anchor-target" aria-hidden="true"></span><span id="activities" class="anchor-target" aria-hidden="true"></span>
+ <div class="container">
+  <div class="work-heading">
+   <div class="badge badge-green">>RECERCA · PUBLICACIÓ · PROJECTES<</div>
+   <h2 id="outputs-title">>Recerca i resultats<</h2>
+   <p>>Contribucions basades en la recerca sobre l’Antiguitat i la pedagogia inclusiva, amb enllaços als registres acadèmics.<</p>
+  </div>
+  <div class="outputs-grid">
+   <article class="output-card">
+    <div class="output-top"><span class="output-kind">>RECERCA AVALUADA PER PARELLS · 2026<</span><span class="output-number">01</span></div>
+    <h3>Same Standards, Different Pathways</h3>
+    <p class="output-subtitle">>Neurodiversitat, Història Antiga i alfabetització crítica en IA<</p>
+    <p class="output-authors">Isaías Arrayás Morales &amp; Carlos Heredia Chimeno · <em>AI &amp; Antiquity</em>> 2.2, p. 70–94<</p>
+    <a class="output-link" href="https://doi.org/10.64946/aiantiquity.v2i2.005" target="_blank" rel="noopener noreferrer">>Llegir l’article · DOI ↗<</a>
+   </article>
+   <article class="output-card">
+    <div class="output-top"><span class="output-kind">>PROJECTE D’INNOVACIÓ · 2025–2026<</span><span class="output-number">02</span></div>
+    <h3>Forgotten Voices in Antiquity</h3>
+    <p class="output-subtitle">>Projecte GI517492 · Universitat Autònoma de Barcelona<</p>
+    <p class="output-authors">>Docència inclusiva, experiències històriques marginades, crítica de fonts i alfabetització responsable en IA.<</p>
+    <a class="output-link" href="research-ca.html">>Recerca, projectes i publicacions →<</a>
+   </article>
+  </div>
+  <div class="section-actions research-more"><a class="btn btn-outline" href="research-ca.html">>Explorar tota la recerca i els recursos →<</a></div>
+ </div>
+</section>
+
+<section id="events" class="ciaw-events" aria-labelledby="events-title">
+ <div class="container">
+  <div class="events-layout">
+   <div class="events-intro">
+    <div class="badge badge-amber">>ACTIVITATS ACADÈMIQUES<</div>
+    <h2 id="events-title">>Activitats i recursos<</h2>
+    <p>>Seminaris, materials docents i intercanvi acadèmic, vinculats als estudis sobre l’Antiguitat i oberts al debat públic.<</p>
+    <a class="events-more" href="resources-ca.html">>Consultar recursos docents oberts ↗<</a>
+    <a class="events-more events-more-secondary" href="https://ai-antiquity.org/index.php/ai/events" target="_blank" rel="noopener noreferrer">>Programa d’activitats de la revista ↗<</a>
+   </div>
+   <div class="event-list">
+    <article class="event-entry event-upcoming event-featured">
+     <div class="event-date"><span>>NOV<</span><strong>24</strong><small>2026</small></div>
+     <div class="event-body">
+      <span class="event-state" id="seminar-state">>PROPER SEMINARI · L’ANTIGUITAT AL MÓN ACTUAL II<</span>
+      <h3 lang="ca">Antiguitat, extrema dreta i xarxes socials</h3>
+      <p>>Recepció clàssica, xarxes socials, moviments d’extrema dreta i IA generativa.<</p>
+      <div class="event-seminar-feature event-compact">
+       <a class="event-poster-thumb" href="1000002037_cleaned.webp" target="_blank" rel="noopener noreferrer" aria-label="Obrir el cartell original de les jornades">
+        <img src="1000002037_cleaned.webp" loading="lazy" decoding="async" width="1024" height="1449" alt="Cartell de les jornades del 24 de novembre de 2026 sobre Antiguitat, extrema dreta i xarxes socials"/>
+        <span>>Veure cartell ↗<</span>
+       </a>
+       <div class="event-seminar-facts">
+        <p><strong>>Data i horari<</strong><span>>24 de novembre de 2026 · 10.30–13.15 h<</span></p>
+        <p><strong>>Lloc<</strong><span>Sala de Graus · Facultat de Filosofia i Lletres (UAB)</span></p>
+        <p><strong>>Organitzen<</strong><span>UOC · UAB · CIAW</span></p>
+        <span class="event-programme-hint">>Programa complet disponible a sota ↓<</span>
+       </div>
+      </div>
+      <details class="event-programme-details">
+       <summary>>Veure el programa complet <<span aria-hidden="true">⌄</span></summary>
+       <div class="event-programme-content">
+        <ol class="event-sessions">
+         <li><time datetime="10:30">10.30–10.45</time><div><strong lang="ca">Presentació de les jornades</strong><span>Carlos Heredia i Marc Mendoza (UAB)</span></div></li>
+         <li><time datetime="10:45">10.45–11.25</time><div><strong lang="ca">De Roma al <em>feed</em>: com l’extrema dreta resignifica l’Antiguitat a les xarxes socials</strong><span>Laura Pérez Altabe (UPF)</span></div></li>
+         <li><time datetime="11:25">11.25–12.05</time><div><strong lang="es">Apropiaciones de la Antigüedad en el contexto actual de auge de las ultraderechas y de la IA generativa</strong><span>Oskar Aguado (EHU)</span></div></li>
+         <li><time datetime="12:05">12.05–12.45</time><div><strong lang="ca"><em>Iosephus Maria ad portas</em>: l’extrema dreta catalana més enllà d’Ítaca</strong><span>Marc Mendoza (UAB)</span></div></li>
+         <li><time datetime="12:45">12.45–13.15</time><div><strong lang="ca">>Debat final<</strong></div></li>
+        </ol>
+        <p class="event-programme-support">>Amb el suport de: Facultat de Filosofia i Lletres (UAB); Màster Universitari de la Mediterrània Antiga (UOC–UAB–UAH); Center for Innovation in Ancient Worlds (CIAW).<</p>
+       </div>
+      </details>
+     </div>
+    </article>
+    <article class="event-entry event-past-compact">
+     <div class="event-date"><span>>MAIG<</span><strong>06</strong><small>2026</small></div>
+     <div class="event-body">
+      <span class="event-state event-past">>CELEBRAT · UAB<</span>
+      <h3>>Innovació i tecnologia en l’ensenyament de la Història Antiga<</h3>
+      <a href="https://ai-antiquity.org/index.php/ai/events" target="_blank" rel="noopener noreferrer">>Informació sobre les jornades ↗<</a>
+     </div>
+    </article>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="people" class="ciaw-people" aria-labelledby="people-title">
+ <div class="container">
+  <div class="people-heading">
+   <div class="people-heading-copy">
+    <div class="badge">>L’EQUIP DEL CIAW<</div>
+    <h2 id="people-title">>Qui som<</h2>
+    <p>>El CIAW reuneix activitat acadèmica i editorial arrelada a Catalunya i vinculada a la <<strong>Universitat Autònoma de Barcelona (UAB)</strong>>, juntament amb col·laboradors d’altres institucions. El centre continua sent una iniciativa independent i sense ànim de lucre.<</p>
+   </div>
+   <a class="people-directory" href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer">>Consultar l’equip editorial de la revista ↗<</a>
+  </div>
+  <div class="people-grid">
+   <article class="person-card">
+    <span class="person-number" aria-hidden="true">01</span>
+    <div class="person-monogram" aria-hidden="true">CH</div>
+    <h3>Carlos Heredia Chimeno</h3>
+    <p class="person-role">>Fundador del CIAW · Editor en cap d’ <<em>AI &amp; Antiquity</em></p>
+    <p class="person-affiliation">>Història Antiga · Universitat Autònoma de Barcelona<</p>
+    <div class="profile-links"><a href="https://portalrecerca.uab.cat/es/persons/carlos-heredia-chimeno/" target="_blank" rel="noopener noreferrer">>Perfil UAB ↗<</a><a href="https://orcid.org/0000-0003-2866-5883" target="_blank" rel="noopener noreferrer">ORCID ↗</a></div>
+   </article>
+   <article class="person-card">
+    <span class="person-number" aria-hidden="true">02</span>
+    <div class="person-monogram" aria-hidden="true">IA</div>
+    <h3>Isaías Arrayás Morales</h3>
+    <p class="person-role">>Col·laboració acadèmica · Editor associat d’ <<em>AI &amp; Antiquity</em></p>
+    <p class="person-affiliation">>Història Antiga · Universitat Autònoma de Barcelona<</p>
+    <div class="profile-links"><a href="https://portalrecerca.uab.cat/es/persons/isaias-arrayas-morales-3/" target="_blank" rel="noopener noreferrer">>Perfil UAB ↗<</a><a href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer">>Càrrec editorial ↗<</a></div>
+   </article>
+   <article class="person-card">
+    <span class="person-number" aria-hidden="true">03</span>
+    <div class="person-monogram" aria-hidden="true">SS</div>
+    <h3>Sílvia Swan</h3>
+    <p class="person-role">>Col·laboració editorial · Editora associada d’ <<em>AI &amp; Antiquity</em></p>
+    <p class="person-affiliation">Universidad Europea de Madrid</p>
+    <div class="profile-links"><a href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer">>Perfil editorial verificat ↗<</a></div>
+   </article>
+  </div>
+  <div class="governance-note">
+   <div><span class="governance-label">>COM FUNCIONA EL CIAW<</span><h3>>Independent per disseny. Col·laboratiu a la pràctica.<</h3></div>
+   <p>>El CIAW és una iniciativa acadèmica independent i sense ànim de lucre, <<strong>>no un departament de la UAB ni de cap altra universitat<</strong>>. Els seus col·laboradors mantenen les seves pròpies afiliacions acadèmiques. Els càrrecs editorials, els enviaments i les decisions d’avaluació per parells corresponen a <<em>AI &amp; Antiquity</em>> i segueixen <<a href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer">>l’estructura publicada de la revista ↗<</a>>. Per a col·laboracions i consultes, <<a href="#contact">>contacta amb el CIAW<</a>.</p>
+  </div>
+
+ </div>
+</section>
+
+ <section id="teaching-resources" class="resources-summary" aria-labelledby="resources-title">
+ <div class="container">
+  <div class="resources-teaser">
+   <div>
+    <div class="badge badge-purple">>RECURSOS DOCENTS OBERTS<</div>
+    <h2 id="resources-title">>Recursos docents<</h2>
+    <p>>Consulta les nostres tres infografies basades en la recerca sobre aprenentatge inclusiu, perspectives històriques i alfabetització crítica en IA. Els materials reflecteixen una fase anterior del projecte GI517492; l’enfocament revisat s’explica a l’estudi científic posterior.<</p>
+    <div class="section-actions">
+     <a class="btn btn-primary" href="resources-ca.html">>Consultar totes les guies →<</a>
+     <a class="btn btn-outline" href="https://doi.org/10.5281/zenodo.21763472" target="_blank" rel="noopener noreferrer">>Citar els recursos · DOI ↗<</a>
+    </div>
+   </div>
+   <a class="resource-teaser-img" href="resources-ca.html" aria-label="Explorar els recursos docents del CIAW">
+    <img loading="lazy" src="files/info2.webp" alt="Vista prèvia de les infografies docents inclusives del CIAW"/>
+   </a>
+  </div>
+ </div>
+</section>
+
+ <section id="contact" aria-labelledby="contact-title">
+  <div class="container">
+   <div class="contact-panel">
+    <div class="badge">>COL·LABORA<</div>
+    <h2 id="contact-title">>Col·labora amb el CIAW<</h2>
+    <p>>Donem la benvinguda a les aliances acadèmiques, les col·laboracions de recerca i les iniciatives educatives. Per a consultes sobre el CIAW, contacta amb Carlos Heredia Chimeno mitjançant la seva <<strong>>adreça acadèmica pública de la UAB<</strong>>. Per a manuscrits i consultes editorials, utilitza la pàgina oficial de contacte de la revista.<</p>
+    <div class="section-actions">
+     <a href="mailto:carlos.heredia@uab.cat" class="btn btn-primary">>Contactar amb el CIAW →<</a>
+     <a href="https://ai-antiquity.org/index.php/ai/contact" class="btn btn-outline" target="_blank" rel="noopener noreferrer">>Contacte editorial de la revista ↗<</a>
+    </div>
+   </div>
+  </div>
+ </section>
+</main>
+
+<footer class="footer-short">
+ <div class="container footer-inner">
+  <div>
+   <strong>CIAW · Center for Innovation in Ancient Worlds</strong>
+   <p>>Iniciativa acadèmica independent sense ànim de lucre · Amb seu a Catalunya, Espanya · Fundada el 2025 · © <<span id="year">2026</span></p>
+  </div>
+  <div class="footer-links">
+   <a href="#about">>Qui som<</a><a href="#people">>Equip<</a><a href="research-ca.html">>Recerca i resultats<</a>
+   <a href="resources-ca.html">>Recursos<</a>
+   <a href="ca.html" lang="ca">Català</a><a href="es.html" lang="es">>Castellà<</a>
+   <a href="#contact">>Contacte<</a><a href="privacy-ca.html">>Privacitat<</a>
+  </div>
+ </div>
+</footer>
+
 <script>
-(function(){
- const btn=document.getElementById('ciaw-menu-toggle');
- const menu=document.getElementById('ciaw-mobile-menu');
- if(!btn||!menu)return;
- function setOpen(open){
-  menu.classList.toggle('active',open);
-  btn.setAttribute('aria-expanded',String(open));
-  btn.setAttribute('aria-label',open?"Tancar el menú de navegació":"Obrir el menú de navegació");
-  btn.textContent=open?'✕':'☰';
- }
- btn.addEventListener('click',()=>setOpen(!menu.classList.contains('active')));
- menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
- document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false);});
-})();
+const seminarState=document.getElementById('seminar-state');
+if(seminarState && new Date() >= new Date('2026-11-25T00:00:00+01:00')) seminarState.textContent='SEMINARI CELEBRAT · L’ANTIGUITAT AL MÓN ACTUAL II';
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
+const header = document.getElementById('main-header');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
+const btn = document.getElementById('mobile-menu-btn');
+const menu = document.getElementById('mobile-menu');
+function setMenu(open) {
+ menu.classList.toggle('active', open);
+ btn.setAttribute('aria-expanded', String(open));
+ btn.setAttribute('aria-label', open ? 'Tancar el menú de navegació' : 'Obrir el menú de navegació');
+ btn.textContent = open ? '✕' : '☰';
+}
+btn.addEventListener('click', () => setMenu(!menu.classList.contains('active')));
+menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => {if (e.key === 'Escape') setMenu(false);});
 </script>
 </body>
 </html>
