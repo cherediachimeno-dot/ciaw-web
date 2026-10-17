@@ -1,0 +1,70 @@
+name: Find original CIAW logo from public profile mirrors
+on:
+  push:
+    paths: [".github/workflows/find-ciaw-profile-logo.yml"]
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip -q install requests pillow beautifulsoup4
+      - name: Check publicly accessible profile metadata mirrors
+        run: |
+          python - <<'PY'
+          import requests,re,json,io,html
+          from bs4 import BeautifulSoup
+          from pathlib import Path
+          from PIL import Image
+          urls=[
+           'https://r.jina.ai/https://independent.academia.edu/AIAntiquity',
+           'https://r.jina.ai/http://independent.academia.edu/AIAntiquity',
+           'https://r.jina.ai/https://www.academia.edu/AIAntiquity',
+           'https://independent.academia.edu/AIAntiquity?utm_source=none',
+           'https://ai-antiquity.org/index.php/ai/ciaw',
+           'https://web.archive.org/web/20260000000000id_/https://independent.academia.edu/AIAntiquity'
+          ]
+          s=requests.Session()
+          s.headers.update({'User-Agent':'Googlebot'})
+          for url in urls:
+            try:
+              r=s.get(url,timeout=30)
+              print('SOURCE',url,'STATUS',r.status_code,'LEN',len(r.content),'TYPE',r.headers.get('content-type'))
+              if r.status_code!=200:continue
+              txt=r.text
+              print('FIRST_TEXT',repr(txt[:500]))
+              if 'academia' in url:
+                lines=[x for x in txt.splitlines() if any(t in x.lower() for t in ['profile picture','profile photo','avatar','photo','academia-photos','og:image','profile_pic','s3.amazonaws.com'])]
+                print('INTERESTING',json.dumps(lines[:22],ensure_ascii=False)[:6000])
+              soup=BeautifulSoup(txt,'html.parser')
+              candidates=[]
+              for m in soup.find_all('meta'):
+                if 'image' in str(m):
+                  print('META',str(m)[:700])
+                  if m.get('content'):candidates.append(m.get('content'))
+              for img in soup.find_all('img'):
+                print('IMAGE',str(img)[:600])
+                if img.get('src'): candidates.append(img.get('src'))
+              for link in re.findall(r'https?://[^\s"\'<>()]+',txt):
+                if any(k in link.lower() for k in ('academia-photos','academia-assets','profile','avatar')):
+                  print('LINK',link[:350])
+                  if re.search(r'\.(png|jpg|jpeg|webp)(\?|$)',link,re.I):candidates.append(link)
+              for n,src in enumerate(dict.fromkeys(candidates)):
+                if n>15: break
+                try:
+                  img=s.get(src,timeout=18)
+                  im=Image.open(io.BytesIO(img.content))
+                  print('DOWNLOADED',src[:240],im.size,im.format)
+                  if 150<=im.width<=2000 and 150<=im.height<=2000 and 0.7<=im.width/im.height<=1.4:
+                    dest=Path('assets')/('academia-profile-verify-'+str(len(list(Path('assets').glob('academia-profile-verify-*')))+1)+'.png')
+                    im.convert('RGBA').save(dest)
+                except Exception as e:print('FAILED_IMG',str(e)[:90])
+            except Exception as e:print('ERROR',url,str(e)[:250])
+          PY
+      - name: Save any discovered profile images
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/academia-profile-verify-* || true
+          git diff --cached --quiet || (git commit -m 'Inspect Academia profile imagery for CIAW logo' && git push)
