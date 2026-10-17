@@ -168,35 +168,44 @@ def translate_body(source: str, translations: dict) -> tuple[str, list[str]]:
             if key not in PRESERVED and not key.isnumeric():
                 missing.add(key)
             return match.group(0)
-        return '>' + before + value + after + '<'
+        return before + value + after
     html = TEXT_NODE.sub(translate_node, html)
     for i, blob in enumerate(placeholders):
         html = html.replace(f'__CIAW_SCRIPT_STYLE_{i}__', blob)
     return html, sorted(missing)
 
 
-def replace_local_links(html, lang):
+def replace_local_links(html, lang, page):
+    """Preserve the equivalent target page when switching languages."""
     for src, destinations in PAGE_NAMES.items():
         html = html.replace('href="' + src + '"', 'href="' + destinations[lang] + '"')
         html = html.replace('href="' + src + '#', 'href="' + destinations[lang] + '#')
-    # The language menu must always link to the correct language.
-    english_home = PAGE_NAMES['index.html'][lang]
-    html = html.replace('href="' + english_home + '" lang="en"', 'href="index.html" lang="en"')
-    if 'href="index.html" lang="en"' not in html:
-        # English home uses a non-interactive current-language span instead.
-        html = html.replace('<span class="current" aria-label="English version">EN</span>',
-                            '<a href="index.html" lang="en">EN</a>')
-        html = html.replace('EN · <a href="ca.html"', '<a href="index.html" lang="en">EN</a> · <a href="ca.html"')
-        html = html.replace('<span>EN</span> · <a href="ca.html"', '<a href="index.html" lang="en">EN</a> · <a href="ca.html"')
-    # Active local-language control.
-    target = 'ca' if lang == 'ca' else 'es'
-    current = '<a href="' + target + '.html" lang="' + target + '">' + target.upper() + '</a>'
-    # Preserve all other links and use the same structure/CSS.
-    html = html.replace(current, '<span aria-current="page">' + target.upper() + '</span>')
-    # English-only menu line in the mobile version.
-    html = html.replace('href="index.html" lang="en">EN</a> ·', 'href="index.html" lang="en">EN</a> ·')
-    return html
 
+    # The original English page often uses a static EN current-language element.
+    english_target = page
+    html = html.replace('<span class="current" aria-label="English version">EN</span>',
+                        '<a href="' + english_target + '" lang="en">EN</a>')
+    html = html.replace('<span aria-current="page">EN</span>',
+                        '<a href="' + english_target + '" lang="en">EN</a>')
+    html = html.replace('EN · <a href="ca.html"',
+                        '<a href="' + english_target + '" lang="en">EN</a> · <a href="ca.html"')
+    html = html.replace('<span>EN</span> · <a href="ca.html"',
+                        '<a href="' + english_target + '" lang="en">EN</a> · <a href="ca.html"')
+
+    # Language switching within a subject page points to the equivalent page,
+    # not to the other language's homepage.
+    for other in ('ca', 'es'):
+        target = PAGE_NAMES[page][other]
+        if target != other + '.html':
+            html = html.replace('href="' + other + '.html" lang="' + other + '"',
+                                'href="' + target + '" lang="' + other + '"')
+    active_href = PAGE_NAMES[page][lang]
+    active = '<a href="' + active_href + '" lang="' + lang + '">' + lang.upper() + '</a>'
+    html = html.replace(active, '<span aria-current="page">' + lang.upper() + '</span>')
+    # The older homepage mobile menu uses the full language names.
+    active_mobile = '<a href="' + active_href + '" lang="' + lang + '">' + ('Català' if lang=='ca' else 'Castellano') + '</a>'
+    html = html.replace(active_mobile, '<span aria-current="page">' + ('Català' if lang=='ca' else 'Castellano') + '</span>')
+    return html
 
 def translate_attributes(html, lang):
     attrs = ALT[lang]
@@ -216,7 +225,7 @@ def localize(source, page, lang):
     if missing:
         raise ValueError(f'{page} [{lang}] has {len(missing)} untranslated visible strings:\n' + '\n'.join(missing))
     html = translate_attributes(html, lang)
-    html = replace_local_links(html, lang)
+    html = replace_local_links(html, lang, page)
     html = html.replace('<html lang="en">', '<html lang="' + lang + '">', 1)
     # Localised metadata and discoverable alternate versions.
     html = re.sub(r'(<title>).*?(</title>)', lambda m:m.group(1) + TITLES[page][lang=='ca'] + m.group(2), html, count=1, flags=re.S)
