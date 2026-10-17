@@ -12,12 +12,40 @@
 <link rel="alternate" hreflang="en" href="https://ciaw.es/"/><link rel="alternate" hreflang="es" href="https://ciaw.es/es.html"/><link rel="alternate" hreflang="ca" href="https://ciaw.es/ca.html"/>
 </head>
 <body class="locale-site">
-<header class="site-head"><div class="container">
-<a class="site-name" href="index.html">CIAW · Center for Innovation in Ancient Worlds</a>
-<nav class="site-nav" aria-label="Site navigation">
-<a href="index.html">Home</a><a href="research.html">Recerca</a><a href="seminar-2026.html">Jornades</a><a href="resources.html">Recursos</a>
-<span class="langs">Llengua: <a href="index.html" lang="en">EN</a><strong aria-current="page">CA</strong><a href="es.html" lang="es">ES</a></span>
-</nav></div></header>
+<header class="ciaw-shared-header">
+ <div class="container">
+  <nav class="ciaw-header-nav" aria-label="Navegació principal">
+   <a class="ciaw-header-brand" href="index.html" aria-label="CIAW — inici">
+    <img src="assets/ciaw-header-logo.png" alt="CIAW · Center for Innovation in Ancient Worlds" width="250" height="46" fetchpriority="high"/>
+   </a>
+   <div class="ciaw-header-links">
+    <a href="index.html#about">About &amp; People</a>
+    <a href="research.html">Research &amp; Outputs</a>
+    <a href="index.html#journal">AI &amp; Antiquity</a>
+    <a href="index.html#game-studies">Game Studies</a>
+    <a href="index.html#neurodiversity">Neurodiversity</a>
+    <a href="index.html#events">Events &amp; Resources</a>
+    <span class="ciaw-header-langs" aria-label="Idioma">
+     <a href="index.html" lang="en">EN</a>
+     <span aria-current="page">CA</span>
+     <a href="es.html" lang="es">ES</a>
+    </span>
+    <a class="ciaw-header-cta" href="index.html#contact">Collaborate</a>
+   </div>
+   <button id="ciaw-menu-toggle" type="button" class="ciaw-menu-toggle" aria-expanded="false" aria-controls="ciaw-mobile-menu" aria-label="Obrir el menú de navegació">☰</button>
+   <div id="ciaw-mobile-menu" class="ciaw-mobile-menu">
+    <a href="index.html#about">About &amp; People</a>
+    <a href="research.html">Research &amp; Outputs</a>
+    <a href="index.html#journal">AI &amp; Antiquity</a>
+    <a href="index.html#game-studies">Game Studies</a>
+    <a href="index.html#neurodiversity">Neurodiversity</a>
+    <a href="index.html#events">Events &amp; Resources</a>
+    <a href="index.html#contact" class="ciaw-header-cta">Collaborate</a>
+    <div class="ciaw-mobile-langs"><a href="index.html" lang="en">English</a> · <a href="ca.html" lang="ca" aria-current="page">Català</a> · <a href="es.html" lang="es">Castellano</a></div>
+   </div>
+  </nav>
+ </div>
+</header>
 <main>
 <section class="subhero locale-hero">
  <div class="container locale-hero-grid">
@@ -56,5 +84,21 @@
 <a class="btn btn-outline" href="index.html#people">Perfils acadèmics →</a>
 <h2>Contacte i col·laboració</h2><p>Per a consultes acadèmiques o propostes de col·laboració, pots escriure a Carlos Heredia Chimeno a l'adreça institucional indicada a continuació. <a class="locale-text-link" href="mailto:carlos.heredia@uab.cat">Escriure al CIAW ↗</a>.</p></div></div></main>
 <footer class="site-foot"><div class="container"><span>CIAW · Independent academic initiative based in Catalonia, Spain · Founded 2025</span><span><a href="index.html#people">People</a><a href="index.html#contact">Contact</a><a href="privacy.html">Privacy</a></span></div></footer>
+<script>
+(function(){
+ const btn=document.getElementById('ciaw-menu-toggle');
+ const menu=document.getElementById('ciaw-mobile-menu');
+ if(!btn||!menu)return;
+ function setOpen(open){
+  menu.classList.toggle('active',open);
+  btn.setAttribute('aria-expanded',String(open));
+  btn.setAttribute('aria-label',open?"Tancar el menú de navegació":"Obrir el menú de navegació");
+  btn.textContent=open?'✕':'☰';
+ }
+ btn.addEventListener('click',()=>setOpen(!menu.classList.contains('active')));
+ menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false);});
+})();
+</script>
 </body>
 </html>
