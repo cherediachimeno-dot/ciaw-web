@@ -1,0 +1,3018 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>CIAW | Center for Innovation in Ancient Worlds</title>
+<meta content="Inclusive innovation, neurodiversity and responsible AI for Ancient Studies." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+
+:root{
+
+--bg:#f8fafc;
+--surface:#ffffff;
+
+--text:#0f172a;
+--muted:#64748b;
+
+--blue:#2563eb;
+--blue-dark:#1d4ed8;
+--blue-light:#eff6ff;
+
+--green:#059669;
+--green-light:#ecfdf5;
+
+--purple:#7c3aed;
+--purple-light:#f5f3ff;
+
+--amber:#d97706;
+--amber-light:#fffbeb;
+
+--border:#e2e8f0;
+
+--radius:20px;
+
+--shadow-sm:0 4px 12px rgba(15,23,42,.03);
+--shadow-md:0 12px 32px rgba(15,23,42,.06);
+--shadow-lg:0 20px 40px rgba(15,23,42,.1);
+
+--max:1200px;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+html,
+body{
+    overflow-x:hidden;
+    width:100%;
+}
+
+body{
+
+font-family:Inter,sans-serif;
+
+background:var(--bg);
+
+color:var(--text);
+
+line-height:1.7;
+
+-webkit-font-smoothing:antialiased;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+.container{
+
+width:min(var(--max),92%);
+
+margin:auto;
+
+}
+
+section{
+
+padding:100px 0;
+position:relative;
+
+}
+
+h1{
+
+font-size:clamp(2.8rem,6.5vw,4.8rem);
+
+line-height:1.1;
+
+font-weight:800;
+
+letter-spacing:-0.03em;
+
+}
+
+h2{
+
+font-size:clamp(2rem,3.8vw,2.8rem);
+
+margin-bottom:18px;
+letter-spacing:-0.02em;
+
+}
+
+p{
+
+color:var(--muted);
+
+}
+
+.gradient-text{
+background:linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+button,.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:14px 28px;
+
+border-radius:999px;
+
+font-weight:600;
+
+transition:all .3s cubic-bezier(0.16, 1, 0.3, 1);
+
+}
+
+.btn-primary{
+
+background:var(--blue);
+
+color:white;
+box-shadow:0 8px 20px rgba(37,99,235,.25);
+
+}
+
+.btn-primary:hover{
+
+background:var(--blue-dark);
+
+transform:translateY(-2px);
+
+box-shadow:0 12px 28px rgba(37,99,235,.38);
+
+}
+
+.btn-outline{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 28px;
+    border-radius:999px;
+    border:2px solid rgba(255,255,255,.6);
+    background:rgba(255,255,255,.05);
+    color:#ffffff;
+    font-weight:600;
+    text-decoration:none;
+    backdrop-filter:blur(8px);
+    transition:all .3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-outline:hover{
+    background:#ffffff;
+    color:#0f172a;
+    border-color:#ffffff;
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+header{
+
+position:fixed;
+top:0;
+width:100%;
+height:90px;
+
+backdrop-filter:blur(20px);
+background:rgba(255,255,255,.85);
+
+border-bottom:1px solid rgba(226,232,240,.7);
+
+z-index:999;
+transition:all .3s ease;
+
+}
+
+header.scrolled{
+height:76px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+nav{
+
+height:100%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+    .logo{
+    height:120px;
+    width:auto;
+    display:block;
+    object-fit:contain;
+    transform-origin:left center;
+    transition:all .3s ease;
+}
+
+header.scrolled .logo{
+    height:75px;
+}
+
+.menu{
+
+display:flex;
+
+align-items:center;
+
+gap:28px;
+
+font-size:.92rem;
+
+font-weight:600;
+
+}
+
+.menu a{
+
+color:#475569;
+position:relative;
+padding:6px 0;
+transition:color .25s ease;
+
+}
+
+.menu a::after{
+content:'';
+position:absolute;
+bottom:0;
+left:0;
+width:0;
+height:2px;
+background:var(--blue);
+border-radius:2px;
+transition:width .25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu a:hover{
+
+color:var(--blue);
+
+}
+
+.menu a:hover::after{
+width:100%;
+}
+
+.menu a.nav-cta{
+background:var(--blue-light);
+color:var(--blue);
+padding:8px 18px;
+border-radius:999px;
+transition:all .25s ease;
+}
+
+.menu a.nav-cta::after{
+display:none;
+}
+
+.menu a.nav-cta:hover{
+background:var(--blue);
+color:white;
+transform:translateY(-1px);
+}
+
+.hero{
+
+position:relative;
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+overflow:hidden;
+
+padding-top:110px;
+
+background:
+
+linear-gradient(rgba(15,23,42,.65),rgba(15,23,42,.75)),
+
+url("banner.png")
+
+center/cover no-repeat;
+
+}
+
+/* Glow Effect */
+.glow-orb{
+position:absolute;
+border-radius:50%;
+filter:blur(90px);
+pointer-events:none;
+z-index:1;
+}
+
+.hero-glow-1{
+width:500px;
+height:500px;
+background:rgba(37,99,235,.25);
+top:-100px;
+right:-100px;
+}
+
+.hero-glow-2{
+width:400px;
+height:400px;
+background:rgba(124,58,237,.2);
+bottom:-50px;
+left:-100px;
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:820px;
+
+color:white;
+
+}
+
+.kicker{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:8px 12px;
+
+padding:8px 20px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(16px);
+
+border:1px solid rgba(255,255,255,.2);
+
+margin-bottom:28px;
+
+font-size:.82rem;
+
+font-weight:700;
+
+letter-spacing:.08em;
+
+text-transform:uppercase;
+
+color:#ffffff;
+
+box-shadow:0 4px 15px rgba(0,0,0,.1);
+
+max-width:100%;
+
+text-align:center;
+
+}
+
+.hero p{
+
+margin:28px 0 42px;
+
+font-size:1.22rem;
+
+color:rgba(241,245,249,.92);
+
+font-weight:400;
+
+line-height:1.8;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+margin-bottom:60px;
+
+}
+
+.hero-glass{
+
+background:rgba(255,255,255,.07);
+
+backdrop-filter:blur(24px);
+
+border:1px solid rgba(255,255,255,.18);
+
+padding:32px;
+
+border-radius:24px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+
+}
+
+.hero-glass div{
+
+text-align:center;
+
+position:relative;
+
+}
+
+.hero-glass div:not(:last-child)::after{
+content:'';
+position:absolute;
+right:-10px;
+top:20%;
+height:60%;
+width:1px;
+background:rgba(255,255,255,.15);
+}
+
+.hero-glass strong{
+
+display:block;
+
+font-size:1.6rem;
+
+color:white;
+
+margin-bottom:6px;
+
+font-weight:700;
+
+}
+
+.hero-glass span{
+
+font-size:.88rem;
+
+color:rgba(255,255,255,.8);
+
+}
+
+.section-intro{
+
+max-width:760px;
+
+margin-bottom:60px;
+
+}
+
+.grid{
+
+display:grid;
+
+gap:28px;
+
+}
+
+.grid-2{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.grid-3{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+.card{
+
+background:var(--surface);
+
+padding:36px;
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow-sm);
+
+border:1px solid var(--border);
+
+transition:all .35s cubic-bezier(0.16, 1, 0.3, 1);
+
+position:relative;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:var(--shadow-lg);
+
+border-color:rgba(37,99,235,.3);
+
+}
+
+.card img{
+transition:transform .5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover img{
+transform:scale(1.03);
+}
+
+/* Badges con Colores por Categorías */
+.badge{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:6px 14px;
+
+border-radius:999px;
+
+background:var(--blue-light);
+
+color:var(--blue);
+
+font-weight:700;
+
+font-size:.78rem;
+
+letter-spacing:.03em;
+
+text-transform:uppercase;
+
+margin-bottom:20px;
+
+}
+
+.badge-purple{
+background:var(--purple-light);
+color:var(--purple);
+}
+
+.badge-green{
+background:var(--green-light);
+color:var(--green);
+}
+
+.badge-amber{
+background:var(--amber-light);
+color:var(--amber);
+}
+
+/* Botón outline sobre fondo claro */
+#contact .btn-outline{
+
+    border:2px solid var(--blue);
+    color:var(--blue);
+    background:transparent;
+
+}
+
+#contact .btn-outline:hover{
+
+    background:var(--blue);
+    color:white;
+    border-color:var(--blue);
+
+}
+
+/* Animaciones Scroll */
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:all .7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:900px){
+
+    #teaching-resources .card > div{
+    grid-template-columns:1fr !important;
+}
+
+#teaching-resources img{
+    height:280px !important;
+}
+    
+.menu{
+
+display:none;
+
+}
+
+.grid-2,
+
+.grid-3,
+
+.hero-glass{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-glass div:not(:last-child)::after{
+display:none;
+}
+
+.hero{
+
+padding-top:120px;
+
+}
+
+#projects .card > div{
+    grid-template-columns:1fr !important;
+    gap:24px !important;
+}
+
+#projects .card img{
+    width:100%;
+    max-width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+#research .grid > .card{
+margin-bottom:35px;
+}
+
+#research img{
+display:block;
+width:100%;
+border-radius:16px;
+height:240px !important;
+}
+
+#research .card > div{
+grid-template-columns:1fr !important;
+}
+
+}
+
+@media(max-width:600px){
+.kicker {
+    padding: 8px 14px;
+    font-size: .75rem;
+    border-radius: 16px;
+    gap: 4px 8px;
+}
+}
+
+    /* Oculto en escritorio */
+.mobile-view-full{
+    display:none;
+}
+
+/* Solo móvil */
+@media (max-width:900px){
+
+.mobile-view-full{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:0 0 14px;
+
+    padding:10px 16px;
+
+    background:var(--blue);
+
+    color:#fff;
+
+    border-radius:999px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.mobile-view-full:hover{
+
+    background:var(--blue-dark);
+
+}
+
+}
+
+    /* ==========================
+ MOBILE MENU
+========================== */
+
+.mobile-menu-btn{
+
+display:none;
+
+background:none;
+
+border:none;
+
+font-size:2rem;
+
+color:var(--text);
+
+cursor:pointer;
+
+padding:5px;
+
+}
+
+
+/* menú móvil oculto */
+
+.mobile-menu{
+
+display:none;
+
+position:absolute;
+
+top:90px;
+
+left:0;
+
+width:100%;
+
+background:white;
+
+border-top:1px solid var(--border);
+
+box-shadow:var(--shadow-md);
+
+padding:25px;
+
+flex-direction:column;
+
+gap:18px;
+
+z-index:998;
+
+}
+
+
+.mobile-menu a{
+
+font-weight:600;
+
+color:#475569;
+
+padding:10px 0;
+
+}
+
+
+/* botón colaborar */
+
+.mobile-menu .nav-cta{
+
+background:var(--blue-light);
+
+color:var(--blue);
+
+padding:12px 20px;
+
+border-radius:999px;
+
+text-align:center;
+
+}
+
+
+/* versión móvil */
+
+@media(max-width:900px){
+
+.mobile-menu-btn{
+
+display:block;
+
+}
+
+
+.menu{
+
+display:none;
+
+}
+
+
+.mobile-menu.active{
+
+display:flex;
+
+}
+
+}
+
+    @media(max-width:900px){
+
+    .logo{
+        height:90px;
+        width:auto;
+    }
+
+    header{
+        height:100px;
+    }
+
+    header.scrolled{
+        height:80px;
+    }
+
+    header.scrolled .logo{
+        height:70px;
+    }
+
+}
+
+    @media(max-width:900px){
+
+.mobile-menu-btn{
+
+    font-size:2.2rem;
+    margin-right:5px;
+
+}
+
+}
+
+    @media(max-width:900px){
+
+.logo{
+    height:120px;
+    transform:scale(1.8);
+    transform-origin:left center;
+}
+
+}
+
+</style>
+</head>
+<body>
+<header id="main-header">
+<div class="container">
+<nav>
+<a href="#">
+<img alt="CIAW Logo" class="logo" src="logo.png"/>
+</a>
+<div class="menu">
+<a href="#mission">Mission</a>
+<a href="#journal">Journal</a>
+<a href="#projects">Projects</a>
+<a href="#teaching-resources">Teaching Guides</a>
+<a href="#research">Research</a>
+<a href="#neurodiversity">Neurodiversity</a>
+<a href="#values">Values</a>
+<a class="nav-cta" href="#contact">Collaborate</a>
+</div>
+<button class="mobile-menu-btn" id="mobile-menu-btn">
+    ☰
+</button>
+<div class="mobile-menu" id="mobile-menu">
+<a href="#mission">Mission</a>
+<a href="#journal">Journal</a>
+<a href="#activities">Activities</a>
+<a href="#projects">Projects</a>
+<a href="#teaching-resources">Teaching Guides</a>
+<a href="#research">Research</a>
+<a href="#neurodiversity">Neurodiversity</a>
+<a href="#values">Values</a>
+<a class="nav-cta" href="#contact">Collaborate</a>
+</div>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="glow-orb hero-glow-1"></div>
+<div class="glow-orb hero-glow-2"></div>
+<div class="container">
+<div class="hero-content">
+<div class="kicker">
+<span>Innovation</span> • <span>Neurodiversity</span> • <span>Responsible AI</span>
+</div>
+<h1>
+
+Reimagining Ancient Studies
+through <span class="gradient-text">Inclusive Innovation</span>
+</h1>
+<p>
+
+CIAW is an international non-profit centre advancing Ancient Studies through inclusive pedagogy, neurodiversity-aware design, responsible artificial intelligence, and evidence-based academic innovation.
+
+We promote open knowledge, interdisciplinary collaboration, and learning environments that protect academic integrity, academic freedom, and professional dignity. CIAW opposes workplace bullying, harassment, intimidation, defamation, exclusionary practices, coordinated reputational attacks, and the misuse of digital technologies—including artificial intelligence—to marginalise, silence, or discredit members of the scholarly community.
+
+</p>
+<div class="hero-buttons">
+<a class="btn btn-primary" href="#mission">
+
+Explore CIAW →
+
+</a>
+<a class="btn btn-outline" href="#contact">
+
+Get involved
+
+</a>
+</div>
+<div class="hero-glass">
+<div>
+<strong>Inclusive</strong>
+<span>Neurodiversity by Design</span>
+</div>
+<div>
+<strong>Responsible AI</strong>
+<span>Transparent &amp; Ethical</span>
+</div>
+<div>
+<strong>Open Science</strong>
+<span>Accessible Knowledge</span>
+</div>
+<div>
+<strong>Integrity</strong>
+<span>Evidence before Narratives</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================
+MISSION
+========================= -->
+<section id="mission">
+<div class="container">
+<div class="section-intro reveal">
+<div class="badge">
+OUR MISSION
+</div>
+<h2>
+Building the Future of Ancient Studies
+</h2>
+<p>
+
+CIAW develops innovative methodologies for teaching, research and public engagement
+that combine humanities scholarship with responsible digital technologies.
+
+Our work places neurodiversity, accessibility, academic integrity and open
+collaboration at the centre of educational innovation.
+
+</p>
+</div>
+<div class="grid grid-2">
+<div class="card reveal">
+<h3>
+🧠 Neurodiversity First
+</h3>
+<p style="margin-top:12px;">
+
+Learning environments should adapt to people—not the opposite.
+
+CIAW designs courses, workshops and resources that recognise different cognitive
+profiles as sources of creativity, analytical strength and innovation rather than
+barriers to participation.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+⚙ Responsible AI
+</h3>
+<p style="margin-top:12px;">
+
+Artificial Intelligence should enhance scholarship rather than replace scholarly
+judgement.
+
+CIAW develops transparent, explainable and evidence-based AI methodologies for
+Ancient Studies, always centred on verification and human expertise.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+🌍 Open Knowledge
+</h3>
+<p style="margin-top:12px;">
+
+Research becomes stronger when knowledge circulates openly.
+
+Whenever licensing permits, CIAW publishes teaching materials,
+methodological guides, datasets and workflows as reusable Open Educational
+Resources.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+🛡 Academic Integrity
+</h3>
+<p style="margin-top:12px;">
+
+Healthy academic communities require transparency,
+respect and evidence-based dialogue.
+
+CIAW opposes the misuse of digital technologies for harassment,
+fabricated attribution, reputational attacks, exclusionary behaviour,
+or coordinated defamatory campaigns that undermine scholarly trust.
+
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================
+OUR COMMITMENTS
+========================= -->
+<section>
+<div class="container">
+<div class="section-intro reveal">
+<div class="badge badge-purple">
+
+OUR COMMITMENTS
+
+</div>
+<h2>
+
+Innovation with Human Values
+
+</h2>
+<p>
+
+Innovation is meaningful only when it expands participation,
+strengthens critical thinking,
+and protects the people who create knowledge.
+
+These commitments guide every CIAW activity.
+
+</p>
+</div>
+<div class="grid grid-3">
+<div class="card reveal">
+<h3>
+
+Inclusive Education
+
+</h3>
+<p style="margin-top:10px;">
+
+Universal Design for Learning,
+accessible materials,
+multimodal resources,
+flexible assessment,
+and neurodiversity-aware pedagogy.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+Responsible Innovation
+
+</h3>
+<p style="margin-top:10px;">
+
+Critical adoption of AI,
+transparent methodologies,
+reproducible workflows,
+ethical experimentation
+and continuous evaluation.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+Academic Well-being
+
+</h3>
+<p style="margin-top:10px;">
+
+Respectful collaboration,
+constructive peer dialogue,
+institutional accountability,
+and environments that discourage intimidation,
+harassment and defamatory narratives.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+Interdisciplinary Collaboration
+
+</h3>
+<p style="margin-top:10px;">
+
+Historians,
+archaeologists,
+classicists,
+computer scientists,
+educators
+and heritage professionals
+working together.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+Evidence Before Opinion
+
+</h3>
+<p style="margin-top:10px;">
+
+Claims should remain verifiable.
+
+CIAW promotes critical literacy,
+documentation,
+source verification,
+and methodological transparency
+across all digital practices.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+Open Communities
+
+</h3>
+<p style="margin-top:10px;">
+
+International collaboration,
+shared resources,
+open publications,
+peer mentoring
+and sustainable academic networks.
+
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================
+FOUNDATION
+========================= -->
+<section id="foundation">
+<div class="container">
+<div class="section-intro reveal">
+<div class="badge badge-amber">
+
+FOUNDATION
+
+</div>
+<h2>
+
+Where CIAW Comes From
+
+</h2>
+<p>
+
+CIAW emerged from years of teaching,
+research,
+curriculum design
+and digital innovation across several universities and higher education institutions.
+
+Rather than representing a single institution,
+CIAW integrates experiences from diverse academic environments into one shared mission:
+making Ancient Studies more inclusive,
+more innovative,
+and more accessible.
+
+</p>
+</div>
+<div class="grid grid-2">
+<div class="card reveal">
+<h3>
+
+Academic Experience
+
+</h3>
+<p style="margin-top:12px;">
+
+CIAW builds upon collaborations and teaching developed across institutions including:
+
+<strong style="display:block;margin-top:10px;color:var(--text);">
+
+• Universitat Autònoma de Barcelona<br/>
+
+• Universitat Oberta de Catalunya<br/>
+
+• ENTI–Universitat de Barcelona<br/>
+
+• Universidad Europea<br/>
+
+• Kyoto Prefectural University
+
+</strong>
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+Why CIAW Exists
+
+</h3>
+<p style="margin-top:12px;">
+
+Many excellent initiatives remain isolated.
+
+CIAW was created to connect educators,
+researchers,
+students
+and digital innovators
+through practical methodologies,
+open educational resources,
+and responsible technological innovation.
+
+Our objective is not simply to study Antiquity,
+but to rethink how Ancient Studies can be taught,
+shared
+and experienced in the twenty-first century.
+
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================
+AI & ANTIQUITY
+====================================================== -->
+<section id="journal">
+<div class="container">
+<div class="section-intro reveal">
+<div class="badge badge-green">
+FLAGSHIP PUBLICATION
+</div>
+<h2>
+
+AI &amp; Antiquity
+
+</h2>
+<p>
+
+An international open-access journal exploring Artificial Intelligence,
+Ancient Studies,
+digital humanities,
+inclusive pedagogy,
+and responsible technological innovation.
+
+</p>
+</div>
+<div class="grid grid-2" style="align-items:center;">
+<div class="reveal">
+<div style="overflow:hidden;border-radius:24px;box-shadow:var(--shadow-lg);">
+<img alt="AI &amp; Antiquity Volume 2 Issue 1" src="https://ai-antiquity.org/public/journals/1/homepageImage_en.webp" style="width:100%;display:block;"/>
+</div>
+</div>
+<div class="reveal">
+<div class="card">
+<div class="badge badge-green">
+
+Volume 2 · Issue 1 · 2026
+
+</div>
+<h3 style="font-size:2rem;margin-bottom:12px;">
+
+AI &amp; Antiquity
+
+</h3>
+<p style="margin-bottom:18px;">
+<strong>
+
+Journal of Teaching,
+Artificial Intelligence
+and Ancient Studies
+
+</strong>
+</p>
+<p style="font-size:.9rem;color:var(--muted);">
+
+ISSN 3081-4553
+
+</p>
+<p style="margin:20px 0;">
+
+This issue examines how Artificial Intelligence is transforming
+teaching,
+historical research,
+editorial practice,
+heritage,
+and public engagement,
+placing verification,
+critical literacy
+and inclusion
+at the centre of academic practice.
+
+</p>
+<div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;">
+<a class="btn btn-primary" href="https://doi.org/10.64946/aiantiquity.v2i1" rel="noopener noreferrer" target="_blank">
+
+Read the Issue →
+
+</a>
+<a class="btn btn-outline" href="https://ai-antiquity.org/index.php/ai/issue/archive" rel="noopener noreferrer" style="border-color:var(--border);color:var(--text);" target="_blank">
+
+Archive
+
+</a>
+</div>
+</div>
+</div>
+</div>
+<div style="height:50px"></div>
+<div class="grid grid-3">
+<div class="card reveal">
+<h3>
+
+📚 Research
+
+</h3>
+<p style="margin-top:10px;">
+
+Comparative evaluations of AI in historical research,
+source criticism,
+epigraphy,
+philology,
+and archaeological interpretation.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+🎓 Teaching
+
+</h3>
+<p style="margin-top:10px;">
+
+Inclusive assessment,
+critical AI literacy,
+accessible learning environments,
+and neurodiversity-aware methodologies.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+🌍 Society
+
+</h3>
+<p style="margin-top:10px;">
+
+Public history,
+heritage communication,
+digital ethics,
+algorithmic accountability
+and responsible innovation.
+
+</p>
+</div>
+</div>
+<div style="height:50px"></div>
+<div class="card reveal">
+<h3 style="font-size:1.8rem;margin-bottom:24px;">
+
+Why this journal matters
+
+</h3>
+<div class="grid grid-2">
+<div>
+<p>
+
+Artificial Intelligence is reshaping scholarship at every level.
+
+Rather than framing AI as either a miracle or a threat,
+AI &amp; Antiquity approaches it as an intellectual ecosystem requiring
+critical reflection,
+verification,
+ethical governance,
+and methodological transparency.
+
+</p>
+<p style="margin-top:20px;">
+
+The journal examines how AI mediates teaching,
+knowledge production,
+editorial work,
+peer review,
+historical interpretation,
+and cultural memory.
+
+</p>
+</div>
+<div>
+<p>
+
+Special attention is devoted to the risks introduced by generative AI,
+including fabricated citations,
+hallucinated references,
+misattribution,
+algorithmic bias,
+and other failures that may affect scholarly communication.
+
+</p>
+<p style="margin-top:20px;">
+
+The journal also encourages discussion about institutional responses that foster academic integrity, transparent evaluation, and respectful scholarly dialogue in digital environments.
+
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================
+ACTIVITIES
+====================================================== -->
+<section id="activities">
+<div class="container">
+<div class="section-intro reveal">
+<div class="badge">
+
+WHAT WE DO
+
+</div>
+<h2>
+
+Activities
+
+</h2>
+<p>
+
+CIAW develops practical initiatives connecting teaching,
+research,
+digital innovation
+and public engagement.
+
+</p>
+</div>
+<div class="grid grid-3">
+<div class="card reveal">
+<h3>
+
+🎓 Workshops
+
+</h3>
+<p style="margin-top:10px;">
+
+Hands-on training on Ancient History,
+epigraphy,
+languages,
+digital humanities,
+AI
+and inclusive teaching.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+📖 Open Educational Resources
+
+</h3>
+<p style="margin-top:10px;">
+
+Guides,
+templates,
+rubrics,
+datasets,
+prompts
+and reusable classroom materials.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+🤝 Mentoring
+
+</h3>
+<p style="margin-top:10px;">
+
+Supporting educators,
+students,
+early-career researchers
+and independent scholars.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+⚙ Innovation Labs
+
+</h3>
+<p style="margin-top:10px;">
+
+Experimental projects combining AI,
+game-based learning,
+digital storytelling
+and historical reconstruction.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+🧠 Neurodiversity
+
+</h3>
+<p style="margin-top:10px;">
+
+Designing educational experiences that recognise diverse cognitive strengths,
+executive function needs
+and accessible communication.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+
+🌍 International Networks
+
+</h3>
+<p style="margin-top:10px;">
+
+Building collaborations between universities,
+schools,
+cultural institutions
+and researchers worldwide.
+
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================
+CURRENT PROJECTS
+====================================================== -->
+<section id="projects">
+<div class="container">
+<div class="section-intro reveal">
+<div class="badge badge-amber">
+RESEARCH · TEACHING · IMPACT
+</div>
+<h2>
+Current Projects
+</h2>
+<p>
+
+CIAW develops collaborative initiatives that combine educational innovation,
+responsible Artificial Intelligence,
+Ancient Studies,
+and inclusive pedagogical design.
+
+</p>
+</div>
+<div class="grid">
+<!-- PROJECT 1 -->
+<div class="card reveal">
+<div style="display:grid;grid-template-columns:320px 1fr;gap:35px;align-items:center;">
+<div style="overflow:hidden;border-radius:16px;">
+<img alt="Forgotten Voices in Antiquity" src="banner.webp" style="border-radius:16px;width:100%;height:100%;object-fit:cover;"/>
+</div>
+<div>
+<div class="badge">
+
+Teaching Innovation 2025–2026
+
+</div>
+<h3 style="font-size:1.8rem;margin:10px 0;">
+
+Forgotten Voices in Antiquity
+
+</h3>
+<p>
+
+Official Teaching Innovation Project (GI517492)
+at the Universitat Autònoma de Barcelona,
+exploring inclusive methodologies,
+critical AI literacy,
+and new approaches for teaching Ancient History.
+
+</p>
+<div style="height:15px"></div>
+<div class="grid grid-2">
+<div>
+<strong style="color:var(--text);font-size:.9rem;">Focus</strong>
+<ul style="margin-top:8px;color:var(--muted);font-size:.9rem;">
+<li>Inclusive pedagogy</li>
+<li>Marginalised voices</li>
+<li>Critical AI literacy</li>
+<li>Universal Design for Learning</li>
+</ul>
+</div>
+<div>
+<strong style="color:var(--text);font-size:.9rem;">Outputs</strong>
+<ul style="margin-top:8px;color:var(--muted);font-size:.9rem;">
+<li>Teaching guides</li>
+<li>Case studies</li>
+<li>Open educational resources</li>
+<li>Transferable methodologies</li>
+</ul>
+</div>
+</div>
+<p style="margin-top:20px;font-size:.9rem;">
+<strong>Principal Investigators:</strong> Carlos Heredia · Isaías Arrayás
+
+</p>
+</div>
+</div>
+</div>
+<!-- PROJECT 2 -->
+<div class="card reveal">
+<div style="display:grid;grid-template-columns:320px 1fr;gap:35px;align-items:center;">
+<div style="overflow:hidden;border-radius:16px;">
+<img alt="Faculty of Philosophy and Letters" src="facu.webp" style="border-radius:16px;width:100%;height:100%;object-fit:cover;"/>
+</div>
+<div>
+<div class="badge badge-purple">
+
+Faculty Innovation
+
+</div>
+<h3 style="font-size:1.8rem;margin:10px 0;">
+
+Inclusive AI Workshops
+
+</h3>
+<p>
+
+Faculty-wide initiative introducing responsible AI,
+prompt engineering,
+ethical assessment,
+and accessible instructional design
+within Humanities programmes.
+
+</p>
+<div style="height:20px"></div>
+<div class="grid grid-3">
+<div>
+<h4 style="font-size:1rem;margin-bottom:6px;">Accessibility</h4>
+<p style="font-size:.88rem;">Inclusive materials &amp; multimodal resources.</p>
+</div>
+<div>
+<h4 style="font-size:1rem;margin-bottom:6px;">Ethics</h4>
+<p style="font-size:.88rem;">Transparency, verification &amp; critical AI literacy.</p>
+</div>
+<div>
+<h4 style="font-size:1rem;margin-bottom:6px;">Impact</h4>
+<p style="font-size:.88rem;">Faculty seminars &amp; shared teaching models.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PROJECT 3 -->
+<div class="card reveal">
+<div style="display:grid;grid-template-columns:320px 1fr;gap:35px;align-items:center;">
+<div style="overflow:hidden;border-radius:16px;">
+<img alt="AI Workshops" src="talleres.webp" style="border-radius:16px;width:100%;height:100%;object-fit:cover;"/>
+</div>
+<div>
+<div class="badge">
+
+Professional Development
+
+</div>
+<h3 style="font-size:1.8rem;margin:10px 0;">
+
+AI, Assessment &amp; Inclusive Pedagogy
+
+</h3>
+<p>
+
+Training programme developed through the
+Formació a Mida initiative at UAB,
+supporting university teachers in integrating
+Artificial Intelligence responsibly into higher education.
+
+</p>
+<div style="height:20px"></div>
+<div class="grid grid-2">
+<div>
+<strong style="color:var(--text);font-size:.9rem;">Courses</strong>
+<ul style="margin-top:8px;color:var(--muted);font-size:.9rem;">
+<li>Continuous Assessment &amp; AI</li>
+<li>Inclusive AI for Humanities</li>
+<li>Ethics of Generative AI</li>
+</ul>
+</div>
+<div>
+<strong style="color:var(--text);font-size:.9rem;">Methodology</strong>
+<ul style="margin-top:8px;color:var(--muted);font-size:.9rem;">
+<li>Collaborative laboratories</li>
+<li>Hands-on workshops</li>
+<li>Practical templates</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PROJECT 4 -->
+<div class="card reveal">
+<div style="display:grid;grid-template-columns:320px 1fr;gap:35px;align-items:center;">
+<div style="overflow:hidden;border-radius:16px;">
+<img alt="Archeion" src="https://upload.wikimedia.org/wikipedia/commons/3/38/Denis_Bourez_-_British_Museum%2C_London_%288747049029%29_%282%29.jpg" style="border-radius:16px;width:100%;height:220px;object-fit:cover;"/>
+</div>
+<div>
+<div class="badge badge-green">
+
+Public Engagement
+
+</div>
+<h3 style="font-size:1.8rem;margin:10px 0;">
+
+Archeion
+
+</h3>
+<p>
+
+Archeion is CIAW's public dissemination initiative,
+bringing Ancient History,
+Artificial Intelligence,
+archaeology
+and digital humanities
+to broader audiences through multimedia storytelling.
+
+</p>
+<div style="height:20px"></div>
+<div class="grid grid-3">
+<div>
+<h4 style="font-size:1rem;">Podcast</h4>
+<p style="font-size:.88rem;">Long-form discussions.</p>
+</div>
+<div>
+<h4 style="font-size:1rem;">Video</h4>
+<p style="font-size:.88rem;">Educational explainers.</p>
+</div>
+<div>
+<h4 style="font-size:1rem;">Outreach</h4>
+<p style="font-size:.88rem;">Accessible dissemination.</p>
+</div>
+</div>
+<div style="margin-top:25px;">
+<a class="btn btn-primary" href="https://www.instagram.com/archeion.es/" rel="noopener noreferrer" target="_blank">
+
+Visit Archeion →
+
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></section>
+<!-- ========================================= -->
+<!-- TEACHING RESOURCES -->
+<!-- ========================================= -->
+<section id="teaching-resources">
+<div class="container">
+<div class="section-intro reveal">
+<div class="badge badge-purple">
+OPEN EDUCATIONAL RESOURCES
+</div>
+<h2>
+Teaching Innovation Resources
+</h2>
+<p>
+
+This section brings together a series of open educational resources developed within the framework of teaching innovation projects focused on inclusive education, critical approaches to Artificial Intelligence, and responsible knowledge practices in Higher Education.
+
+</p>
+<p style="margin-top:16px;">
+
+Designed from research and teaching experience in Ancient History and Classical Studies, these materials translate pedagogical reflection into practical frameworks that can be adapted across disciplines. They provide educators with strategies for curriculum design, classroom activities, assessment practices, and responsible integration of emerging technologies.
+
+</p>
+<p style="margin-top:16px;">
+
+The resources presented here combine academic guidelines with accessible visual materials, allowing their use in teaching, professional development workshops, institutional discussions, and collaborative innovation initiatives.
+
+</p>
+</div>
+<div class="grid grid-2 reveal">
+<div class="card">
+<h3>
+Teaching Guidelines
+</h3>
+<p style="margin-top:12px;">
+
+Three complementary frameworks addressing inclusive curriculum design, neurodiversity-aware teaching, flexible learning pathways, critical AI literacy, and responsible academic practices. Each guideline includes its theoretical foundations, practical applications, transferability across disciplines, citation information, and access to related publications and visual resources.
+
+</p>
+</div>
+<div class="card">
+<h3>
+Shareable Infographics
+</h3>
+<p style="margin-top:12px;">
+
+Visual resources designed for teaching workshops, professional development, and institutional reflection. Each infographic summarises key principles from the guidelines and can be freely consulted, shared, and adapted with appropriate acknowledgement.
+
+</p>
+<p style="margin-top:12px;">
+
+The infographics were created using <strong>Canva Pro</strong> and <strong>NotebookLM</strong> through project-funded licences within the UAB Teaching Innovation Project <em>"Voces olvidadas en la Antigüedad: docencia inclusiva y pensamiento crítico en tiempos de inteligencia artificial"</em> (Universitat Autònoma de Barcelona – Modalitat A, GI517492), directed by Carlos Heredia and Isaías Arrayás.
+
+</p>
+</div>
+</div>
+<div style="height:20px"></div>
+<div class="section-intro reveal" style="text-align:center;margin:0 auto 40px;">
+<h2 style="font-size:clamp(1.8rem,3vw,2.2rem);">
+Explore the Resources
+</h2>
+<p>
+
+The following guidelines address three interconnected dimensions of contemporary Higher Education:
+inclusive learning design, critical engagement with Artificial Intelligence, and responsible academic knowledge practices.
+
+</p>
+</div>
+<!-- ================= GUIDELINE 1 ================= -->
+<div class="card reveal" style="padding:0;overflow:hidden;margin-bottom:35px;">
+<div style="padding:28px 36px 0;">
+<div class="badge">
+GUIDELINE 1 · Journal of Classics Teaching · Cambridge University Press · 2026
+</div>
+</div>
+<div style="padding:0 36px;">
+<div class="infographic-wrapper">
+<a class="mobile-view-full" href="files/info1.webp" rel="noopener" target="_blank">
+            🔍 Open full-size infographic
+        </a>
+<div style="overflow:hidden;border-radius:16px;">
+<img alt="Guideline on inclusive flipped learning, AI-supported teaching, and accessible learning design across disciplines." src="files/info1.webp" style="width:100%;display:block;"/>
+</div>
+</div>
+</div>
+<div style="padding:28px 36px 36px;">
+<p>
+This guideline presents an adaptable framework for combining flipped learning, Artificial Intelligence, and inclusive instructional design in Higher Education. Originally developed through Ancient History teaching, it provides transferable strategies for supporting diverse learners while maintaining academic standards, disciplinary accuracy, and critical engagement with knowledge.
+</p>
+<p style="margin-top:16px;">
+The framework can be adapted to different subjects by modifying learning materials, classroom activities, sources, and assessment methods according to disciplinary objectives and institutional contexts.
+</p>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Key Teaching Principles
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>
+<strong style="color:var(--text);">Inclusive flipped learning:</strong>
+Students engage with accessible materials before class, allowing classroom time to focus on discussion, collaboration, interpretation, problem-solving, and disciplinary reasoning.
+</li>
+<li>
+<strong style="color:var(--text);">Critical AI literacy:</strong>
+Artificial Intelligence is used as a tool for questioning, comparing, analysing, and improving understanding rather than replacing disciplinary expertise or academic judgement.
+</li>
+<li>
+<strong style="color:var(--text);">Critical enquiry:</strong>
+Learning activities encourage students to examine evidence, perspectives, assumptions, and debates within each discipline.
+</li>
+</ul>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Flexible Learning Pathways
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>
+<strong style="color:var(--text);">Structured pathway:</strong>
+Guided sequences, visual organisers, explicit instructions, and planning tools support learners who benefit from greater structure and reduced cognitive overload.
+</li>
+<li>
+<strong style="color:var(--text);">Creative pathway:</strong>
+Flexible formats allow students to demonstrate disciplinary understanding through different forms of communication, including written work, presentations, podcasts, videos, infographics, or digital projects.
+</li>
+</ul>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Inclusive Assessment
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>
+<strong style="color:var(--text);">Continuous feedback:</strong>
+Learning portfolios, reflective activities, and formative assessment support students in monitoring their progress throughout the learning process.
+</li>
+<li>
+<strong style="color:var(--text);">Equivalent academic expectations:</strong>
+Assessment focuses on knowledge, reasoning, evidence use, and argumentation while allowing different pathways for communicating learning.
+</li>
+</ul>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Possible Uses
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>Redesigning modules through inclusive flipped learning approaches.</li>
+<li>Developing AI literacy activities within disciplinary teaching.</li>
+<li>Creating accessible pre-class materials and classroom activities.</li>
+<li>Designing workshops on inclusive teaching methodologies.</li>
+<li>Supporting curriculum innovation projects across disciplines.</li>
+</ul>
+<div style="margin-top:30px;padding:24px;background:var(--blue-light);border-radius:16px;">
+<strong style="color:var(--blue);">
+Transferability:
+</strong>
+<span style="color:var(--text);">
+This framework can be adapted to different fields by changing examples, sources, learning activities, and assessment approaches while maintaining the underlying principles of accessibility, flexibility, and critical engagement.
+</span>
+</div>
+<!-- ACCESS BLOCK -->
+<div style="margin-top:24px;padding:24px;background:var(--bg);border-radius:16px;border:1px solid var(--border);">
+<h4 style="margin-top:0;color:var(--text);">
+Access the Infographic
+</h4>
+<p>
+The infographic version of this guideline is openly available for consultation, teaching activities, workshops, and institutional training. Educators can download, share, and adapt this resource following the recommended citation and attribution guidelines below.
+</p>
+<div style="margin-top:18px;">
+<a class="btn btn-primary" href="https://doi.org/10.5281/zenodo.21763472" rel="noopener" target="_blank">
+Open infographic record →
+</a>
+</div>
+</div>
+<!-- IMPLEMENTATION BLOCK -->
+<div style="margin-top:24px;padding:24px;background:var(--surface);border-left:4px solid var(--blue);border-radius:0 16px 16px 0;">
+<h4 style="margin-top:0;color:var(--text);">
+Implementation Guide
+</h4>
+<p>
+<strong style="color:var(--text);">Step 1 — Explore:</strong>
+Read the infographic alongside the full publication to understand the theoretical framework and evidence base.
+</p>
+<p style="margin-top:12px;">
+<strong style="color:var(--text);">Step 2 — Adapt:</strong>
+Modify examples, activities, sources, and assessment formats according to your discipline, students, and institutional context.
+</p>
+<p style="margin-top:12px;margin-bottom:0;">
+<strong style="color:var(--text);">Step 3 — Apply:</strong>
+Integrate the principles into curriculum design, classroom activities, assessment strategies, or staff development initiatives.
+</p>
+</div>
+<!-- CITATION BLOCK -->
+<div style="margin-top:24px;padding:24px;background:var(--bg);border-radius:16px;border:1px solid var(--border);">
+<h4 style="margin-top:0;color:var(--text);">
+How to Cite and Attribute This Resource
+</h4>
+<p>
+Use the citation below when referencing this guideline in academic publications, teaching materials, institutional reports, conference presentations, research projects, or professional development activities.
+</p>
+<p style="margin-top:16px;">
+<strong style="color:var(--text);">
+Center for the Innovation in Ancient Worlds &amp; Heredia Chimeno, C.
+</strong>
+(2026).
+
+<em>
+CIAW Teaching Infographics: Inclusive Learning, Critical AI Literacy, and Responsible Knowledge Practices
+</em>
+
+[Infographic:
+<em>
+Inclusive Learning Itineraries: Flipped Learning and AI for Neurodivergence
+</em>
+].
+
+Zenodo.
+
+<a href="https://doi.org/10.5281/zenodo.21763472" rel="noopener" style="color:var(--blue);text-decoration:underline;" target="_blank">
+https://doi.org/10.5281/zenodo.21763472
+</a>
+</p>
+<p style="margin-top:16px;">
+<strong style="color:var(--text);">For classroom use:</strong>
+You may include this resource in lectures, seminars, workshops, Moodle/Canvas pages, institutional training sessions, or teaching innovation projects, provided that the original authorship and project framework are acknowledged.
+</p>
+<p style="margin-top:16px;margin-bottom:0;">
+<strong style="color:var(--text);">Suggested attribution:</strong><br/>
+"Adapted from CIAW Teaching Infographics: Inclusive Learning, Critical AI Literacy, and Responsible Knowledge Practices (2026), Center for the Innovation in Ancient Worlds &amp; Heredia Chimeno, C."
+</p>
+</div>
+<div style="margin-top:30px;">
+<a class="btn btn-outline" href="https://www.cambridge.org/core/journals/journal-of-classics-teaching/article/flipped-learning-and-aisupported-itineraries-for-neurodivergent-learners-a-case-study-in-ancient-history/4F26FC45751B193942CC3C1AA11961BC" rel="noopener" style="border-color:var(--border);color:var(--text);" target="_blank">
+Read the Full Publication &amp; Research Background →
+</a>
+</div>
+</div>
+</div>
+<!-- ================= GUIDELINE 2 ================= -->
+<div class="card reveal" style="padding:0;overflow:hidden;margin-bottom:35px;">
+<div style="padding:28px 36px 0;">
+<div class="badge badge-purple">
+GUIDELINE 2 · Universitat Autònoma de Barcelona · 2026
+</div>
+</div>
+<div style="padding:0 36px;">
+<div class="infographic-wrapper">
+<a class="mobile-view-full" href="files/info2.webp" rel="noopener" target="_blank">
+            🔍 Open full-size infographic
+        </a>
+<div style="overflow:hidden;border-radius:16px;">
+<img alt="Guideline on inclusive flipped learning, AI-supported teaching, and accessible learning design across disciplines." src="files/info2.webp" style="width:100%;display:block;"/>
+</div>
+</div>
+</div>
+<div style="padding:28px 36px 36px;">
+<p>
+This guideline presents an approach to teaching that combines inclusive perspectives, neurodiversity-aware practices, and responsible Artificial Intelligence use. It encourages educators to move beyond single narratives by incorporating diverse experiences, viewpoints, and forms of knowledge into classroom activities and disciplinary discussions.
+</p>
+<p style="margin-top:16px;">
+Originally developed through historical enquiry, the framework can be transferred to different subjects by adapting examples, sources, learning activities, and discussion formats according to each discipline's objectives and traditions.
+</p>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Principles for Transforming Learning
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>
+<strong style="color:var(--text);">From a single narrative to multiple perspectives:</strong>
+Students explore different viewpoints, experiences, and forms of knowledge rather than relying exclusively on dominant or established interpretations.
+</li>
+<li>
+<strong style="color:var(--text);">AI as a critical learning partner:</strong>
+AI-generated materials become opportunities to analyse assumptions, inaccuracies, limitations, stereotypes, and methodological challenges.
+</li>
+<li>
+<strong style="color:var(--text);">Connecting knowledge and experience:</strong>
+Teaching activities explore how ideas, structures, institutions, and social contexts shape the experiences of individuals and communities.
+</li>
+</ul>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Inclusive Classroom Design
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>
+<strong style="color:var(--text);">Multiple ways of engaging:</strong>
+Flexible learning activities allow students to access, analyse, and communicate knowledge through different approaches and formats.
+</li>
+<li>
+<strong style="color:var(--text);">Accessible methodologies:</strong>
+Clear expectations, flexible pathways, and supportive resources help reduce barriers while maintaining disciplinary standards.
+</li>
+<li>
+<strong style="color:var(--text);">Supportive learning environments:</strong>
+Dialogue, feedback, and empathy contribute to learning spaces where diverse students can participate meaningfully.
+</li>
+</ul>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Learning Outcomes
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>
+<strong style="color:var(--text);">Critical thinking:</strong>
+Students develop the ability to evaluate information, including AI-generated content, through evidence, disciplinary methods, and academic standards.
+</li>
+<li>
+<strong style="color:var(--text);">Inclusive participation:</strong>
+Flexible approaches encourage engagement from learners with different experiences, strengths, and learning profiles.
+</li>
+<li>
+<strong style="color:var(--text);">Expanded disciplinary perspectives:</strong>
+Students learn to recognise complexity, uncertainty, and multiple viewpoints within knowledge production.
+</li>
+</ul>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Possible Uses
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>Curriculum redesign focused on inclusion and representation.</li>
+<li>Teaching workshops on diversity, accessibility, and inclusive methodologies.</li>
+<li>Activities exploring perspectives, assumptions, and knowledge construction.</li>
+<li>Staff development sessions on responsible AI integration.</li>
+<li>Interdisciplinary discussions about inclusive approaches to learning.</li>
+</ul>
+<div style="margin-top:30px;padding:24px;background:var(--purple-light);border-radius:16px;">
+<strong style="color:var(--purple);">
+Transferability:
+</strong>
+<span style="color:var(--text);">
+This framework can support teaching innovation across Humanities, Social Sciences, Education, and interdisciplinary programmes by adapting examples and activities while maintaining its focus on inclusion, critical reflection, and responsible knowledge practices.
+</span>
+</div>
+<!-- ACCESS INFOGRAPHIC -->
+<div style="margin-top:24px;padding:24px;background:var(--bg);border-radius:16px;border:1px solid var(--border);">
+<h4 style="margin-top:0;color:var(--text);">
+Access the Infographic
+</h4>
+<p>
+The infographic version of this guideline is openly available for consultation, teaching activities, workshops, curriculum redesign discussions, and professional development sessions. Educators and institutions are encouraged to reuse and adapt the resource while maintaining appropriate attribution.
+</p>
+<div style="margin-top:18px;">
+<a class="btn btn-primary" href="https://doi.org/10.5281/zenodo.21763472" rel="noopener" target="_blank">
+Open infographic record →
+</a>
+</div>
+</div>
+<!-- IMPLEMENTATION GUIDE -->
+<div style="margin-top:24px;padding:24px;background:var(--surface);border-left:4px solid var(--purple);border-radius:0 16px 16px 0;">
+<h4 style="margin-top:0;color:var(--text);">
+Implementation Guide
+</h4>
+<p>
+<strong style="color:var(--text);">Step 1 — Explore:</strong>
+Analyse the infographic together with the publication framework to identify the principles most relevant to your teaching context.
+</p>
+<p style="margin-top:12px;">
+<strong style="color:var(--text);">Step 2 — Adapt:</strong>
+Select examples, sources, activities, and discussion formats that reflect the needs of your students and the objectives of your discipline.
+</p>
+<p style="margin-top:12px;margin-bottom:0;">
+<strong style="color:var(--text);">Step 3 — Apply:</strong>
+Integrate inclusive perspectives, responsible AI practices, and multiple forms of knowledge into your curriculum, classroom activities, or institutional initiatives.
+</p>
+</div>
+<!-- CITATION -->
+<div style="margin-top:24px;padding:24px;background:var(--bg);border-radius:16px;border:1px solid var(--border);">
+<h4 style="margin-top:0;color:var(--text);">
+How to Cite and Attribute This Resource
+</h4>
+<p>
+Use this citation when referencing the infographic in research outputs, teaching resources, institutional documents, workshops, conferences, or educational innovation projects.
+</p>
+<p style="margin-top:16px;">
+<strong style="color:var(--text);">
+Center for the Innovation in Ancient Worlds &amp; Heredia Chimeno, C.
+</strong>
+(2026).
+
+<em>
+CIAW Teaching Infographics: Inclusive Learning, Critical AI Literacy, and Responsible Knowledge Practices
+</em>
+
+[Infographic:
+<em>
+Rethinking Ancient History: Inclusion, AI, and Forgotten Voices
+</em>
+].
+
+Zenodo.
+
+<a href="https://doi.org/10.5281/zenodo.21763472" rel="noopener" style="color:var(--blue);text-decoration:underline;" target="_blank">
+https://doi.org/10.5281/zenodo.21763472
+</a>
+</p>
+<p style="margin-top:16px;">
+<strong style="color:var(--text);">For classroom use:</strong>
+This resource can be incorporated into lectures, seminars, online learning platforms, staff training sessions, curriculum review processes, and interdisciplinary teaching projects.
+</p>
+<p style="margin-top:16px;margin-bottom:0;">
+<strong style="color:var(--text);">Suggested attribution:</strong><br/>
+"Adapted from CIAW Teaching Infographics: Inclusive Learning, Critical AI Literacy, and Responsible Knowledge Practices (2026), Center for the Innovation in Ancient Worlds &amp; Heredia Chimeno, C."
+</p>
+</div>
+<div style="margin-top:30px;">
+<a class="btn btn-outline" href="https://ddd.uab.cat/pub/llibres/2026/328624/inndocidepraedusup_a2026.pdf#page=69" rel="noopener" style="border-color:var(--border);color:var(--text);" target="_blank">
+Read the Full Publication &amp; Research Background →
+</a>
+</div>
+</div>
+</div>
+<!-- ================= GUIDELINE 3 ================= -->
+<div class="card" style="padding:0;overflow:hidden;margin-bottom:35px;">
+<div style="padding:28px 36px 0;">
+<div class="badge badge-green">
+GUIDELINE 3 · AI &amp; Antiquity · Volume 2, Issue 1 · 2026
+</div>
+</div>
+<div style="padding:0 36px;">
+<div class="infographic-wrapper">
+<a class="mobile-view-full" href="files/info3.webp" rel="noopener" target="_blank">
+            🔍 Open full-size infographic
+        </a>
+<div style="overflow:hidden;border-radius:16px;">
+<img alt="Guideline on inclusive flipped learning, AI-supported teaching, and accessible learning design across disciplines." src="files/info3.webp" style="width:100%;display:block;"/>
+</div>
+</div>
+</div>
+<div style="padding:28px 36px 36px;">
+<p>
+This guideline provides educators and researchers with a framework for addressing Artificial Intelligence verification, academic integrity, and responsible evaluation practices in Higher Education. It focuses on evidence-based verification, transparency, methodological judgement, and the prevention of AI-related accusations becoming instruments of harassment, reputational damage, or factional conflicts within research communities.
+</p>
+<p style="margin-top:16px;">
+Rather than assuming that the presence or alleged use of Artificial Intelligence represents academic misconduct, this approach emphasises that AI-related concerns must be examined through reliable evidence, transparent procedures, and disciplinary standards. Verification should strengthen academic integrity, not become a mechanism for personal attacks, professional exclusion, or conflicts between competing groups of researchers.
+</p>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Understanding the Challenges
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>
+<strong style="color:var(--text);">AI use and unsupported accusations:</strong>
+Claims that researchers have used Artificial Intelligence improperly require evidence and contextual analysis. Assumptions based only on writing style, productivity, or personal disagreements may lead to unfair judgments.
+</li>
+<li>
+<strong style="color:var(--text);">Limits of detection methods:</strong>
+AI detection tools may produce uncertain results and should not be treated as definitive proof of misconduct without additional verification, scholarly review, and examination of research practices.
+</li>
+<li>
+<strong style="color:var(--text);">Academic conflicts and reputational harm:</strong>
+In environments marked by competing schools, institutions, or research factions, allegations of AI use may become tools for undermining colleagues rather than improving research standards.
+</li>
+</ul>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Developing Critical AI Verification Literacy
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>
+<strong style="color:var(--text);">Verification as a core academic skill:</strong>
+Researchers and students should learn to evaluate sources, references, arguments, data, writing processes, and methodological decisions rather than relying on suspicion or automated judgements.
+</li>
+<li>
+<strong style="color:var(--text);">Transparent AI practices:</strong>
+Academic communities should promote clarity about when, why, and how AI tools are used in research, teaching, writing, and analysis.
+</li>
+<li>
+<strong style="color:var(--text);">Critical evaluation of evidence:</strong>
+AI-related concerns should distinguish between acceptable assistance, methodological weaknesses, accidental errors, and intentional misuse.
+</li>
+</ul>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Guidance for Educators and Researchers
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>
+<strong style="color:var(--text);">Prioritise evidence-based review:</strong>
+Evaluate possible AI misuse through research documentation, sources, drafts, methodology, citations, and scholarly practices rather than isolated indicators.
+</li>
+<li>
+<strong style="color:var(--text);">Promote fair academic dialogue:</strong>
+Address concerns through discussion, peer review, and institutional procedures instead of public accusations or harassment campaigns.
+</li>
+<li>
+<strong style="color:var(--text);">Protect research communities:</strong>
+Encourage environments where disagreement about methods, theories, or interpretations does not become confused with evidence of AI misconduct.
+</li>
+</ul>
+<h4 style="margin:28px 0 10px;color:var(--text);">
+Possible Uses
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;">
+<li>Developing institutional frameworks for transparent AI verification practices.</li>
+<li>Training researchers and educators to evaluate AI-related claims responsibly.</li>
+<li>Creating guidelines that distinguish academic integrity concerns from interpersonal or factional conflicts.</li>
+<li>Supporting workshops on AI literacy, evidence evaluation, and responsible scholarly communication.</li>
+<li>Designing fair procedures for addressing suspected inappropriate AI use.</li>
+</ul>
+<div style="margin-top:30px;padding:24px;background:var(--green-light);border-radius:16px;">
+<strong style="color:var(--green);">
+Transferability:
+</strong>
+<span style="color:var(--text);">
+The principles presented here are applicable across disciplines because verification, transparency, evidence-based judgement, and protection against unsupported accusations are fundamental components of academic integrity in any research environment.
+</span>
+</div>
+<!-- ACCESS INFOGRAPHIC -->
+<div style="margin-top:24px;padding:24px;background:var(--bg);border-radius:16px;border:1px solid var(--border);">
+<h4 style="margin-top:0;color:var(--text);">
+Access the Infographic
+</h4>
+<p>
+The infographic provides a concise visual framework for discussing AI verification, academic integrity, evidence evaluation, and responsible scholarly communication. It can be used in researcher training, institutional workshops, doctoral programmes, and discussions about ethical AI practices.
+</p>
+<div style="margin-top:18px;">
+<a class="btn btn-primary" href="https://doi.org/10.5281/zenodo.21763472" rel="noopener" target="_blank">
+Open infographic record →
+</a>
+</div>
+</div>
+<!-- IMPLEMENTATION GUIDE -->
+<div style="margin-top:24px;padding:24px;background:var(--surface);border-left:4px solid var(--green);border-radius:0 16px 16px 0;">
+<h4 style="margin-top:0;color:var(--text);">
+Implementation Guide
+</h4>
+<p>
+<strong style="color:var(--text);">Step 1 — Explore:</strong>
+Review the infographic and publication to understand the distinction between AI assistance, methodological limitations, and evidence-based academic evaluation.
+</p>
+<p style="margin-top:12px;">
+<strong style="color:var(--text);">Step 2 — Adapt:</strong>
+Use the framework to develop institutional policies, classroom discussions, researcher training activities, or responsible AI guidelines.
+</p>
+<p style="margin-top:12px;margin-bottom:0;">
+<strong style="color:var(--text);">Step 3 — Apply:</strong>
+Promote transparent, fair, and evidence-based approaches when addressing possible AI-related concerns in educational and research environments.
+</p>
+</div>
+<!-- CITATION BLOCK -->
+<div style="margin-top:24px;padding:24px;background:var(--bg);border-radius:16px;border:1px solid var(--border);">
+<h4 style="margin-top:0;color:var(--text);">
+How to Cite and Attribute This Resource
+</h4>
+<p>
+Use this citation when referring to the infographic in research articles, academic discussions, institutional documents, teaching resources, workshops, or professional development activities.
+</p>
+<p style="margin-top:16px;">
+<strong style="color:var(--text);">
+Center for the Innovation in Ancient Worlds &amp; Heredia Chimeno, C.
+</strong>
+(2026).
+
+<em>
+CIAW Teaching Infographics: Inclusive Learning, Critical AI Literacy, and Responsible Knowledge Practices
+</em>
+
+[Infographic:
+<em>
+Source Verification and Academic Harassment in the Era of AI
+</em>
+].
+
+Zenodo.
+
+<a href="https://doi.org/10.5281/zenodo.21763472" rel="noopener" style="color:var(--blue);text-decoration:underline;" target="_blank">
+https://doi.org/10.5281/zenodo.21763472
+</a>
+</p>
+<p style="margin-top:16px;">
+<strong style="color:var(--text);">For classroom and research use:</strong>
+This resource can support discussions about AI literacy, academic integrity, research ethics, doctoral training, institutional policy development, and responsible scholarly communication.
+</p>
+<p style="margin-top:16px;margin-bottom:0;">
+<strong style="color:var(--text);">Suggested attribution:</strong><br/>
+"Adapted from CIAW Teaching Infographics: Inclusive Learning, Critical AI Literacy, and Responsible Knowledge Practices (2026), Center for the Innovation in Ancient Worlds &amp; Heredia Chimeno, C."
+</p>
+</div>
+<div style="margin-top:30px;">
+<a class="btn btn-outline" href="https://ai-antiquity.org/index.php/ai/article/view/29" rel="noopener" style="border-color:var(--border);color:var(--text);" target="_blank">
+Read the Full Publication &amp; Research Background →
+</a>
+</div>
+</div>
+</div>
+<!-- ================= FINAL RESOURCE SECTION ================= -->
+<div class="card reveal" style="text-align:left;">
+<h3>
+Using and Adapting These Resources
+</h3>
+<p style="margin-top:12px;">
+These guidelines and infographics are designed as open educational resources to support teaching innovation, professional development, and collaborative reflection across disciplines. They can be adapted to different subjects, institutional contexts, and learner communities according to local needs and educational objectives.
+</p>
+<p style="margin-top:16px;">
+Educators and institutions are encouraged to reuse, discuss, and extend these materials while acknowledging the original project, publications, and authors.
+</p>
+<div style="margin-top:24px;padding:24px;background:var(--bg);border-radius:16px;border:1px solid var(--border);">
+<h4 style="margin-top:0;color:var(--text);">
+Suggested Applications
+</h4>
+<ul style="line-height:1.9;color:var(--muted);padding-left:20px;margin-bottom:0;">
+<li>Curriculum redesign and course development.</li>
+<li>Teaching workshops and professional development activities.</li>
+<li>Departmental discussions on inclusive pedagogy and AI literacy.</li>
+<li>Collaborative projects on educational innovation.</li>
+<li>Research ethics and responsible AI training initiatives.</li>
+</ul>
+</div>
+<p style="margin-top:24px;margin-bottom:0;">
+By connecting inclusive methodologies, critical approaches to technology, and disciplinary expertise, these resources contribute to more accessible, reflective, and innovative approaches to teaching and learning.
+</p>
+</div>
+</div>
+</section>
+<!-- ======================================================
+CURRENT RESEARCH
+====================================================== -->
+<section id="research">
+<div class="glow-orb" style="width:450px;height:450px;background:rgba(37,99,235,.12);top:10%;left:-100px;"></div>
+<div class="container">
+<div class="section-intro reveal">
+<div class="badge">
+CURRENT RESEARCH
+</div>
+<h2>
+What Are We Working On?
+</h2>
+<p>
+
+CIAW actively develops research, educational innovation and international
+collaborations exploring Ancient Studies, neurodiversity and responsible
+Artificial Intelligence. Our current work combines peer-reviewed publications,
+inclusive teaching methodologies and collaborative research projects that seek
+to transform how the ancient world is taught, studied and shared.
+
+</p>
+</div>
+<div class="grid">
+<div class="card reveal">
+<div style="display:grid;grid-template-columns:300px 1fr;gap:35px;align-items:center;">
+<div style="overflow:hidden;border-radius:16px;">
+<img alt="Journal of Classics Teaching" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" style="border-radius:16px;width:100%;height:320px;object-fit:cover;"/>
+</div>
+<div>
+<div class="badge badge-green">
+
+Peer-reviewed Publication
+
+</div>
+<h3 style="font-size:1.8rem;margin:12px 0;">
+
+Flipped Learning and AI-Supported Itineraries for Neurodivergent Learners:
+A Case Study in Ancient History
+
+</h3>
+<p>
+
+Recently published in the <strong>Journal of Classics Teaching</strong>
+(Cambridge University Press), this study investigates how flipped learning,
+Artificial Intelligence and inclusive instructional design can improve Ancient
+History teaching for neurodivergent students while strengthening executive
+function, autonomy and engagement.
+
+</p>
+<div style="margin-top:25px;">
+<a class="btn btn-primary" href="https://www.cambridge.org/core/journals/journal-of-classics-teaching/article/flipped-learning-and-aisupported-itineraries-for-neurodivergent-learners-a-case-study-in-ancient-history/4F26FC45751B193942CC3C1AA11961BC" rel="noopener noreferrer" target="_blank">
+
+Read Publication →
+
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="card reveal">
+<div style="display:grid;grid-template-columns:300px 1fr;gap:35px;align-items:center;">
+<div style="overflow:hidden;border-radius:16px;">
+<img alt="DDD UAB" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" style="border-radius:16px;width:100%;height:320px;object-fit:cover;"/>
+</div>
+<div>
+<div class="badge badge-green">
+Published Chapter
+</div>
+<h3 style="font-size:1.8rem;margin:12px 0;">
+Rethinking Ancient History: Forgotten Voices, Inclusive Teaching and Artificial Intelligence
+</h3>
+<p>
+Published by the <strong>Universitat Autònoma de Barcelona</strong> in <em>Innovació docent: de la idea a la pràctica en educació superior</em> (2026), this chapter presents the project <strong>Forgotten Voices in Antiquity</strong>, which reimagines Ancient History teaching by bringing traditionally marginalized groups, including women, children, enslaved people, foreigners, and other underrepresented communities, into the centre of historical analysis.
+</p>
+<p style="margin-top:16px;">
+Through the critical use of Artificial Intelligence, students learn to identify biases, compare AI-generated narratives with primary sources, and develop historical, digital, and ethical literacy within an inclusive and neurodiversity-aware learning environment.
+</p>
+<div style="margin-top:25px;">
+<a class="btn btn-primary" href="https://ddd.uab.cat/pub/llibres/2026/328624/inndocidepraedusup_a2026.pdf#page=69" rel="noopener noreferrer" target="_blank">
+
+Read Chapter →
+
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- UPCOMING ARTICLE -->
+<div class="card reveal">
+<div class="badge badge-purple">
+
+Upcoming Publication 
+
+</div>
+<h3 style="font-size:1.8rem;margin:12px 0;">
+
+Inclusive Assessment in Online Ancient History:
+A Neurodiversity-Informed Approach to the Critical Use of AI
+
+</h3>
+<p>
+
+Forthcoming in <strong>Journal of Classical Teaching</strong> this
+article proposes a neurodiversity-informed redesign of continuous assessment
+for fully online Ancient History courses. Drawing on inclusive practices
+developed at institutions such as The Open University and adapted to online
+higher education, it presents a model based on universal design rather than
+individual accommodation.
+
+</p>
+<p style="margin-top:16px;">
+
+The proposed framework combines short visual learning capsules,
+asynchronous "silent tutorials", optional live tutorials and structured
+planning tools to support executive functioning, reduce cognitive overload
+and improve self-regulation throughout the semester.
+
+</p>
+<p style="margin-top:16px;">
+
+Rather than using Artificial Intelligence as a shortcut for academic work,
+students critically analyse AI-generated interpretations of the ancient
+world, identifying algorithmic bias, historiographical omissions and
+stereotyped representations. By comparing AI outputs with primary sources
+and current scholarship, the approach strengthens both historical thinking
+and critical AI literacy while promoting more inclusive perspectives on
+traditionally marginalised groups in Antiquity.
+
+</p>
+</div>
+<div class="card reveal">
+<div class="badge badge-green">
+
+Coming September 2026
+
+</div>
+<h3 style="font-size:1.8rem;margin-bottom:16px;">
+
+AI &amp; Antiquity — Volume 2 · Issue 2
+
+</h3>
+<p style="margin-bottom:30px;">
+
+CIAW is currently coordinating a special collection of international
+contributions dedicated to neurodiversity, inclusive pedagogy and innovation
+in Ancient Studies. The forthcoming issue brings together researchers from
+Europe and Latin America working at the intersection of Classics, accessibility
+and educational transformation.
+
+</p>
+<div class="grid grid-2">
+<div class="card" style="padding:24px;background:var(--bg);">
+<h4>
+
+The Positive Contribution of Neurodivergence to Ancient Studies
+
+</h4>
+<p style="margin:10px 0;font-size:.9rem;">
+<strong>Jenny Read-Heimerdinger</strong> · Institut Catholique de Toulouse
+
+</p>
+<p style="font-size:.9rem;">
+
+How neurodivergent strengths—including rigour, clarity and advanced pattern
+recognition—can enrich research, teaching and scholarly practice in Ancient
+History and Classics.
+
+</p>
+</div>
+<div class="card" style="padding:24px;background:var(--bg);">
+<h4>
+
+The Neurodiverse Teaching the Neurodiverse
+
+</h4>
+<p style="margin:10px 0;font-size:.9rem;">
+<strong>Julia Tomas</strong> · The Open University
+
+</p>
+<p style="font-size:.9rem;">
+
+Reflections on teaching Ancient History as a dyspraxic lecturer and how
+neurodivergent-led pedagogy benefits students across higher education.
+
+</p>
+</div>
+<div class="card" style="padding:24px;background:var(--bg);">
+<h4>
+
+The Relaxed Tutorial Project
+
+</h4>
+<p style="margin:10px 0;font-size:.9rem;">
+<strong>Cora Beth Fraser</strong> · The Open University
+
+</p>
+<p style="font-size:.9rem;">
+
+A disability-led redesign of online Classics tutorials introducing
+sensory-friendly learning environments and flexible participation models.
+
+</p>
+</div>
+<div class="card" style="padding:24px;background:var(--bg);">
+<h4>
+
+The Case Study of the "Simulacrum"
+
+</h4>
+<p style="margin:10px 0;font-size:.9rem;">
+<strong>Sebastián Altamirano</strong> · Universidad de Costa Rica
+
+</p>
+<p style="font-size:.9rem;">
+
+An innovative formative assessment model in Latin that reduces anxiety,
+improves preparation and supports neurodivergent learners.
+
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================
+NEURODIVERSITY BY DESIGN
+====================================================== -->
+<section id="neurodiversity">
+<div class="container">
+<div class="section-intro reveal">
+<div class="badge badge-purple">
+NEURODIVERSITY BY DESIGN
+</div>
+<h2>
+Different Minds.<br/>
+<span class="gradient-text">Better Humanities.</span>
+</h2>
+<p>
+
+CIAW considers neurodiversity an essential source of creativity,
+innovation,
+critical thinking
+and scholarly excellence.
+
+Rather than adapting learners to rigid educational models,
+we design learning environments that recognise different cognitive
+strengths from the beginning.
+
+</p>
+</div>
+<div class="grid grid-2">
+<div class="card reveal">
+<h3 style="margin-bottom:16px;">
+Who do we design for?
+</h3>
+<ul style="line-height:2.2;color:var(--muted);padding-left:18px;">
+<li>ADHD &amp; Executive Function support</li>
+<li>Autism Spectrum &amp; Structured clarity</li>
+<li>Dyslexia &amp; Multimodal learning</li>
+<li>Dyspraxia &amp; Accessible workflows</li>
+<li>Tourette Syndrome &amp; Flexible engagement</li>
+<li>Giftedness &amp; Deep intellectual exploration</li>
+<li>Highly Sensitive Persons &amp; Low-sensory options</li>
+<li>Mixed neurocognitive profiles</li>
+</ul>
+</div>
+<div class="card reveal">
+<h3 style="margin-bottom:16px;">
+How does this translate into practice?
+</h3>
+<ul style="line-height:2.2;color:var(--muted);padding-left:18px;">
+<li>Chunked learning materials</li>
+<li>Clear visual hierarchy &amp; typography</li>
+<li>Executive-function friendly resources</li>
+<li>Flexible assessment pathways</li>
+<li>Accessible digital environments</li>
+<li>Predictable workshop structures</li>
+<li>Multimodal learning resources</li>
+<li>Inclusive communication strategies</li>
+</ul>
+</div>
+</div>
+<div style="height:30px;"></div>
+<div class="card reveal">
+<h3 style="margin-bottom:16px;">
+Artificial Intelligence as Cognitive Support
+</h3>
+<p>
+
+CIAW explores Artificial Intelligence as an assistive educational technology.
+
+Used responsibly,
+AI can support reading,
+organisation,
+summarisation,
+language learning,
+historical interpretation
+and personalised learning pathways,
+while always preserving human judgement,
+critical reflection
+and scholarly verification.
+
+</p>
+</div>
+</div>
+</section>
+<!-- ======================================================
+VALUES
+====================================================== -->
+<section id="values">
+<div class="container">
+<div class="section-intro reveal">
+<div class="badge">
+OUR VALUES
+</div>
+<h2>
+The Principles Behind CIAW
+</h2>
+<p>
+
+Everything we build is guided by openness,
+inclusion,
+academic responsibility
+and long-term collaboration.
+
+</p>
+</div>
+<div class="grid grid-3">
+<div class="card reveal">
+<h3>
+📖 Open Knowledge
+</h3>
+<p style="margin-top:10px;">
+
+Whenever possible,
+our publications,
+teaching resources
+and methodologies are openly shared.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+⚙ Innovation
+</h3>
+<p style="margin-top:10px;">
+
+We experiment responsibly with new technologies,
+always evaluating educational impact
+before technological novelty.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+🤝 Collaboration
+</h3>
+<p style="margin-top:10px;">
+
+Ancient Studies benefit from interdisciplinary dialogue between
+historians,
+archaeologists,
+classicists,
+educators
+and technologists.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+🌍 Accessibility
+</h3>
+<p style="margin-top:10px;">
+
+Accessibility is not an afterthought.
+
+It is a design principle embedded in every CIAW initiative.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+🧠 Neurodiversity
+</h3>
+<p style="margin-top:10px;">
+
+Different cognitive profiles strengthen teaching,
+research,
+problem solving
+and historical interpretation.
+
+</p>
+</div>
+<div class="card reveal">
+<h3>
+🛡 Academic Integrity
+</h3>
+<p style="margin-top:10px;">
+
+CIAW promotes evidence-based scholarship, transparent methodologies, respectful academic dialogue, and opposes the misuse of digital technologies for harassment, fabricated attribution, coordinated reputational attacks, or other practices that undermine trust in scholarly communities.
+
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================
+GET INVOLVED
+====================================================== -->
+<section id="contact">
+<div class="container">
+<div class="card reveal" style="text-align:center;padding:80px 40px;background:linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);">
+<div class="badge">
+JOIN THE COMMUNITY
+</div>
+<h2>
+
+Let's Build the Future of Ancient Studies
+
+</h2>
+<p style="max-width:720px;margin:20px auto 38px;">
+
+CIAW welcomes collaborations with universities,
+schools,
+research groups,
+cultural institutions,
+educators,
+students
+and independent scholars interested in inclusive innovation,
+responsible Artificial Intelligence
+and Ancient Studies.
+
+</p>
+<div style="display:flex;justify-content:center;gap:18px;flex-wrap:wrap;">
+<a class="btn btn-primary" href="mailto:carlos.heredia@uab.cat">
+
+Collaborate with CIAW →
+
+</a>
+<a class="btn btn-outline" href="https://ai-antiquity.org" rel="noopener noreferrer" target="_blank">
+
+Visit the Journal
+
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================
+FOOTER
+====================================================== -->
+<footer style="background:#0f172a;color:white;padding:80px 0 40px;">
+<div class="container">
+<div class="grid grid-3">
+<div>
+<p style="color:#94a3b8;max-width:320px;font-size:.95rem;">
+
+CIAW is an independent non-profit initiative promoting
+inclusive innovation,
+responsible Artificial Intelligence,
+neurodiversity,
+and open scholarship
+for Ancient Studies.
+
+</p>
+</div>
+<div>
+<h3 style="margin-bottom:20px;color:white;font-size:1.1rem;">
+
+Navigation
+
+</h3>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:.95rem;color:#cbd5e1;">
+<a href="#mission" style="transition:color .2s ease;">Mission</a>
+<a href="#journal" style="transition:color .2s ease;">Journal</a>
+<a href="#activities" style="transition:color .2s ease;">Activities</a>
+<a href="#projects" style="transition:color .2s ease;">Projects</a>
+<a href="#teaching-resources" style="transition:color .2s ease;">Teaching Guides</a>
+<a href="#research" style="transition:color .2s ease;">Research</a>
+<a href="#neurodiversity" style="transition:color .2s ease;">Neurodiversity</a>
+<a href="#values" style="transition:color .2s ease;">Values</a>
+<a href="#contact" style="transition:color .2s ease;">Contact</a>
+</div>
+</div>
+<div>
+<h3 style="margin-bottom:20px;color:white;font-size:1.1rem;">
+
+Connect
+
+</h3>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:.95rem;color:#cbd5e1;">
+<a href="mailto:carlos.heredia@uab.cat" style="transition:color .2s ease;">
+
+carlos.heredia@uab.cat
+
+</a>
+<a href="https://ai-antiquity.org" rel="noopener noreferrer" target="_blank">
+
+AI &amp; Antiquity ↗
+
+</a>
+<a href="https://www.instagram.com/archeion.es/" rel="noopener noreferrer" target="_blank">
+
+Archeion ↗
+
+</a>
+</div>
+</div>
+</div>
+<hr style="margin:50px 0 30px;border:none;height:1px;background:rgba(255,255,255,.1);"/>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+<p style="color:#64748b;font-size:.9rem;">
+
+© <span id="year"></span>
+
+CIAW — Center for Innovation in Ancient Worlds.
+
+</p>
+<p style="color:#64748b;font-size:.9rem;">
+
+Designed for inclusive innovation.
+
+</p>
+</div>
+</div>
+</footer>
+<script>
+
+// Año dinámico
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Sombra al scroll en Header
+const header = document.getElementById('main-header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// Scroll Reveal Animado
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            // Animación ligeramente escalonada
+            setTimeout(() => {
+                entry.target.classList.add('active');
+            }, 80);
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Menú móvil desplegable
+
+const mobileBtn = document.getElementById("mobile-menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+
+
+mobileBtn.addEventListener("click",()=>{
+
+    mobileMenu.classList.toggle("active");
+
+    mobileBtn.textContent =
+        mobileMenu.classList.contains("active")
+        ? "✕"
+        : "☰";
+
+});
+
+
+// cerrar menú al pulsar un enlace
+
+document.querySelectorAll(".mobile-menu a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        mobileMenu.classList.remove("active");
+
+        mobileBtn.textContent="☰";
+
+    });
+
+});
+
+</script>
+</body>
+</html>
