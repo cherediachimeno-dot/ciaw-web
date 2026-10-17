@@ -1,0 +1,58 @@
+name: Produce CIAW institutional share image
+on:
+  push:
+    paths:
+      - ".github/workflows/create-ciaw-share-card.yml"
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate an original 1200 by 630 CIAW image for social previews
+        run: |
+          python -m pip -q install pillow
+          python - <<'PY'
+          from PIL import Image, ImageDraw, ImageFont, ImageFilter
+          from pathlib import Path
+          import math
+          W,H=1200,630
+          im=Image.new("RGB",(W,H))
+          px=im.load()
+          for y in range(H):
+            for x in range(W):
+              grad=x/W
+              light=y/H
+              px[x,y]=(int(12+9*grad),int(26+22*grad),int(48+34*light+4*grad))
+          d=ImageDraw.Draw(im,"RGBA")
+          # Restrained diagrams recalling ancient cartography and historical networks
+          for r in (120,175,230,290,350):
+            box=(955-r,304-r,955+r,304+r)
+            d.arc(box,10,348,fill=(101,176,238,65),width=2)
+          for angle in range(0,360,24):
+            t=math.radians(angle)
+            d.line((955+120*math.cos(t),304+120*math.sin(t),955+360*math.cos(t),304+360*math.sin(t)),fill=(142,201,238,30),width=2)
+          for off in range(0,10):
+            xx=955+off*13
+            d.ellipse((xx-8,500-off*3,xx,508-off*3),fill=(152,226,218,45))
+          d.rounded_rectangle((82,85,123,126),radius=9,fill=(119,231,224,255))
+          d.text((93,89),"C",font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',27),fill=(14,34,61,255))
+          font=lambda size,bold=False:ImageFont.truetype("/usr/share/fonts/truetype/dejavu/"+("DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf"),size)
+          d.text((141,91),"CENTER FOR INNOVATION IN ANCIENT WORLDS",font=font(18,True),fill=(215,234,250,255))
+          d.text((75,167),"CIAW",font=font(146,True),fill=(255,255,255,255),stroke_width=0)
+          d.rounded_rectangle((82,359,558,366),radius=3,fill=(100,208,214,255))
+          d.text((81,399),"ANCIENT STUDIES",font=font(32,True),fill=(252,254,255,255))
+          d.text((83,455),"OPEN SCHOLARSHIP  •  GAME STUDIES",font=font(21),fill=(190,224,243,255))
+          d.text((83,492),"NEURODIVERSITY & INCLUSIVE TEACHING",font=font(21),fill=(190,224,243,255))
+          d.text((83,567),"INDEPENDENT  •  BASED IN CATALONIA  •  FOUNDED 2025",font=font(15,True),fill=(136,221,213,255))
+          Path('assets').mkdir(exist_ok=True)
+          im.save('assets/ciaw-social.png',optimize=True)
+          print('SAVED',Image.open('assets/ciaw-social.png').size,Path('assets/ciaw-social.png').stat().st_size)
+          PY
+      - name: Commit institutional identity image
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/ciaw-social.png
+          git diff --cached --quiet || (git commit -m 'Create original CIAW institutional social sharing image' && git push)
