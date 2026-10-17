@@ -65,6 +65,11 @@ jobs:
               w=pg.evaluate('()=>document.documentElement.scrollWidth-innerWidth')
               print('VIEW',tag,'overflow',w,'heading',pg.locator('h1').first.inner_text()[:100])
               assert w<=2,tag+' horizontal overflow'
+              if path in ('index.html','es.html','ca.html') and width==1440:
+                menu=pg.locator('.site-header nav .menu')
+                btn=pg.locator('#mobile-menu-btn')
+                assert menu.evaluate('(x)=>getComputedStyle(x).display')=='none',(tag,'translated nav would clip at desktop width')
+                assert btn.evaluate('(x)=>getComputedStyle(x).display')!='none',(tag,'hamburger not accessible at 1440px')
               if path in ('es.html','ca.html') and width==390:
                 btn=pg.locator('#mobile-menu-btn')
                 btn.click()
