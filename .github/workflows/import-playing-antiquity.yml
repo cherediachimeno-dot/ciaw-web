@@ -1,0 +1,34 @@
+name: Import original Playing Antiquity artwork
+on:
+  push:
+    paths:
+      - '.github/workflows/import-playing-antiquity.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import-banner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download editorial banner from the existing series page
+        run: |
+          mkdir -p assets
+          curl --fail --location --retry 3 --max-time 45 \
+            --user-agent 'Mozilla/5.0 (compatible; CIAW Editorial Asset Migration)' \
+            'https://i.ibb.co/3yNc8B31/Panorama-de-fantas-a-puertos-y-batallas.webp' \
+            --output assets/playing-antiquity-banner.webp
+          python - <<'PY'
+          from pathlib import Path
+          p=Path("assets/playing-antiquity-banner.webp")
+          b=p.read_bytes()
+          if len(b)<10000 or b[:4]!=b"RIFF" or b[8:12]!=b"WEBP":
+              raise SystemExit("The image was not downloaded as a valid WebP")
+          print("Recovered Playing Antiquity banner:",len(b),"bytes")
+          PY
+      - name: Commit artwork
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/playing-antiquity-banner.webp
+          git diff --cached --quiet || (git commit -m 'Add original Playing Antiquity panorama to CIAW' && git push)
