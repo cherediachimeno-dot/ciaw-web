@@ -75,7 +75,7 @@
  .gs-areas{grid-template-columns:1fr 1fr}
  .gs-areas .gs-area:last-child{grid-column:1/-1}
 }
-@media(min-width:1551px){.gs-subnav{top:104px}}
+@media(min-width:1200px){.gs-subnav{top:104px}}
 @media(max-width:680px){
  .gs-subnav{top:83px}
  .gs-page .container{width:min(calc(100% - 30px),1160px)}
