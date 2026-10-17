@@ -1,0 +1,33 @@
+name: Comprobar DNS y dominio CIAW
+on:
+  push:
+    paths:
+      - ".github/workflows/check-ciaw-domain.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Consultar GitHub Pages y DNS publico
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "===== GITHUB PAGES CONFIG ====="
+          curl -sS -L -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' "https://api.github.com/repos/$GITHUB_REPOSITORY/pages" | jq '{html_url, cname, build_type, status, source, message}'
+          echo "===== GODADDY AUTHORITATIVE A ====="
+          dig @ns61.domaincontrol.com +short ciaw.es A
+          echo "===== CLOUDFLARE A ====="
+          dig @1.1.1.1 +short ciaw.es A
+          echo "===== GOOGLE A ====="
+          dig @8.8.8.8 +short ciaw.es A
+          echo "===== WWW CNAME ====="
+          dig @1.1.1.1 +short www.ciaw.es CNAME
+          echo "===== GITHUB PAGES HTTP ====="
+          curl -sS -L -m 20 -o /tmp/ciaw-pages.html -w 'status=%{http_code} url=%{url_effective}\n' https://cherediachimeno-dot.github.io/ciaw-web/
+          if grep -q 'Different Minds.' /tmp/ciaw-pages.html; then echo 'PAGES_NEURO=YES'; else echo 'PAGES_NEURO=NO'; fi
+          echo "===== CUSTOM DOMAIN HTTP ====="
+          curl -sS -L -m 20 -o /tmp/ciaw-domain.html -w 'status=%{http_code} url=%{url_effective}\n' https://ciaw.es/ || true
+          if grep -q 'Different Minds.' /tmp/ciaw-domain.html; then echo 'DOMAIN_NEURO=YES'; else echo 'DOMAIN_NEURO=NO'; fi
