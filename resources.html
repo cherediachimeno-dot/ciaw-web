@@ -12,12 +12,38 @@
 
 </head>
 <body>
-<header class="site-head"><div class="container">
-<a class="site-name" href="index.html">CIAW · Center for Innovation in Ancient Worlds</a>
-<nav class="site-nav" aria-label="Site navigation">
-<a href="index.html">Home</a><a href="research.html">Research</a><a href="seminar-2026.html">Seminar</a><a href="resources.html">Resources</a>
-<span class="langs">Language: <a href="index.html" lang="en">EN</a><a href="ca.html" lang="ca">CA</a><a href="es.html" lang="es">ES</a></span>
-</nav></div></header>
+<header class="ciaw-shared-header">
+ <div class="container">
+  <nav class="ciaw-header-nav" aria-label="Main navigation">
+   <a class="ciaw-header-brand" href="index.html" aria-label="CIAW home">
+    <img src="assets/ciaw-header-logo.png" alt="CIAW · Center for Innovation in Ancient Worlds" width="250" height="48" fetchpriority="high"/>
+   </a>
+   <div class="ciaw-header-links">
+    <a href="index.html#about">About &amp; People</a>
+    <a href="research.html">Research &amp; Outputs</a>
+    <a href="index.html#journal">AI &amp; Antiquity</a>
+    <a href="game-studies.html">Game Studies</a>
+    <a href="index.html#neurodiversity">Neurodiversity</a>
+    <a href="index.html#events" class="ciaw-section-parent">Events &amp; Resources</a>
+    <span class="ciaw-header-langs" aria-label="Language">
+     <span aria-current="page">EN</span><a href="ca.html" lang="ca">CA</a><a href="es.html" lang="es">ES</a>
+    </span>
+    <a class="ciaw-header-cta" href="index.html#contact">Collaborate</a>
+   </div>
+   <button id="ciaw-menu-toggle" type="button" class="ciaw-menu-toggle" aria-expanded="false" aria-controls="ciaw-mobile-menu" aria-label="Open navigation menu">☰</button>
+   <div id="ciaw-mobile-menu" class="ciaw-mobile-menu">
+    <a href="index.html#about">About &amp; People</a>
+    <a href="research.html">Research &amp; Outputs</a>
+    <a href="index.html#journal">AI &amp; Antiquity</a>
+    <a href="game-studies.html">Game Studies</a>
+    <a href="index.html#neurodiversity">Neurodiversity</a>
+    <a href="index.html#events" class="ciaw-section-parent">Events &amp; Resources</a>
+    <a class="ciaw-header-cta" href="index.html#contact">Collaborate</a>
+    <div class="ciaw-mobile-langs"><span>EN</span> · <a href="ca.html" lang="ca">Català</a> · <a href="es.html" lang="es">Castellano</a></div>
+   </div>
+  </nav>
+ </div>
+</header>
 <main><section class="subhero"><div class="container"><span class="eyebrow">OPEN EDUCATIONAL MATERIALS</span><h1>Teaching Resources</h1><p class="lead">Three infographics on inclusive learning, Ancient History pedagogy and critical AI literacy, alongside their publication record and subsequent research developments.</p></div></section><div class="container intro">
 <div class="notice"><strong>Research context.</strong> These materials document an earlier phase of teaching innovation project GI517492. Its later peer-reviewed account moves away from assigning learning routes by diagnosis towards flexible pathways available to all students, while maintaining common academic standards. <a href="https://doi.org/10.64946/aiantiquity.v2i2.005" target="_blank" rel="noopener noreferrer">Read the revised framework ↗</a></div>
 <section class="page-section"><h2>Browse the infographics</h2><div class="grid resource-grid">
@@ -26,5 +52,15 @@
 <article class="card"><a href="files/info3.webp" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="files/info3.webp" alt="Teaching infographic on verifying AI-generated historical information"/></a><h3>AI verification &amp; integrity</h3><p>Historical evidence, responsible AI and careful reference verification.</p><a href="files/info3.webp" target="_blank" rel="noopener noreferrer">Open image ↗</a></article>
 </div><p style="margin-top:25px" class="detail">For citation and information on reuse, consult the <a href="https://doi.org/10.5281/zenodo.21763472" target="_blank" rel="noopener noreferrer">open Zenodo record ↗</a>.</p></section></div></main>
 <footer class="site-foot"><div class="container"><span>CIAW · Independent academic initiative based in Catalonia, Spain · Founded 2025</span><span><a href="index.html#people">People</a><a href="index.html#contact">Contact</a><a href="privacy.html">Privacy</a></span></div></footer>
+<script>
+(function(){
+const btn=document.getElementById('ciaw-menu-toggle'),menu=document.getElementById('ciaw-mobile-menu');
+if(!btn||!menu)return;
+function toggle(state){menu.classList.toggle('active',state);btn.setAttribute('aria-expanded',String(state));btn.textContent=state?'✕':'☰';btn.setAttribute('aria-label',state?'Close navigation menu':'Open navigation menu')}
+btn.addEventListener('click',()=>toggle(!menu.classList.contains('active')));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggle(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle(false)});
+})();
+</script>
 </body>
 </html>
