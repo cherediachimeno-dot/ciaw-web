@@ -6,6 +6,12 @@ on:
     paths:
       - "index.html"
       - "privacy.html"
+      - "research.html"
+      - "seminar-2026.html"
+      - "resources.html"
+      - "es.html"
+      - "ca.html"
+      - "subpages.css"
       - "favicon.svg"
       - "robots.txt"
       - "sitemap.xml"
@@ -35,7 +41,7 @@ jobs:
       - name: Preparar archivos estáticos
         run: |
           mkdir -p _site
-          cp index.html privacy.html favicon.svg robots.txt sitemap.xml logo.png banner.png _site/
+          cp index.html privacy.html research.html seminar-2026.html resources.html es.html ca.html subpages.css favicon.svg robots.txt sitemap.xml logo.png banner.png _site/
           cp 1000002037_cleaned.webp _site/
           cp -R assets files _site/
           touch _site/.nojekyll
@@ -46,6 +52,12 @@ jobs:
           test -f _site/favicon.svg
           test -f _site/privacy.html
           test -f _site/sitemap.xml
+          test -f _site/research.html
+          test -f _site/seminar-2026.html
+          test -f _site/resources.html
+          test -f _site/es.html
+          test -f _site/ca.html
+          test -f _site/assets/ciaw-social.png
           test -f _site/1000002037_cleaned.webp
       - name: Comprobar configuración de Pages
         env:
