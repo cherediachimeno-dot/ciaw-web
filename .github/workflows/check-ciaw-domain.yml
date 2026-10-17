@@ -16,7 +16,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           echo "===== GITHUB PAGES CONFIG ====="
-          curl -sS -L -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' "https://api.github.com/repos/$GITHUB_REPOSITORY/pages" | jq '{html_url, cname, build_type, status, source, message}'
+          curl -sS -L -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' "https://api.github.com/repos/$GITHUB_REPOSITORY/pages" | jq '{html_url, cname, build_type, https_enforced, https_certificate, pending_domain_unverified_at}'
           echo "===== GODADDY AUTHORITATIVE A ====="
           dig @ns61.domaincontrol.com +short ciaw.es A
           echo "===== CLOUDFLARE A ====="
