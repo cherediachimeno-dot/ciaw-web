@@ -13,6 +13,14 @@ on:
       - "resources.html"
       - "es.html"
       - "ca.html"
+      - "game-studies-es.html"
+      - "game-studies-ca.html"
+      - "research-es.html"
+      - "research-ca.html"
+      - "resources-es.html"
+      - "resources-ca.html"
+      - "privacy-es.html"
+      - "privacy-ca.html"
       - "subpages.css"
       - "favicon.ico"
       - "favicon-32.png"
@@ -45,7 +53,7 @@ jobs:
       - name: Preparar archivos estáticos
         run: |
           mkdir -p _site
-          cp index.html privacy.html research.html game-studies.html game-studies.css seminar-2026.html resources.html es.html ca.html subpages.css favicon.ico favicon-32.png apple-touch-icon.png robots.txt sitemap.xml logo.png banner.png _site/
+          cp index.html es.html ca.html privacy.html privacy-es.html privacy-ca.html research.html research-es.html research-ca.html game-studies.html game-studies-es.html game-studies-ca.html game-studies.css seminar-2026.html resources.html resources-es.html resources-ca.html subpages.css favicon.ico favicon-32.png apple-touch-icon.png robots.txt sitemap.xml logo.png banner.png _site/
           cp 1000002037_cleaned.webp _site/
           cp -R assets files _site/
           touch _site/.nojekyll
@@ -65,6 +73,12 @@ jobs:
           test -f _site/resources.html
           test -f _site/es.html
           test -f _site/ca.html
+          for lang in es ca; do
+            test -f "_site/game-studies-$lang.html"
+            test -f "_site/research-$lang.html"
+            test -f "_site/resources-$lang.html"
+            test -f "_site/privacy-$lang.html"
+          done
           test -f _site/assets/ciaw-social.png
           test -f _site/1000002037_cleaned.webp
       - name: Comprobar configuración de Pages
