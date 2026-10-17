@@ -12,7 +12,7 @@ on:
       - "es.html"
       - "ca.html"
       - "subpages.css"
-      - "favicon.svg"
+      - "favicon.ico"
       - "robots.txt"
       - "sitemap.xml"
       - "assets/**"
@@ -41,7 +41,7 @@ jobs:
       - name: Preparar archivos estáticos
         run: |
           mkdir -p _site
-          cp index.html privacy.html research.html seminar-2026.html resources.html es.html ca.html subpages.css favicon.svg robots.txt sitemap.xml logo.png banner.png _site/
+          cp index.html privacy.html research.html seminar-2026.html resources.html es.html ca.html subpages.css favicon.ico robots.txt sitemap.xml logo.png banner.png _site/
           cp 1000002037_cleaned.webp _site/
           cp -R assets files _site/
           touch _site/.nojekyll
@@ -49,7 +49,7 @@ jobs:
           test -f _site/files/info1.webp
           test -f _site/files/info2.webp
           test -f _site/files/info3.webp
-          test -f _site/favicon.svg
+          test -f _site/favicon.ico
           test -f _site/privacy.html
           test -f _site/sitemap.xml
           test -f _site/research.html
