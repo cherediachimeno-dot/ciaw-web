@@ -1281,6 +1281,38 @@ nav .menu{gap:19px;font-size:.88rem}
  .governance-note{grid-template-columns:1fr;padding:24px;gap:13px}
 }
 
+
+/* 24 November 2026: poster and original-language academic seminar programme */
+.event-featured .event-body h3{font-size:1.26rem;line-height:1.36;margin-bottom:9px}
+.event-seminar-feature{display:grid;grid-template-columns:148px minmax(0,1fr);align-items:start;gap:19px;margin:18px 0 17px}
+.event-poster-thumb{display:block;overflow:hidden;max-width:148px;border:1px solid #e1d8ca;border-radius:11px;background:#fcf7ef;box-shadow:0 5px 16px rgba(15,23,42,.08);text-decoration:none}
+.event-poster-thumb img{display:block;width:100%;height:auto;aspect-ratio:1024/1449;object-fit:cover}
+.event-poster-thumb span{display:block;text-align:center;background:#fff;color:#1d4ed8;font-size:.75rem;font-weight:800;padding:9px 4px}
+.event-poster-thumb:hover span{text-decoration:underline;text-underline-offset:3px}
+.event-poster-thumb:focus-visible{outline:3px solid #2563eb;outline-offset:4px}
+.event-seminar-facts{display:grid;gap:10px;align-content:start}
+.event-seminar-facts p{display:grid;gap:2px;line-height:1.5}
+.event-seminar-facts strong{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:#64748b}
+.event-seminar-facts span{font-size:.87rem;font-weight:650;color:#334155}
+.event-programme{margin-top:22px}
+.event-programme h4{font-size:1.04rem;letter-spacing:-.01em;margin-bottom:12px;color:#172554}
+.event-programme h4 span{color:#64748b;font-weight:500}
+.event-sessions{list-style:none;padding:0;margin:0;border-top:1px solid #e2e8f0}
+.event-sessions li{display:grid;grid-template-columns:102px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid #e2e8f0}
+.event-sessions time{font-size:.8rem;font-weight:800;color:#1d4ed8;white-space:nowrap;padding-top:2px;font-variant-numeric:tabular-nums}
+.event-sessions li>div{display:grid;gap:4px;min-width:0}
+.event-sessions strong{font-size:.86rem;line-height:1.52;color:#273449}
+.event-sessions li span{font-size:.8rem;line-height:1.42;color:#64748b}
+.event-body .event-organisers{border-left:3px solid #dbeafe;padding-left:12px;margin-top:16px;font-size:.77rem;line-height:1.7;color:#64748b}
+.event-organisers strong{color:#334155}
+@media(max-width:640px){
+ .event-seminar-feature{grid-template-columns:1fr;gap:15px}
+ .event-poster-thumb{width:140px}
+ .event-sessions li{grid-template-columns:1fr;gap:2px}
+ .event-sessions time{padding-top:0}
+ .event-featured .event-body h3{font-size:1.14rem}
+}
+
 </style>
 </head>
 
@@ -1371,8 +1403,8 @@ nav .menu{gap:19px;font-size:.88rem}
    </a>
    <a class="highlight-tile" href="#events">
     <span class="highlight-tag">NEXT SEMINAR · 24 NOVEMBER 2026</span>
-    <strong>Ancient World Today</strong>
-    <span>The Far Right and Antiquity · Academic seminar</span>
+    <strong><em>Antiguitat, extrema dreta i xarxes socials</em></strong>
+    <span>L’Antiguitat al món actual II · UAB, 10.30–13.15 h</span>
     <span class="highlight-arrow" aria-hidden="true">↘</span>
    </a>
   </div>
@@ -1554,13 +1586,34 @@ nav .menu{gap:19px;font-size:.88rem}
     <a class="events-more" href="https://ai-antiquity.org/index.php/ai/events" target="_blank" rel="noopener noreferrer">Full events programme ↗</a>
    </div>
    <div class="event-list">
-    <article class="event-entry event-upcoming">
+    <article class="event-entry event-upcoming event-featured">
      <div class="event-date"><span>NOV</span><strong>24</strong><small>2026</small></div>
      <div class="event-body">
-      <span class="event-state">UPCOMING SEMINAR</span>
-      <h3>Ancient World Today: The Far Right and Antiquity</h3>
-      <p>Historical mythmaking, classical imagery and the political uses of Antiquity. Programme details are available from the organisers.</p>
-      <a href="https://ai-antiquity.org/index.php/ai/events" target="_blank" rel="noopener noreferrer">Seminar details ↗</a>
+      <span class="event-state">UPCOMING SEMINAR · L’ANTIGUITAT AL MÓN ACTUAL II</span>
+      <h3 lang="ca">Antiguitat, extrema dreta i xarxes socials</h3>
+      <p>A seminar on the appropriation of Antiquity by far-right movements, social media and generative AI.</p>
+      <div class="event-seminar-feature">
+       <a class="event-poster-thumb" href="1000002037_cleaned.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full seminar poster in a new tab">
+        <img src="1000002037_cleaned.webp" loading="lazy" decoding="async" width="1024" height="1449" alt="Official poster for Antiguitat, extrema dreta i xarxes socials, 24 November 2026, with a classical marble head and social-media imagery"/>
+        <span>View full poster ↗</span>
+       </a>
+       <div class="event-seminar-facts">
+        <p><strong>Date &amp; time</strong><span>24 November 2026 · 10.30–13.15 h</span></p>
+        <p><strong>Venue</strong><span>Sala de Graus, Facultat de Filosofia i Lletres (UAB)</span></p>
+        <p><strong>Organised by</strong><span>UOC · UAB · CIAW</span></p>
+       </div>
+      </div>
+      <div class="event-programme" aria-labelledby="seminar-programme-title">
+       <h4 id="seminar-programme-title">Programme <span lang="ca">· Programa</span></h4>
+       <ol class="event-sessions">
+        <li><time datetime="10:30">10.30–10.45</time><div><strong lang="ca">Presentació de les jornades</strong><span>Carlos Heredia i Marc Mendoza (UAB)</span></div></li>
+        <li><time datetime="10:45">10.45–11.25</time><div><strong lang="ca">De Roma al <em>feed</em>: com l’extrema dreta resignifica l’Antiguitat a les xarxes socials</strong><span>Laura Pérez Altabe (UPF)</span></div></li>
+        <li><time datetime="11:25">11.25–12.05</time><div><strong lang="es">Apropiaciones de la Antigüedad en el contexto actual de auge de las ultraderechas y de la IA generativa</strong><span>Oskar Aguado (EHU)</span></div></li>
+        <li><time datetime="12:05">12.05–12.45</time><div><strong lang="ca"><em>Iosephus Maria ad portas</em>: l’extrema dreta catalana més enllà d’Ítaca</strong><span>Marc Mendoza (UAB)</span></div></li>
+        <li><time datetime="12:45">12.45–13.15</time><div><strong lang="ca">Debat final</strong></div></li>
+       </ol>
+      </div>
+      <p class="event-organisers"><strong>With the support of:</strong> Facultat de Filosofia i Lletres (UAB); Màster Universitari de la Mediterrània Antiga (UOC–UAB–UAH); Center for Innovation in Ancient Worlds (CIAW).</p>
      </div>
     </article>
     <article class="event-entry">
