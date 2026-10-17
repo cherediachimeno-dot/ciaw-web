@@ -5,7 +5,15 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>CIAW | Center for Innovation in Ancient Worlds</title>
-<meta name="description" content="CIAW is an independent academic initiative connecting Ancient Studies, open scholarship, Game Studies, inclusive teaching and critical digital methods."/>
+<meta name="description" content="CIAW is an independent academic initiative based in Catalonia advancing Ancient Studies through open publishing, Game Studies, neurodiversity-aware teaching and responsible digital innovation."/>
+<link rel="canonical" href="https://ciaw.es/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="CIAW | Center for Innovation in Ancient Worlds"/>
+<meta property="og:description" content="Open scholarship, Game Studies and neurodiversity-aware teaching for Ancient Studies. Based in Catalonia."/>
+<meta property="og:url" content="https://ciaw.es/"/>
+<meta property="og:image" content="https://ciaw.es/assets/ai-antiquity-vol2-issue2.webp"/>
+<meta property="og:image:alt" content="AI &amp; Antiquity, volume 2 issue 2: Neurodiversity and Antiquity"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -1091,6 +1099,94 @@ nav .menu{gap:19px;font-size:.88rem}
  .neuro-support{padding:22px}
 }
 
+
+/* 2026 Editorial refresh: current work, journal, illustrated neurodiversity */
+.ciaw-highlights{padding:48px 0;background:#eef2f8;border-block:1px solid #e2e8f0}
+.highlights-intro{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:22px}
+.highlights-intro h2{font-size:clamp(1.25rem,2.2vw,1.8rem);margin:6px 0 0;letter-spacing:-.025em}
+.highlights-intro p{font-size:.94rem;color:#64748b}
+.highlights-kicker,.feature-eyebrow,.highlight-tag{font-size:.72rem;font-weight:800;letter-spacing:.095em;text-transform:uppercase}
+.highlights-kicker{color:#4338ca}
+.highlights-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.highlight-tile{display:flex;flex-direction:column;gap:10px;position:relative;min-width:0;padding:24px 44px 25px 23px;min-height:170px;background:#fff;border:1px solid #dde5ef;border-radius:17px;box-shadow:0 5px 18px rgba(15,23,42,.035);color:#334155;transition:border-color .2s,transform .2s,box-shadow .2s}
+.highlight-tile .highlight-tag{color:#5b21b6;font-size:.69rem}
+.highlight-tile strong{font-size:1.16rem;color:#17233b;line-height:1.35;letter-spacing:-.015em}
+.highlight-tile > span:not(.highlight-tag):not(.highlight-arrow){font-size:.88rem;color:#64748b;line-height:1.55}
+.highlight-arrow{position:absolute;right:21px;top:24px;font-size:1.35rem;color:#6366f1}
+.highlight-tile:hover{transform:translateY(-3px);border-color:#a5b4fc;box-shadow:0 12px 28px rgba(15,23,42,.07)}
+.highlight-tile:focus-visible,.issue-cover:focus-visible,.issue-read-link:focus-visible,.neuro-figure a:focus-visible{outline:3px solid #4f46e5;outline-offset:4px}
+.journal-heading{max-width:810px}
+.journal-heading strong{color:#065f46}
+.journal-showcase{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:20px;align-items:stretch}
+.journal-about-card,.journal-featured{border:1px solid #e0e7ef;border-radius:22px;overflow:hidden}
+.journal-about-card{background:#fff;padding:34px;display:flex;flex-direction:column}
+.journal-about-card .feature-eyebrow{color:#047857}
+.journal-about-card h3{font-size:1.55rem;letter-spacing:-.028em;line-height:1.28;margin:16px 0}
+.journal-about-card p{color:#475569;line-height:1.78}
+.journal-facts{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
+.journal-facts span{font-size:.74rem;font-weight:700;background:#ecfdf5;color:#047857;padding:6px 10px;border-radius:99px}
+.journal-about-card .section-actions{margin-top:auto;padding-top:30px}
+.journal-featured{display:grid;grid-template-columns:minmax(125px,.72fr) minmax(0,1fr);gap:0;background:linear-gradient(120deg,#fef7ed,#fffaf5 55%,#fff);border-color:#e9ded1}
+.issue-cover{display:flex;align-items:center;justify-content:center;padding:23px 0 23px 23px}
+.issue-cover img{display:block;width:100%;height:auto;max-height:340px;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(68,43,20,.12))}
+.issue-copy{padding:31px 29px 30px 23px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0}
+.issue-copy .feature-eyebrow{color:#9a3412;line-height:1.55}
+.issue-copy h3{font-family:Georgia,serif;color:#292524;font-size:clamp(1.5rem,2.2vw,2.05rem);line-height:1.17;letter-spacing:-.02em;margin:16px 0}
+.issue-copy p{font-size:.92rem;line-height:1.75;color:#57534e}
+.issue-read-link{display:inline-flex;align-items:center;gap:9px;font-size:.92rem;font-weight:800;color:#9a3412;margin-top:22px;text-decoration:none;border-bottom:1px solid #c2410c;padding-bottom:5px}
+.issue-read-link:hover{color:#7c2d12}
+#neurodiversity{background:linear-gradient(145deg,#f6f4ff 0%,#fff 70%);}
+.neuro-editorial{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);align-items:start;gap:clamp(28px,5vw,78px)}
+.neuro-editorial-copy h2{max-width:650px;font-size:clamp(2rem,3.4vw,3.1rem);line-height:1.16;letter-spacing:-.035em}
+.neuro-editorial-copy .neuro-lead{font-size:1.05rem;line-height:1.8;margin-top:18px;max-width:650px}
+.neuro-editorial-copy .neuro-detail{font-size:.98rem;line-height:1.78;margin-top:14px}
+.neuro-principles{margin-top:26px;border-top:1px solid #dcd7f9}
+.neuro-principles > div{display:grid;grid-template-columns:32px 1fr;gap:13px;padding:15px 0;border-bottom:1px solid #e8e5f9}
+.principle-number{font-size:.77rem;font-weight:800;color:#7c3aed;padding-top:2px}
+.neuro-principles p{display:flex;flex-direction:column;gap:4px;margin:0;color:#475569;font-size:.9rem;line-height:1.6}
+.neuro-principles strong{font-size:.96rem;color:#312e81}
+.neuro-editorial-copy .section-actions{margin-top:25px}
+.neuro-figure{margin:0;padding:15px 15px 19px;background:white;border-radius:21px;border:1px solid #ede9fe;box-shadow:0 14px 38px rgba(67,56,202,.075)}
+.neuro-figure > a{display:block;overflow:hidden;background:#f9f6ef;border-radius:13px}
+.neuro-figure img{width:100%;height:auto;display:block;transition:transform .35s ease}
+.neuro-figure a:hover img{transform:scale(1.015)}
+.neuro-figure figcaption{font-size:.78rem;line-height:1.55;color:#64748b;padding:13px 3px 0}
+.neuro-figure figcaption strong{color:#312e81}
+.neuro-figure figcaption a{color:#4338ca;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:1000px){
+ .journal-showcase{grid-template-columns:1fr}
+ .journal-featured{grid-template-columns:230px minmax(0,1fr)}
+ .journal-about-card .section-actions{margin-top:16px;padding:0}
+ .neuro-editorial{gap:28px}
+}
+@media(max-width:740px){
+ .highlights-intro{display:block}
+ .highlights-intro p{margin-top:7px}
+ .highlights-grid{grid-template-columns:1fr}
+ .highlight-tile{min-height:0;padding:18px 45px 19px 20px;gap:5px}
+ .journal-featured{grid-template-columns:minmax(110px,.62fr) minmax(0,1fr)}
+ .journal-about-card{padding:25px}
+ .issue-cover{padding:16px 0 16px 14px}
+ .issue-copy{padding:22px 18px}
+ .issue-copy h3{font-size:1.4rem;margin:9px 0}
+ .issue-copy p{font-size:.85rem;line-height:1.57}
+ .neuro-editorial{grid-template-columns:1fr}
+ .neuro-figure{max-width:400px;margin:auto}
+}
+@media(max-width:440px){
+ .journal-featured{grid-template-columns:minmax(90px,.55fr) minmax(0,1fr)}
+ .issue-cover{padding:12px 0 12px 10px}
+ .issue-copy{padding:18px 12px}
+ .issue-copy .feature-eyebrow{font-size:.63rem}
+ .issue-copy h3{font-size:1.2rem}
+ .issue-copy p{font-size:.78rem;line-height:1.45}
+ .issue-read-link{font-size:.83rem;margin-top:12px}
+ .journal-about-card .section-actions{margin-top:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .highlight-tile,.neuro-figure img{transition:none}
+}
+
 </style>
 </head>
 
@@ -1154,30 +1250,76 @@ nav .menu{gap:19px;font-size:.88rem}
   </div>
  </section>
 
- <section id="journal" aria-labelledby="journal-title">
-  <div class="container">
-   <div class="section-intro">
-    <div class="badge badge-green">FLAGSHIP PUBLICATION</div>
-    <h2 id="journal-title"><em>AI &amp; Antiquity</em></h2>
-    <p>Published by CIAW, this international, peer-reviewed Diamond Open Access journal connects Ancient Studies with teaching, artificial intelligence, digital humanities, Game Studies and critical approaches to historical knowledge.</p>
+<section id="highlights" class="ciaw-highlights" aria-labelledby="highlights-title">
+ <div class="container">
+  <div class="highlights-intro">
+   <div>
+    <span class="highlights-kicker">CURRENTLY AT CIAW</span>
+    <h2 id="highlights-title">Research, publishing, exchange.</h2>
    </div>
-   <div class="journal-panel">
-    <div class="card">
-     <h3>Open research, interdisciplinary dialogue</h3>
-     <p><em>AI &amp; Antiquity</em> publishes scholarship on the ancient world and emerging technologies, inclusive education and new forms of cultural representation. Its thematic publications include <em>Playing Antiquity</em>, dedicated to video games and the ancient world.</p>
-     <div class="section-actions">
-      <a class="btn btn-primary" href="https://ai-antiquity.org/" target="_blank" rel="noopener noreferrer">Visit the Journal ↗</a>
-      <a class="btn btn-outline" href="https://ai-antiquity.org/index.php/ai/issue/archive" target="_blank" rel="noopener noreferrer">Browse Issues ↗</a>
-     </div>
-    </div>
-    <div class="journal-meta" aria-label="Journal information">
-     <p><strong>Model</strong>Peer-reviewed · Diamond Open Access · No APC</p>
-     <p><strong>ISSN</strong>3081-4553</p>
-     <p><strong>Current thematic issue</strong><a class="journal-issue-link" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">Volume 2, Issue 2 (2026): <em>Neurodiversity and Antiquity</em> ↗</a></p>
-    </div>
-   </div>
+   <p>Three ways to explore our latest work.</p>
   </div>
- </section>
+  <div class="highlights-grid">
+   <a class="highlight-tile" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">
+    <span class="highlight-tag">NEW ISSUE · SEPTEMBER 2026</span>
+    <strong><em>Neurodiversity and Antiquity</em></strong>
+    <span>AI &amp; Antiquity · Vol. 2, Issue 2</span>
+    <span class="highlight-arrow" aria-hidden="true">↗</span>
+   </a>
+   <a class="highlight-tile" href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer">
+    <span class="highlight-tag">CALL FOR PAPERS · FEBRUARY 2027</span>
+    <strong><em>Playing Antiquity</em></strong>
+    <span>Video games, teaching and historical knowledge</span>
+    <span class="highlight-arrow" aria-hidden="true">↗</span>
+   </a>
+   <a class="highlight-tile" href="#teaching-resources">
+    <span class="highlight-tag">OPEN EDUCATIONAL RESOURCES</span>
+    <strong>Inclusive teaching guides</strong>
+    <span>Accessible learning and critical AI literacy</span>
+    <span class="highlight-arrow" aria-hidden="true">↘</span>
+   </a>
+  </div>
+ </div>
+</section>
+
+
+
+ <section id="journal" aria-labelledby="journal-title">
+ <div class="container">
+  <div class="section-intro journal-heading">
+   <div class="badge badge-green">CIAW · FLAGSHIP PUBLICATION</div>
+   <h2 id="journal-title"><em>AI &amp; Antiquity</em></h2>
+   <p>An international, peer-reviewed <strong>Diamond Open Access</strong> journal connecting Ancient Studies with inclusive teaching, digital humanities, Game Studies and critical approaches to technology and historical knowledge.</p>
+  </div>
+  <div class="journal-showcase">
+   <div class="journal-about-card">
+    <span class="feature-eyebrow">RESEARCH WITHOUT BARRIERS</span>
+    <h3>Open scholarship, critical perspectives.</h3>
+    <p>Published by CIAW, <em>AI &amp; Antiquity</em> brings together original research, methodological reflection and debates on how Antiquity is studied, interpreted and taught.</p>
+    <div class="journal-facts" aria-label="Journal publication details">
+     <span>Peer reviewed</span>
+     <span>No publication fees</span>
+     <span>ISSN 3081-4553</span>
+    </div>
+    <div class="section-actions">
+     <a class="btn btn-primary" href="https://ai-antiquity.org/" target="_blank" rel="noopener noreferrer">Visit the journal ↗</a>
+     <a class="btn btn-outline" href="https://ai-antiquity.org/index.php/ai/issue/archive" target="_blank" rel="noopener noreferrer">Issue archive ↗</a>
+    </div>
+   </div>
+   <article class="journal-featured" aria-labelledby="featured-issue-title">
+    <a class="issue-cover" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer" aria-label="Read AI & Antiquity volume 2 issue 2">
+     <img src="assets/ai-antiquity-vol2-issue2.webp" loading="lazy" decoding="async" alt="Cover of AI &amp; Antiquity, Volume 2, Issue 2 (2026), showing a stylised ancient helmet composition"/>
+    </a>
+    <div class="issue-copy">
+     <span class="feature-eyebrow">FEATURED ISSUE · VOLUME 2.2 · 2026</span>
+     <h3 id="featured-issue-title"><em>Neurodiversity and Antiquity</em></h3>
+     <p>From individual accommodation to inclusive design: new perspectives on cognitive difference, academic participation, teaching and assessment in Ancient Studies—without lowering scholarly standards.</p>
+     <a class="issue-read-link" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">Explore the issue <span aria-hidden="true">↗</span></a>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
 
  <section id="game-studies" aria-labelledby="games-title">
   <span id="research" class="anchor-target" aria-hidden="true"></span>
@@ -1214,32 +1356,32 @@ nav .menu{gap:19px;font-size:.88rem}
  </section>
 
  <section id="neurodiversity" aria-labelledby="neuro-title">
-  <div class="container">
-   <div class="neuro-heading">
+ <div class="container">
+  <div class="neuro-editorial">
+   <div class="neuro-editorial-copy">
     <div class="badge badge-purple">NEURODIVERSITY BY DESIGN</div>
     <h2 id="neuro-title">Different Minds. <span class="gradient-text">Better Humanities.</span></h2>
-    <p class="neuro-lead">Neurodivergent students, educators and researchers are not simply people to be accommodated. Their different ways of thinking, learning and interpreting evidence can enrich Ancient Studies. CIAW approaches neurodiversity as a matter of <strong>academic participation, research perspectives and educational design</strong>—not as a deficit to be corrected.</p>
-    <p class="neuro-detail">Our goal is to remove unnecessary barriers while maintaining demanding academic standards: <strong>the same intellectual expectations, with different pathways to meet them.</strong> Accessibility should be built into learning environments from the outset rather than offered only as an exception.</p>
-   </div>
-   <div class="grid grid-2 neuro-cards">
-    <div class="card">
-     <h3>Recognising different perspectives</h3>
-     <p>Autistic, ADHD, dyslexic, dyspraxic and other neurodivergent profiles encompass varied experiences, abilities and support needs. CIAW values the distinct scholarly insights individuals may bring, from sustained attention to evidence to alternative interpretive approaches, without assuming that any profile is uniform.</p>
+    <p class="neuro-lead">Neurodivergent students, educators and researchers contribute different experiences and perspectives to Ancient Studies. Inclusion is not simply a matter of offering individual accommodations; it means designing academic environments that value cognitive difference from the outset.</p>
+    <p class="neuro-detail"><strong>Same standards, different pathways.</strong> We preserve rigorous historical analysis while reducing unnecessary cognitive, sensory and social barriers to participation.</p>
+    <div class="neuro-principles">
+     <div><span class="principle-number">01</span><p><strong>Intellectual contribution</strong><span>Recognising diverse approaches to evidence, interpretation and scholarly work.</span></p></div>
+     <div><span class="principle-number">02</span><p><strong>Inclusive design</strong><span>Clear expectations, multimodal materials and flexible ways to participate and demonstrate learning.</span></p></div>
+     <div><span class="principle-number">03</span><p><strong>Responsible digital support</strong><span>Using AI and accessible technologies critically, with human judgement and source verification intact.</span></p></div>
     </div>
-    <div class="card">
-     <h3>Inclusive teaching in practice</h3>
-     <p>Clear structures, predictable learning environments, multimodal materials, executive-function support, flexible participation and meaningful assessment options can improve access without diluting historical analysis or disciplinary rigour.</p>
-    </div>
-   </div>
-   <div class="neuro-support">
-    <p><strong>Technology with a purpose.</strong> Used critically and transparently, AI and digital tools may assist reading, organisation, comprehension and accessibility. They support—not replace—human judgement, historical evidence and academic verification.</p>
     <div class="section-actions">
-     <a class="btn btn-primary" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">Read <em>Neurodiversity and Antiquity</em> ↗</a>
-     <a class="btn btn-outline" href="#teaching-resources">Teaching Resources →</a>
+     <a class="btn btn-primary" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">Read the special issue ↗</a>
+     <a class="btn btn-outline" href="#teaching-resources">Explore teaching resources →</a>
     </div>
    </div>
+   <figure class="neuro-figure">
+    <a href="https://ai-antiquity.org/index.php/ai/neurodiversity" target="_blank" rel="noopener noreferrer" aria-label="See the original illustration in AI & Antiquity">
+     <img src="assets/arturo-galindo-neurodiversity.webp" loading="lazy" decoding="async" alt="Artwork by Arturo Galindo García: an ancient-style helmet made from contrasting golden, pale pink and blue sections, against delicate circular geometric patterns"/>
+    </a>
+    <figcaption>Original artwork by <strong>Arturo Galindo García</strong> (2026) · <em>AI &amp; Antiquity</em> · <a href="https://ai-antiquity.org/index.php/ai/neurodiversity" target="_blank" rel="noopener noreferrer">View original ↗</a></figcaption>
+   </figure>
   </div>
- </section>
+ </div>
+</section>
 
  <section id="projects" aria-labelledby="projects-title">
   <span id="activities" class="anchor-target" aria-hidden="true"></span>
