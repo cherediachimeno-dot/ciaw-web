@@ -1062,6 +1062,35 @@ nav .menu{gap:19px;font-size:.88rem}
  .about-detail {font-size:.98rem}
 }
 
+
+/* Neurodiversity: a core CIAW research and teaching pillar */
+.hero-glass .hero-pillar{display:block;text-align:center;position:relative;border-radius:12px}
+.hero-glass .hero-pillar strong{color:white}
+.hero-glass .hero-pillar:hover span{text-decoration:underline;text-underline-offset:3px}
+.hero-glass .hero-pillar:focus-visible{outline:3px solid #fff;outline-offset:5px}
+#neurodiversity{background:linear-gradient(180deg,#fff 0%,#f7f5ff 100%)}
+.neuro-heading{max-width:860px;margin-bottom:30px}
+.neuro-heading h2{line-height:1.2}
+.neuro-lead{font-size:1.1rem;line-height:1.85;color:#475569}
+.neuro-detail{font-size:.97rem;margin-top:16px;line-height:1.83}
+.neuro-lead strong,.neuro-detail strong{color:#1e293b}
+.neuro-cards .card{border-top:3px solid #8b5cf6}
+.neuro-cards .card h3{font-size:1.15rem;margin-bottom:10px}
+.neuro-cards .card p{font-size:.95rem;line-height:1.78}
+.neuro-support{margin-top:22px;border:1px solid #ddd6fe;border-radius:19px;padding:25px 29px;background:#fff}
+.neuro-support p{font-size:.96rem;line-height:1.8}
+.neuro-support strong{color:#312e81}
+#neurodiversity .section-actions{margin-top:17px}
+#neurodiversity .btn-outline{border:2px solid #a5b4fc;color:#312e81;background:white}
+#neurodiversity .btn-outline:hover{background:#312e81;color:white;border-color:#312e81}
+.journal-issue-link{display:inline-block;color:#1d4ed8;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.journal-issue-link:hover{color:#1e40af}
+@media(max-width:600px){
+ .neuro-heading h2{font-size:clamp(1.9rem,9vw,2.5rem)}
+ .neuro-lead{font-size:1rem}
+ .neuro-support{padding:22px}
+}
+
 </style>
 </head>
 
@@ -1074,6 +1103,7 @@ nav .menu{gap:19px;font-size:.88rem}
     <a href="#about">About</a>
     <a href="#journal">Journal</a>
     <a href="#game-studies">Game Studies</a>
+    <a href="#neurodiversity">Neurodiversity</a>
     <a href="#projects">Projects</a>
     <a href="#teaching-resources">Resources</a>
     <a href="#contact" class="nav-cta">Collaborate</a>
@@ -1083,6 +1113,7 @@ nav .menu{gap:19px;font-size:.88rem}
     <a href="#about">About CIAW</a>
     <a href="#journal">AI &amp; Antiquity</a>
     <a href="#game-studies">Game Studies</a>
+    <a href="#neurodiversity">Neurodiversity</a>
     <a href="#projects">Projects</a>
     <a href="#teaching-resources">Resources</a>
     <a href="#contact" class="nav-cta">Collaborate</a>
@@ -1097,7 +1128,7 @@ nav .menu{gap:19px;font-size:.88rem}
   <div class="container"><div class="hero-content">
    <div class="kicker">Independent academic initiative · Based in Catalonia · Founded 2025</div>
    <h1 id="site-title">Center for Innovation in <span class="gradient-text">Ancient Worlds</span></h1>
-   <p>Based in Catalonia and open to international collaboration, CIAW connects research, academic publishing and educational innovation in Ancient Studies—with a particular focus on <strong style="color:#fff">Game Studies</strong>, inclusive teaching and digital culture.</p>
+   <p>Based in Catalonia and open to international collaboration, CIAW connects research, academic publishing and educational innovation in Ancient Studies—with particular attention to <strong style="color:#fff">Game Studies and neurodiversity</strong>, inclusive teaching and digital culture.</p>
    <div class="hero-buttons">
     <a href="#about" class="btn btn-primary">Discover CIAW →</a>
     <a href="#game-studies" class="btn btn-outline">Explore Game Studies ↓</a>
@@ -1105,7 +1136,7 @@ nav .menu{gap:19px;font-size:.88rem}
    <div class="hero-glass" aria-label="Three key areas">
     <div><strong>Open Scholarship</strong><span>Research &amp; publication</span></div>
     <div><strong>Game Studies</strong><span>Reception &amp; historical play</span></div>
-    <div><strong>Inclusive Education</strong><span>Critical &amp; accessible teaching</span></div>
+    <a class="hero-pillar" href="#neurodiversity" aria-label="Explore CIAW's neurodiversity and inclusive teaching work"><strong>Neurodiversity</strong><span>Inclusive teaching by design ↓</span></a>
    </div>
   </div></div>
  </section>
@@ -1117,8 +1148,8 @@ nav .menu{gap:19px;font-size:.88rem}
     <h2 id="about-title">What is CIAW?</h2>
     <p class="about-lead"><strong>The Center for Innovation in Ancient Worlds (CIAW)</strong> is an independent, non-profit academic initiative founded in 2025 and <strong>based in Catalonia, Spain</strong>. Bringing together Ancient History, Classics, Archaeology and Reception Studies, it promotes interdisciplinary research, scholarly publishing, educational innovation and public engagement with the ancient world.</p>
     <p class="about-detail">Rather than operating as a single university department, CIAW provides a collaborative framework open to scholars, educators and cultural practitioners across institutions and countries. It explores not only what we know about Antiquity, but also <strong>how historical knowledge is produced, represented, taught and shared</strong>—from the critical study of ancient evidence to video games, digital humanities and emerging technologies.</p>
-    <p class="about-detail">Through its Diamond Open Access journal <em>AI &amp; Antiquity</em>, the <em>Playing Antiquity</em> thematic series and its teaching and outreach initiatives, CIAW is committed to rigorous scholarship, academic independence, accessible learning and the open exchange of ideas.</p>
-    <div class="about-focus" aria-label="Areas of work"><span>Ancient Studies</span><span>Open Access Publishing</span><span>Game Studies</span><span>Inclusive Teaching</span><span>Digital Humanities</span></div>
+    <p class="about-detail">Through its Diamond Open Access journal <em>AI &amp; Antiquity</em>, the <em>Playing Antiquity</em> thematic series and its work on neurodiversity-aware teaching, CIAW is committed to rigorous scholarship, academic independence, accessible learning and the open exchange of ideas.</p>
+    <div class="about-focus" aria-label="Areas of work"><span>Ancient Studies</span><span>Open Access Publishing</span><span>Game Studies</span><span>Neurodiversity</span><span>Inclusive Teaching</span><span>Digital Humanities</span></div>
    </div>
   </div>
  </section>
@@ -1142,7 +1173,7 @@ nav .menu{gap:19px;font-size:.88rem}
     <div class="journal-meta" aria-label="Journal information">
      <p><strong>Model</strong>Peer-reviewed · Diamond Open Access · No APC</p>
      <p><strong>ISSN</strong>3081-4553</p>
-     <p><strong>Latest highlighted issue</strong>Volume 2, Issue 2 (2026): <em>Neurodiversity and Antiquity</em></p>
+     <p><strong>Current thematic issue</strong><a class="journal-issue-link" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">Volume 2, Issue 2 (2026): <em>Neurodiversity and Antiquity</em> ↗</a></p>
     </div>
    </div>
   </div>
@@ -1182,6 +1213,34 @@ nav .menu{gap:19px;font-size:.88rem}
   </div>
  </section>
 
+ <section id="neurodiversity" aria-labelledby="neuro-title">
+  <div class="container">
+   <div class="neuro-heading">
+    <div class="badge badge-purple">NEURODIVERSITY BY DESIGN</div>
+    <h2 id="neuro-title">Different Minds. <span class="gradient-text">Better Humanities.</span></h2>
+    <p class="neuro-lead">Neurodivergent students, educators and researchers are not simply people to be accommodated. Their different ways of thinking, learning and interpreting evidence can enrich Ancient Studies. CIAW approaches neurodiversity as a matter of <strong>academic participation, research perspectives and educational design</strong>—not as a deficit to be corrected.</p>
+    <p class="neuro-detail">Our goal is to remove unnecessary barriers while maintaining demanding academic standards: <strong>the same intellectual expectations, with different pathways to meet them.</strong> Accessibility should be built into learning environments from the outset rather than offered only as an exception.</p>
+   </div>
+   <div class="grid grid-2 neuro-cards">
+    <div class="card">
+     <h3>Recognising different perspectives</h3>
+     <p>Autistic, ADHD, dyslexic, dyspraxic and other neurodivergent profiles encompass varied experiences, abilities and support needs. CIAW values the distinct scholarly insights individuals may bring, from sustained attention to evidence to alternative interpretive approaches, without assuming that any profile is uniform.</p>
+    </div>
+    <div class="card">
+     <h3>Inclusive teaching in practice</h3>
+     <p>Clear structures, predictable learning environments, multimodal materials, executive-function support, flexible participation and meaningful assessment options can improve access without diluting historical analysis or disciplinary rigour.</p>
+    </div>
+   </div>
+   <div class="neuro-support">
+    <p><strong>Technology with a purpose.</strong> Used critically and transparently, AI and digital tools may assist reading, organisation, comprehension and accessibility. They support—not replace—human judgement, historical evidence and academic verification.</p>
+    <div class="section-actions">
+     <a class="btn btn-primary" href="https://ai-antiquity.org/index.php/ai/issue/view/volume2issue2" target="_blank" rel="noopener noreferrer">Read <em>Neurodiversity and Antiquity</em> ↗</a>
+     <a class="btn btn-outline" href="#teaching-resources">Teaching Resources →</a>
+    </div>
+   </div>
+  </div>
+ </section>
+
  <section id="projects" aria-labelledby="projects-title">
   <span id="activities" class="anchor-target" aria-hidden="true"></span>
   <div class="container">
@@ -1194,7 +1253,7 @@ nav .menu{gap:19px;font-size:.88rem}
     <div class="card">
      <div class="tag">Teaching innovation · UAB</div>
      <h3>Forgotten Voices in Antiquity</h3>
-     <p>Project GI517492 (2025–2026): inclusive Ancient History teaching, overlooked historical experiences and critical AI literacy.</p>
+     <p>Project GI517492 (2025–2026): inclusive Ancient History teaching, neurodiversity-aware learning, overlooked historical experiences and critical AI literacy.</p>
     </div>
     <div class="card">
      <div class="tag">Professional development</div>
@@ -1211,12 +1270,11 @@ nav .menu{gap:19px;font-size:.88rem}
  </section>
 
  <section id="teaching-resources" aria-labelledby="resources-title">
-  <span id="neurodiversity" class="anchor-target" aria-hidden="true"></span>
   <div class="container">
    <div class="section-intro">
     <div class="badge badge-purple">OPEN EDUCATIONAL RESOURCES</div>
     <h2 id="resources-title">Teaching Resources</h2>
-    <p>Three research-informed infographics on inclusive education, Ancient History teaching and critical AI literacy. Open each image to view the full guide.</p>
+    <p>Three research-informed infographics on neurodiversity-aware learning, inclusive Ancient History teaching and critical AI literacy. Open each image to view the full guide.</p>
    </div>
    <div class="grid grid-3 resources-grid">
     <div class="card">
@@ -1247,7 +1305,7 @@ nav .menu{gap:19px;font-size:.88rem}
    <div class="contact-panel">
     <div class="badge">COLLABORATE</div>
     <h2 id="contact-title">Work with CIAW</h2>
-    <p>We welcome collaboration with researchers, universities, educators and cultural institutions interested in Ancient Studies, Game Studies and inclusive academic innovation.</p>
+    <p>We welcome collaboration with researchers, universities, educators and cultural institutions interested in Ancient Studies, Game Studies, neurodiversity and inclusive academic innovation.</p>
     <div class="section-actions">
      <a href="mailto:carlos.heredia@uab.cat" class="btn btn-primary">Contact CIAW →</a>
      <a href="https://ai-antiquity.org/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Explore the Journal ↗</a>
@@ -1266,6 +1324,7 @@ nav .menu{gap:19px;font-size:.88rem}
   <div class="footer-links">
    <a href="#about">About</a>
    <a href="#game-studies">Game Studies</a>
+   <a href="#neurodiversity">Neurodiversity</a>
    <a href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer">Playing Antiquity ↗</a>
    <a href="mailto:carlos.heredia@uab.cat">Contact</a>
   </div>
