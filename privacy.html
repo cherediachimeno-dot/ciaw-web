@@ -9,13 +9,55 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
+<link rel="stylesheet" href="subpages.css"/>
 <style>
-:root{color-scheme:light}*{box-sizing:border-box}body{margin:0;font:16px/1.8 system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#243047;background:#f8fafc}header{background:#101d3a;color:white;padding:28px max(5%,calc((100% - 960px)/2))}header a{color:white;font-size:1.1rem;font-weight:800;text-decoration:none}main{max-width:960px;padding:52px 5% 75px;margin:auto}h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.2;letter-spacing:-.03em;margin:0 0 20px}h2{font-size:1.2rem;margin:32px 0 4px}p{margin:8px 0;max-width:72ch}a{color:#1d4ed8;text-underline-offset:3px}footer{padding:24px max(5%,calc((100% - 960px)/2));border-top:1px solid #e2e8f0;font-size:.87rem;color:#64748b}.eyebrow{display:block;color:#4f46e5;letter-spacing:.09em;font-weight:800;font-size:.76rem;margin-bottom:12px}a:focus-visible{outline:3px solid #2563eb;outline-offset:4px} 
+.privacy-page{background:#f8fafc;color:#243047}
+.privacy-main{max-width:960px;margin:0 auto;padding:52px 5% 75px;font-size:1rem;line-height:1.82}
+.privacy-main h1{font-size:clamp(2rem,4vw,2.8rem);line-height:1.18;letter-spacing:-.035em;margin:0 0 20px}
+.privacy-main h2{font-size:1.19rem;letter-spacing:-.01em;margin:32px 0 6px}
+.privacy-main p{margin:8px 0;max-width:72ch;color:#475569}
+.privacy-main a{color:#1d4ed8;text-underline-offset:3px}
+.privacy-main .eyebrow{display:block;color:#4f46e5;letter-spacing:.09em;font-weight:800;font-size:.76rem;margin-bottom:12px}
+.privacy-skip{position:absolute;left:14px;top:-80px;background:#fff;padding:9px 16px;z-index:3000;border:2px solid #2563eb;border-radius:10px;font-weight:800}
+.privacy-skip:focus{top:12px}
+@media(max-width:600px){.privacy-main{padding:38px 5% 55px}}
 </style>
 </head>
-<body>
-<header><a href="/">CIAW · Center for Innovation in Ancient Worlds</a></header>
-<main>
+<body class="privacy-page">
+<a class="privacy-skip" href="#privacy-main">Skip to content</a>
+<header class="ciaw-shared-header">
+ <div class="container">
+  <nav class="ciaw-header-nav" aria-label="Main navigation">
+   <a class="ciaw-header-brand" href="index.html" aria-label="CIAW home">
+    <img src="assets/ciaw-header-logo.png" alt="CIAW · Center for Innovation in Ancient Worlds" width="250" height="48" fetchpriority="high"/>
+   </a>
+   <div class="ciaw-header-links">
+    <a href="index.html#about">About &amp; People</a>
+    <a href="research.html">Research &amp; Outputs</a>
+    <a href="index.html#journal">AI &amp; Antiquity</a>
+    <a href="game-studies.html">Game Studies</a>
+    <a href="index.html#neurodiversity">Neurodiversity</a>
+    <a href="index.html#events">Events &amp; Resources</a>
+    <span class="ciaw-header-langs" aria-label="Language">
+     <span aria-current="page">EN</span><a href="ca.html" lang="ca">CA</a><a href="es.html" lang="es">ES</a>
+    </span>
+    <a class="ciaw-header-cta" href="index.html#contact">Collaborate</a>
+   </div>
+   <button id="ciaw-menu-toggle" type="button" class="ciaw-menu-toggle" aria-expanded="false" aria-controls="ciaw-mobile-menu" aria-label="Open navigation menu">☰</button>
+   <div id="ciaw-mobile-menu" class="ciaw-mobile-menu">
+    <a href="index.html#about">About &amp; People</a>
+    <a href="research.html">Research &amp; Outputs</a>
+    <a href="index.html#journal">AI &amp; Antiquity</a>
+    <a href="game-studies.html">Game Studies</a>
+    <a href="index.html#neurodiversity">Neurodiversity</a>
+    <a href="index.html#events">Events &amp; Resources</a>
+    <a class="ciaw-header-cta" href="index.html#contact">Collaborate</a>
+    <div class="ciaw-mobile-langs"><span>EN</span> · <a href="ca.html" lang="ca">Català</a> · <a href="es.html" lang="es">Castellano</a></div>
+   </div>
+  </nav>
+ </div>
+</header>
+<main class="privacy-main" id="privacy-main">
 <span class="eyebrow">INDEPENDENT ACADEMIC INITIATIVE · CATALONIA</span>
 <h1>Privacy &amp; website information</h1>
 <p>This notice concerns <strong>ciaw.es</strong>, the informational website of the Center for Innovation in Ancient Worlds (CIAW), an independent, non-profit academic initiative founded in 2025 and based in Catalonia, Spain. CIAW's website and <em>AI &amp; Antiquity</em>'s journal platform are separate websites.</p>
@@ -31,6 +73,16 @@
 <p>CIAW is an independent non-profit academic initiative based in Catalonia, Spain. Its contributors may hold appointments at the Universitat Autònoma de Barcelona (UAB) or elsewhere; those affiliations do not make CIAW an administrative unit of their universities. The editorial platform <a href="https://ai-antiquity.org/">AI &amp; Antiquity</a> has separate journal-specific policies and submission procedures.</p><p>This page provides information about the website and its contact practices; it does not assert any unverified separate legal incorporation, tax status or registered office. For clarification, please contact the person identified above.</p>
 <p><a href="/">← Return to CIAW</a></p>
 </main>
-<footer>© CIAW · Independent academic initiative · Catalonia, Spain</footer>
+<footer class="site-foot"><div class="container"><span>© CIAW · Independent academic initiative based in Catalonia, Spain</span><span><a href="index.html">Home</a><a href="index.html#people">People</a><a href="index.html#contact">Contact</a></span></div></footer>
+<script>
+(function(){
+const btn=document.getElementById('ciaw-menu-toggle'),menu=document.getElementById('ciaw-mobile-menu');
+if(!btn||!menu)return;
+function toggle(state){menu.classList.toggle('active',state);btn.setAttribute('aria-expanded',String(state));btn.textContent=state?'✕':'☰';btn.setAttribute('aria-label',state?'Close navigation menu':'Open navigation menu')}
+btn.addEventListener('click',()=>toggle(!menu.classList.contains('active')));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggle(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle(false)});
+})();
+</script>
 </body>
 </html>
