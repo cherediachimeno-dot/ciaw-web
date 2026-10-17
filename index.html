@@ -1038,6 +1038,30 @@ nav .menu{gap:19px;font-size:.88rem}
  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 
+
+/* CIAW identity and Playing Antiquity artwork */
+.about-detail {font-size:1rem;line-height:1.82;margin-top:18px;max-width:850px}
+.about-detail strong {color:var(--text)}
+.playing-artwork {
+ grid-column:1 / -1;
+ display:block;
+ justify-self:center;
+ width:100%;
+ max-width:950px;
+ overflow:hidden;
+ background:#f1f5f9;
+ border-radius:17px;
+ border:1px solid #cbd5e1;
+ box-shadow:0 8px 24px rgba(15,23,42,.08)
+}
+.playing-artwork img {display:block;width:100%;height:auto;object-fit:contain;transition:transform .35s ease}
+.playing-artwork:hover img {transform:scale(1.015)}
+.playing-artwork:focus-visible {outline:3px solid var(--blue);outline-offset:4px}
+@media(max-width:600px) {
+ .playing {gap:20px}
+ .about-detail {font-size:.98rem}
+}
+
 </style>
 </head>
 
@@ -1071,9 +1095,9 @@ nav .menu{gap:19px;font-size:.88rem}
  <section class="hero" aria-labelledby="site-title">
   <div class="glow-orb hero-glow-1"></div><div class="glow-orb hero-glow-2"></div>
   <div class="container"><div class="hero-content">
-   <div class="kicker">Independent academic initiative · Founded in 2025</div>
+   <div class="kicker">Independent academic initiative · Based in Catalonia · Founded 2025</div>
    <h1 id="site-title">Center for Innovation in <span class="gradient-text">Ancient Worlds</span></h1>
-   <p>CIAW brings together research, academic publishing and educational innovation in Ancient Studies, with a particular interest in <strong style="color:#fff">Game Studies</strong>, inclusive teaching and digital culture.</p>
+   <p>Based in Catalonia and open to international collaboration, CIAW connects research, academic publishing and educational innovation in Ancient Studies—with a particular focus on <strong style="color:#fff">Game Studies</strong>, inclusive teaching and digital culture.</p>
    <div class="hero-buttons">
     <a href="#about" class="btn btn-primary">Discover CIAW →</a>
     <a href="#game-studies" class="btn btn-outline">Explore Game Studies ↓</a>
@@ -1087,15 +1111,14 @@ nav .menu{gap:19px;font-size:.88rem}
  </section>
 
  <section id="about" aria-labelledby="about-title">
-  <span id="mission" class="anchor-target" aria-hidden="true"></span>
-  <span id="foundation" class="anchor-target" aria-hidden="true"></span>
-  <span id="values" class="anchor-target" aria-hidden="true"></span>
   <div class="container">
    <div class="section-intro">
-    <div class="badge">ABOUT CIAW</div>
+    <div class="badge">INDEPENDENT · BASED IN CATALONIA</div>
     <h2 id="about-title">What is CIAW?</h2>
-    <p class="about-lead"><strong>The Center for Innovation in Ancient Worlds</strong> is an independent, non-profit academic initiative founded in 2025. It connects scholars, educators and cultural practitioners interested in how the ancient world is researched, represented, taught and shared. Our approach combines scholarly rigour, interdisciplinary exchange, openness and accessibility.</p>
-    <div class="about-focus" aria-label="Areas of work"><span>Ancient Studies</span><span>Academic Publishing</span><span>Game Studies</span><span>Inclusive Pedagogy</span><span>Digital Humanities</span></div>
+    <p class="about-lead"><strong>The Center for Innovation in Ancient Worlds (CIAW)</strong> is an independent, non-profit academic initiative founded in 2025 and <strong>based in Catalonia, Spain</strong>. Bringing together Ancient History, Classics, Archaeology and Reception Studies, it promotes interdisciplinary research, scholarly publishing, educational innovation and public engagement with the ancient world.</p>
+    <p class="about-detail">Rather than operating as a single university department, CIAW provides a collaborative framework open to scholars, educators and cultural practitioners across institutions and countries. It explores not only what we know about Antiquity, but also <strong>how historical knowledge is produced, represented, taught and shared</strong>—from the critical study of ancient evidence to video games, digital humanities and emerging technologies.</p>
+    <p class="about-detail">Through its Diamond Open Access journal <em>AI &amp; Antiquity</em>, the <em>Playing Antiquity</em> thematic series and its teaching and outreach initiatives, CIAW is committed to rigorous scholarship, academic independence, accessible learning and the open exchange of ideas.</p>
+    <div class="about-focus" aria-label="Areas of work"><span>Ancient Studies</span><span>Open Access Publishing</span><span>Game Studies</span><span>Inclusive Teaching</span><span>Digital Humanities</span></div>
    </div>
   </div>
  </section>
@@ -1105,7 +1128,7 @@ nav .menu{gap:19px;font-size:.88rem}
    <div class="section-intro">
     <div class="badge badge-green">FLAGSHIP PUBLICATION</div>
     <h2 id="journal-title"><em>AI &amp; Antiquity</em></h2>
-    <p>An international, peer-reviewed Diamond Open Access journal linking Ancient Studies with teaching, artificial intelligence, digital humanities and critical approaches to historical knowledge.</p>
+    <p>Published by CIAW, this international, peer-reviewed Diamond Open Access journal connects Ancient Studies with teaching, artificial intelligence, digital humanities, Game Studies and critical approaches to historical knowledge.</p>
    </div>
    <div class="journal-panel">
     <div class="card">
@@ -1131,7 +1154,7 @@ nav .menu{gap:19px;font-size:.88rem}
    <div class="section-intro">
     <div class="badge badge-purple">RESEARCH AREA</div>
     <h2 id="games-title">Game Studies &amp; Antiquity</h2>
-    <p class="game-lead">Video games are more than illustrations or teaching aids: their narratives, rules and systems actively shape how we imagine and interpret the ancient world. CIAW approaches games as objects of scholarly research, not only as educational tools.</p>
+    <p class="game-lead">CIAW studies video games as cultural artefacts and systems of historical interpretation, not merely as teaching aids or tests of factual accuracy. Through rules, maps, narratives, interfaces and player choices, games turn particular versions of Antiquity into playable experiences. This research asks how they shape historical agency, causation, cultural memory and the contemporary reception of the ancient world.</p>
    </div>
    <div class="grid grid-3 game-grid">
     <div class="card"><h3>Classical reception</h3><p>How games reinterpret historical events, societies, identities and cultural memory.</p></div>
@@ -1139,10 +1162,13 @@ nav .menu{gap:19px;font-size:.88rem}
     <div class="card"><h3>Teaching &amp; public history</h3><p>Critical game literacy, digital heritage, educational practice and historical knowledge.</p></div>
    </div>
    <div class="playing">
+    <a class="playing-artwork" href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer" aria-label="Explore the Playing Antiquity thematic series">
+     <img src="assets/playing-antiquity-banner.webp" loading="lazy" decoding="async" alt="Playing Antiquity panoramic artwork featuring World of Warcraft, Age of Empires and Total War"/>
+    </a>
     <div>
      <div class="badge badge-purple">ANNUAL THEMATIC SERIES</div>
      <h3><em>Playing Antiquity</em></h3>
-     <p><strong>Video Games, Teaching and Historical Knowledge.</strong> This recurring series within <em>AI &amp; Antiquity</em> welcomes research on games, classical reception, mechanics, historical interpretation, education and digital culture. Contributions are not required to address AI or classroom use.</p>
+     <p><strong>Video Games, Teaching and Historical Knowledge.</strong> <em>Playing Antiquity</em> is an annual thematic series within <em>AI &amp; Antiquity</em> devoted to video games and the ancient world. It welcomes research on classical reception, mechanics, historical agency, cultural memory, education and digital technology. Beginning in June 2027, a dedicated issue is planned annually under the journal’s peer-review and Diamond Open Access policies. Contributions need not address AI or classroom use.</p>
      <div class="section-actions">
       <a href="https://ai-antiquity.org/index.php/ai/gamestudies" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Call for Papers &amp; Details ↗</a>
      </div>
@@ -1235,7 +1261,7 @@ nav .menu{gap:19px;font-size:.88rem}
  <div class="container footer-inner">
   <div>
    <strong>CIAW · Center for Innovation in Ancient Worlds</strong>
-   <p>Independent academic initiative · Established 2025 · © <span id="year">2026</span></p>
+   <p>Independent non-profit academic initiative · Based in Catalonia, Spain · Founded 2025 · © <span id="year">2026</span></p>
   </div>
   <div class="footer-links">
    <a href="#about">About</a>
