@@ -29,7 +29,7 @@
     <a href="game-studies-ca.html">Game Studies</a>
     <a href="ca.html#neurodiversity">Neurodiversitat</a>
     <a href="ca.html#events">Activitats i recursos</a>
-    <span class="ciaw-header-langs" aria-label="Language">
+    <span class="ciaw-header-langs" aria-label="Llengua">
      <a href="research.html" lang="en">EN</a><span aria-current="page">CA</span><a href="research-es.html" lang="es">ES</a>
     </span>
     <a class="ciaw-header-cta" href="ca.html#contact">Col·laborar</a>
@@ -65,7 +65,7 @@
 (function(){
 const btn=document.getElementById('ciaw-menu-toggle'),menu=document.getElementById('ciaw-mobile-menu');
 if(!btn||!menu)return;
-function toggle(state){menu.classList.toggle('active',state);btn.setAttribute('aria-expanded',String(state));btn.textContent=state?'✕':'☰';btn.setAttribute('aria-label',state?'Close navigation menu':'Open navigation menu')}
+function toggle(state){menu.classList.toggle('active',state);btn.setAttribute('aria-expanded',String(state));btn.textContent=state?'✕':'☰';btn.setAttribute('aria-label',state?'Tancar el menú de navegació':'Obrir el menú de navegació')}
 btn.addEventListener('click',()=>toggle(!menu.classList.contains('active')));
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggle(false)));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle(false)});
