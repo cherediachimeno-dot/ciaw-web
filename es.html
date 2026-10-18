@@ -1368,8 +1368,27 @@ section[id]{scroll-margin-top:95px}
 .site-header nav .menu{gap:clamp(10px,1.15vw,20px)!important;font-size:.85rem;white-space:nowrap}
 .site-header nav .menu>a{font-size:.84rem}
 .site-header nav .menu .nav-langs{gap:7px}
-@media(max-width:1550px){.site-header nav .menu{display:none}.site-header .mobile-menu-btn{display:block}.site-header .mobile-menu.active{display:flex}}
-@media(min-width:1551px){.site-header nav .menu{display:flex}.site-header .mobile-menu-btn{display:none}}
+/* Full horizontal navigation on normal laptop/desktop screens */
+@media(max-width:1199px){.site-header nav .menu{display:none}.site-header .mobile-menu-btn{display:block}.site-header .mobile-menu.active{display:flex}}
+@media(min-width:1200px){
+ .site-header nav .menu{display:flex}
+ .site-header .mobile-menu-btn{display:none}
+ .site-header>.container{width:min(97%,1510px);max-width:1510px}
+ .site-header nav{gap:clamp(8px,1vw,18px)}
+ .site-header .logo{width:clamp(172px,15vw,242px);max-width:242px}
+ .site-header.scrolled .logo{width:clamp(169px,14.2vw,218px);max-width:218px}
+ .site-header nav .menu{gap:clamp(5px,.7vw,13px)!important;white-space:nowrap;flex-wrap:nowrap}
+ .site-header nav .menu>a{font-size:clamp(.71rem,.78vw,.83rem)}
+ .site-header nav .menu .nav-langs{gap:clamp(2px,.4vw,6px);padding-left:clamp(5px,.55vw,10px)}
+ .site-header nav .menu .nav-langs a{padding:2px!important}
+ .site-header nav .menu a.nav-cta{padding:9px clamp(8px,.8vw,14px)}
+}
+@media(min-width:1551px){
+ .site-header .logo{width:250px;max-width:250px}
+ .site-header.scrolled .logo{width:227px;max-width:227px}
+ .site-header nav .menu{gap:clamp(10px,1.15vw,20px)!important}
+ .site-header nav .menu>a{font-size:.84rem}
+}
 @media(max-width:900px){
  .site-header{height:88px}
  .site-header.scrolled{height:78px}
