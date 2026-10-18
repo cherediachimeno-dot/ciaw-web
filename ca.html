@@ -1433,27 +1433,34 @@ section[id]{scroll-margin-top:95px}
 .event-programme-support{font-size:.77rem!important;line-height:1.7;color:#64748b;margin-top:14px!important}
 
 
-/* A quiet, text-led introduction to the three CIAW priorities */
-.ciaw-priorities{padding:44px 0 55px;background:#fff;border-top:1px solid #e5ebf1}
-.ciaw-priorities h2{font-size:clamp(1.45rem,2.4vw,1.95rem);letter-spacing:-.025em;margin:0 0 24px;color:#1c2d47}
-.priorities-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #dbe3ec;border-bottom:1px solid #dbe3ec}
-.priority-link{min-width:0;display:grid;grid-template-columns:25px minmax(0,1fr) 13px;gap:13px;align-items:start;padding:25px 24px 25px 0;text-decoration:none;color:#1c2d47}
-.priority-link + .priority-link{border-left:1px solid #dbe3ec;padding-left:24px}
-.priority-number{font-size:.75rem;color:#8392a6;line-height:1.6;font-weight:700;font-variant-numeric:tabular-nums}
-.priority-content{display:grid;gap:7px;min-width:0}
-.priority-content strong{font-size:1.06rem;line-height:1.38;font-weight:750;letter-spacing:-.015em}
-.priority-content>span{font-size:.86rem;line-height:1.62;color:#65758a}
-.priority-arrow{font-size:.88rem;color:#94a3b8;line-height:1.5;transition:color .2s ease}
-.priority-link:hover .priority-content strong,.priority-link:hover .priority-arrow{color:#1d4ed8}
-.priority-link:focus-visible{outline:2px solid #2563eb;outline-offset:3px;border-radius:4px}
+/* Priorities follow the same soft-blue panels and typography used throughout CIAW */
+#about{padding-bottom:30px}
+.ciaw-priorities{padding:0 0 55px;background:var(--surface)}
+.priorities-panel{padding:34px 36px 36px;border:1px solid #dbeafe;border-radius:25px;background:linear-gradient(160deg,#f8fafc,#eff6ff);box-shadow:var(--shadow-sm)}
+.ciaw-priorities h2{font-size:clamp(1.5rem,2.6vw,1.95rem);letter-spacing:-.025em;margin:0 0 22px;color:var(--text)}
+.priorities-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:hidden;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.88)}
+.priority-link{min-width:0;display:grid;grid-template-columns:23px minmax(0,1fr) 13px;gap:12px;align-items:start;padding:25px 22px;text-decoration:none;color:var(--text);transition:background .2s ease}
+.priority-link + .priority-link{border-left:1px solid var(--border)}
+.priority-number{font-size:.75rem;color:var(--blue);line-height:1.65;font-weight:800;font-variant-numeric:tabular-nums}
+.priority-content{display:grid;gap:8px;min-width:0}
+.priority-content strong{font-size:1.13rem;line-height:1.35;font-weight:750;letter-spacing:-.015em;color:var(--text)}
+.priority-content>span{font-size:.88rem;line-height:1.65;color:var(--muted)}
+.priority-arrow{font-size:1rem;color:var(--blue);line-height:1.4;transition:transform .2s ease}
+.priority-link:hover{background:var(--blue-light)}
+.priority-link:hover .priority-arrow{transform:translate(2px,-2px)}
+.priority-link:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
 @media(max-width:860px){
- .ciaw-priorities{padding:34px 0 44px}
+ .priorities-panel{padding:26px 24px 27px}
  .priorities-list{grid-template-columns:1fr}
- .priority-link{padding:17px 0;grid-template-columns:24px minmax(0,1fr) 13px}
- .priority-link + .priority-link{border-left:0;border-top:1px solid #dbe3ec;padding-left:0}
+ .priority-link{padding:18px 20px}
+ .priority-link + .priority-link{border-left:0;border-top:1px solid var(--border)}
 }
-@media(prefers-reduced-motion:reduce){.priority-arrow{transition:none}}
-
+@media(max-width:480px){
+ .priorities-panel{padding:22px 17px}
+ .ciaw-priorities h2{margin-bottom:18px}
+ .priority-link{padding:16px 13px;gap:9px;grid-template-columns:22px minmax(0,1fr) 12px}
+}
+@media(prefers-reduced-motion:reduce){.priority-link,.priority-arrow{transition:none}}
 </style>
 
 <link rel="alternate" hreflang="en" href="https://ciaw.es/"/>
@@ -1527,7 +1534,8 @@ section[id]{scroll-margin-top:95px}
 
 <section id="priorities" class="ciaw-priorities" aria-labelledby="priorities-title">
  <div class="container">
-  <h2 id="priorities-title">Les nostres tres prioritats</h2>
+  <div class="priorities-panel">
+   <h2 id="priorities-title">Les nostres tres prioritats</h2>
   <div class="priorities-list">
    <a class="priority-link" href="#journal">
     <span class="priority-number" aria-hidden="true">01</span>
@@ -1544,7 +1552,7 @@ section[id]{scroll-margin-top:95px}
     <span class="priority-content"><strong>Neurodiversitat</strong><span>Docència i recerca inclusives</span></span>
     <span class="priority-arrow" aria-hidden="true">↗</span>
    </a>
-  </div>
+   </div>
  </div>
 </section>
 
