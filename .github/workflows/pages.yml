@@ -33,6 +33,7 @@ on:
       - "files/**"
       - "logo.png"
       - "logo4.webp"
+      - "logo_archeion.webp"
       - "banner.png"
       - "1000002037_cleaned.webp"
       - ".github/workflows/pages.yml"
@@ -58,7 +59,7 @@ jobs:
       - name: Preparar archivos estáticos
         run: |
           mkdir -p _site
-          cp index.html es.html ca.html privacy.html privacy-es.html privacy-ca.html research.html research-es.html research-ca.html game-studies.html game-studies-es.html game-studies-ca.html game-studies.css seminar-2026.html resources.html resources-es.html resources-ca.html subpages.css favicon.ico favicon-32.png apple-touch-icon.png robots.txt sitemap.xml logo.png logo4.webp banner.png _site/
+          cp index.html es.html ca.html privacy.html privacy-es.html privacy-ca.html research.html research-es.html research-ca.html game-studies.html game-studies-es.html game-studies-ca.html game-studies.css seminar-2026.html resources.html resources-es.html resources-ca.html subpages.css favicon.ico favicon-32.png apple-touch-icon.png robots.txt sitemap.xml logo.png logo4.webp logo_archeion.webp banner.png _site/
           cp 1000002037_cleaned.webp _site/
           cp -R assets files _site/
           touch _site/.nojekyll
@@ -85,6 +86,7 @@ jobs:
             test -f "_site/privacy-$lang.html"
           done
           test -f _site/logo4.webp
+          test -f _site/logo_archeion.webp
           test -f _site/assets/ciaw-social.png
           test -f _site/1000002037_cleaned.webp
       - name: Comprobar configuración de Pages
