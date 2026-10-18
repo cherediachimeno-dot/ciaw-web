@@ -1432,6 +1432,28 @@ section[id]{scroll-margin-top:95px}
 .event-programme-content{padding:5px 16px 16px}
 .event-programme-support{font-size:.77rem!important;line-height:1.7;color:#64748b;margin-top:14px!important}
 
+
+/* A quiet, text-led introduction to the three CIAW priorities */
+.ciaw-priorities{padding:44px 0 55px;background:#fff;border-top:1px solid #e5ebf1}
+.ciaw-priorities h2{font-size:clamp(1.45rem,2.4vw,1.95rem);letter-spacing:-.025em;margin:0 0 24px;color:#1c2d47}
+.priorities-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #dbe3ec;border-bottom:1px solid #dbe3ec}
+.priority-link{min-width:0;display:grid;grid-template-columns:25px minmax(0,1fr) 13px;gap:13px;align-items:start;padding:25px 24px 25px 0;text-decoration:none;color:#1c2d47}
+.priority-link + .priority-link{border-left:1px solid #dbe3ec;padding-left:24px}
+.priority-number{font-size:.75rem;color:#8392a6;line-height:1.6;font-weight:700;font-variant-numeric:tabular-nums}
+.priority-content{display:grid;gap:7px;min-width:0}
+.priority-content strong{font-size:1.06rem;line-height:1.38;font-weight:750;letter-spacing:-.015em}
+.priority-content>span{font-size:.86rem;line-height:1.62;color:#65758a}
+.priority-arrow{font-size:.88rem;color:#94a3b8;line-height:1.5;transition:color .2s ease}
+.priority-link:hover .priority-content strong,.priority-link:hover .priority-arrow{color:#1d4ed8}
+.priority-link:focus-visible{outline:2px solid #2563eb;outline-offset:3px;border-radius:4px}
+@media(max-width:860px){
+ .ciaw-priorities{padding:34px 0 44px}
+ .priorities-list{grid-template-columns:1fr}
+ .priority-link{padding:17px 0;grid-template-columns:24px minmax(0,1fr) 13px}
+ .priority-link + .priority-link{border-left:0;border-top:1px solid #dbe3ec;padding-left:0}
+}
+@media(prefers-reduced-motion:reduce){.priority-arrow{transition:none}}
+
 </style>
 
 <link rel="alternate" hreflang="en" href="https://ciaw.es/"/>
@@ -1498,10 +1520,33 @@ section[id]{scroll-margin-top:95px}
     <p class="about-detail">En lloc de funcionar com un únic departament universitari, el CIAW ofereix un marc de col·laboració obert a investigadors, docents i professionals de la cultura de diverses institucions i països. Examina no només què sabem de l’Antiguitat, sinó també <strong>com es produeix, es representa, s’ensenya i es comparteix el coneixement històric</strong>: des de l’anàlisi crítica de les fonts antigues fins als videojocs, les humanitats digitals i les tecnologies emergents.</p>
     <p class="about-detail">A través de la seva revista d’accés obert diamant <em>AI &amp; Antiquity</em>, de la sèrie temàtica <em>Playing Antiquity</em> i de la seva feina sobre docència atenta a la neurodiversitat, el CIAW defensa el rigor científic, la independència acadèmica, l’aprenentatge accessible i l’intercanvi obert d’idees.</p>
     <p class="about-team-note">El CIAW es fonamenta en la col·laboració acadèmica a Catalunya, amb vincles estrets amb la Universitat Autònoma de Barcelona i investigadors d’altres institucions. <a href="#people">Conèixer les persones que hi ha darrere del CIAW →</a></p>
-    <div class="about-focus" aria-label="Àmbits de treball"><span>Estudis sobre l’Antiguitat</span><span>Publicació en accés obert</span><span>Game Studies</span><span>Neurodiversitat</span><span>Docència inclusiva</span><span>Humanitats digitals</span></div>
    </div>
   </div>
  </section>
+
+
+<section id="priorities" class="ciaw-priorities" aria-labelledby="priorities-title">
+ <div class="container">
+  <h2 id="priorities-title">Les nostres tres prioritats</h2>
+  <div class="priorities-list">
+   <a class="priority-link" href="#journal">
+    <span class="priority-number" aria-hidden="true">01</span>
+    <span class="priority-content"><strong><em>AI &amp; Antiquity</em></strong><span>Publicació científica avaluada per parells i en accés obert diamant</span></span>
+    <span class="priority-arrow" aria-hidden="true">↗</span>
+   </a>
+   <a class="priority-link" href="game-studies-ca.html">
+    <span class="priority-number" aria-hidden="true">02</span>
+    <span class="priority-content"><strong>Game Studies</strong><span>Videojocs, història i recepció clàssica</span></span>
+    <span class="priority-arrow" aria-hidden="true">↗</span>
+   </a>
+   <a class="priority-link" href="#neurodiversity">
+    <span class="priority-number" aria-hidden="true">03</span>
+    <span class="priority-content"><strong>Neurodiversitat</strong><span>Docència i recerca inclusives</span></span>
+    <span class="priority-arrow" aria-hidden="true">↗</span>
+   </a>
+  </div>
+ </div>
+</section>
 
 <section id="highlights" class="ciaw-highlights" aria-labelledby="highlights-title">
  <div class="container">
