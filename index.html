@@ -1491,6 +1491,30 @@ section[id]{scroll-margin-top:95px}
  .archeion-heading{gap:10px}
  .archeion-logo{width:44px;height:44px;border-radius:8px}
 }
+
+/* Full journal boards, clearly distinguished from CIAW's three-person core */
+.journal-board-directory{margin-top:40px;padding:30px 32px;border:1px solid #dbe3ee;background:#fff;border-radius:20px;box-shadow:0 8px 25px rgba(15,23,42,.028)}
+.board-directory-heading{max-width:890px;margin-bottom:25px}
+.board-directory-heading h3{font-size:clamp(1.28rem,2.15vw,1.75rem);color:var(--text);letter-spacing:-.025em;line-height:1.35}
+.board-directory-heading p{margin-top:10px;color:#64748b;font-size:.92rem;line-height:1.75}
+.board-group + .board-group{margin-top:30px}
+.board-group h4{font-size:1.04rem;font-weight:800;letter-spacing:-.012em;color:#1d4ed8;margin-bottom:13px}
+.board-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:24px;row-gap:0}
+.board-list li{min-width:0;padding:12px 0 13px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:4px}
+.board-name{font-size:.92rem;line-height:1.42;font-weight:750;color:#1e293b}
+.board-affiliation{font-size:.81rem;line-height:1.52;color:#64748b}
+.board-source{margin-top:24px;font-size:.85rem;font-weight:700}
+.board-source a{color:#1d4ed8;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#93c5fd}
+.board-source a:hover{color:#2563eb}
+.board-source a:focus-visible{outline:3px solid #2563eb;outline-offset:4px}
+@media(max-width:960px){.board-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){
+ .journal-board-directory{margin-top:27px;padding:22px 18px}
+ .board-list{grid-template-columns:1fr}
+ .board-list li{padding:10px 0 11px}
+ .board-group + .board-group{margin-top:26px}
+}
+
 </style>
 </head>
 
@@ -1841,6 +1865,57 @@ section[id]{scroll-margin-top:95px}
     <p class="person-affiliation">Universidad Europea de Madrid</p>
     <div class="profile-links"><a href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer">Verified editorial profile ↗</a></div>
    </article>
+  </div>
+  <div class="journal-board-directory" aria-labelledby="journal-board-title">
+   <div class="board-directory-heading">
+    <h3 id="journal-board-title">AI &amp; Antiquity — Editorial and Advisory Boards</h3>
+    <p>The journal's international Editorial and Advisory Boards support its academic work. These are roles within AI &amp; Antiquity, not positions in CIAW's core team.</p>
+   </div>
+   <div class="board-group">
+    <h4 id="board-editors">Editorial Board</h4>
+    <ul class="board-list" aria-labelledby="board-editors">
+     <li><span class="board-name">Valentina Arena</span><span class="board-affiliation">University of Oxford</span></li>
+     <li><span class="board-name">Gerard Cabezas</span><span class="board-affiliation">Independent Researcher</span></li>
+     <li><span class="board-name">Mirko Canevaro</span><span class="board-affiliation">University of Edinburgh</span></li>
+     <li><span class="board-name">Loredana Cappelletti</span><span class="board-affiliation">Universität Wien</span></li>
+     <li><span class="board-name">Jordi Cortadella</span><span class="board-affiliation">Universitat Autònoma de Barcelona</span></li>
+     <li><span class="board-name">Christopher J. Dart</span><span class="board-affiliation">University of Melbourne</span></li>
+     <li><span class="board-name">Alexandra Eckert</span><span class="board-affiliation">Georg-August-Universität Göttingen</span></li>
+     <li><span class="board-name">Meritxell Ferrer</span><span class="board-affiliation">Universitat Pompeu Fabra</span></li>
+     <li><span class="board-name">Agnès Garcia</span><span class="board-affiliation">Universitat Autònoma de Barcelona</span></li>
+     <li><span class="board-name">Leif Isaksen</span><span class="board-affiliation">University of Exeter</span></li>
+     <li><span class="board-name">Edward A. S. Ross</span><span class="board-affiliation">University of Reading</span></li>
+     <li><span class="board-name">Catherine Steel</span><span class="board-affiliation">University of Glasgow</span></li>
+     <li><span class="board-name">Alexander Thein</span><span class="board-affiliation">University College Dublin</span></li>
+     <li><span class="board-name">Catherine Wolff</span><span class="board-affiliation">Université d’Avignon</span></li>
+     <li><span class="board-name">Antigoni Zournatzi</span><span class="board-affiliation">National Hellenic Research Foundation</span></li>
+    </ul>
+   </div>
+   <div class="board-group">
+    <h4 id="board-advisors">Advisory Board</h4>
+    <ul class="board-list" aria-labelledby="board-advisors">
+     <li><span class="board-name">David Alegre</span><span class="board-affiliation">Universitat Autònoma de Barcelona</span></li>
+     <li><span class="board-name">Patricia Bou</span><span class="board-affiliation">University of Freiburg · Humboldt Postdoc Fellow</span></li>
+     <li><span class="board-name">Diego Chapinal</span><span class="board-affiliation">Universidad Autónoma de Madrid</span></li>
+     <li><span class="board-name">Alejandro Díaz</span><span class="board-affiliation">Universidad de Sevilla</span></li>
+     <li><span class="board-name">Elena Duce</span><span class="board-affiliation">Universidad Autónoma de Madrid</span></li>
+     <li><span class="board-name">Mª Cristina de la Escosura</span><span class="board-affiliation">Universidad de Alcalá</span></li>
+     <li><span class="board-name">Lorenzo Gagliardi</span><span class="board-affiliation">Università degli Studi di Milano</span></li>
+     <li><span class="board-name">Claire Holleran</span><span class="board-affiliation">University of Exeter</span></li>
+     <li><span class="board-name">Mireia López</span><span class="board-affiliation">Universitat de València</span></li>
+     <li><span class="board-name">Dominik Maschek</span><span class="board-affiliation">Leibniz-Zentrum für Archäologie</span></li>
+     <li><span class="board-name">Marc Mendoza</span><span class="board-affiliation">Universitat Autònoma de Barcelona</span></li>
+     <li><span class="board-name">Javier Moralejo</span><span class="board-affiliation">Universidad Autónoma de Madrid</span></li>
+     <li><span class="board-name">Adrià Muñoz</span><span class="board-affiliation">Independent Educator</span></li>
+     <li><span class="board-name">Joan Oller</span><span class="board-affiliation">Universitat Autònoma de Barcelona</span></li>
+     <li><span class="board-name">Laura Regincós</span><span class="board-affiliation">Universitat Autònoma de Barcelona</span></li>
+     <li><span class="board-name">Anna Rovira</span><span class="board-affiliation">Independent Educator</span></li>
+     <li><span class="board-name">Samandar Ro’ziboyev</span><span class="board-affiliation">Sapienza Università di Roma</span></li>
+     <li><span class="board-name">Caitlan Smith</span><span class="board-affiliation">Arkansas State University</span></li>
+     <li><span class="board-name">Alessandro Testa</span><span class="board-affiliation">Charles University</span></li>
+    </ul>
+   </div>
+   <p class="board-source"><a href="https://ai-antiquity.org/index.php/ai/about/editorialTeam" target="_blank" rel="noopener noreferrer">Official and current affiliations: AI &amp; Antiquity editorial team ↗</a></p>
   </div>
   <div class="governance-note">
    <div><span class="governance-label">HOW CIAW OPERATES</span><h3>Independent by design. Collaborative in practice.</h3></div>
