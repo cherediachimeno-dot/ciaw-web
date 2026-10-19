@@ -74,7 +74,8 @@ ALT = {
         'Three key areas': 'Tres áreas principales',
         'Journal publication details': 'Información de la revista',
         'Explore CIAW\'s neurodiversity and inclusive teaching work': 'Explorar el trabajo de CIAW sobre neurodiversidad y docencia inclusiva',
-        'Cover of AI &amp; Antiquity, Volume 2, Issue 2 (2026), showing a stylised ancient helmet composition': 'Cubierta de AI & Antiquity, volumen 2, número 2 (2026), con una composición de casco de inspiración antigua',
+        'Cover of AI & Antiquity, Volume 2, Issue 2 (2026), showing a stylised ancient helmet composition': 'Cubierta de AI & Antiquity, volumen 2, número 2 (2026), con una composición de casco de inspiración antigua',
+        'Artwork by Arturo Galindo García: an ancient-style helmet made from contrasting golden, pale pink and blue sections, against delicate circular geometric patterns': 'Ilustración de Arturo Galindo García: casco de inspiración antigua con elementos dorados, rosas y azules sobre motivos geométricos circulares',
         'Playing Antiquity panoramic composition evoking historical and fantasy strategy and role-playing video games': 'Panorama de Playing Antiquity con referencias a videojuegos históricos y fantásticos de estrategia y rol',
         'Playing Antiquity confirmed publication information': 'Datos editoriales de Playing Antiquity',
         'Academic collaboration': 'Colaboración académica',
@@ -106,7 +107,8 @@ ALT = {
         'Three key areas': 'Tres àrees principals',
         'Journal publication details': 'Informació de la revista',
         'Explore CIAW\'s neurodiversity and inclusive teaching work': 'Consultar els treballs del CIAW sobre neurodiversitat i docència inclusiva',
-        'Cover of AI &amp; Antiquity, Volume 2, Issue 2 (2026), showing a stylised ancient helmet composition': 'Coberta d’AI & Antiquity, volum 2, número 2 (2026), amb una composició de casc d’inspiració antiga',
+        'Cover of AI & Antiquity, Volume 2, Issue 2 (2026), showing a stylised ancient helmet composition': 'Coberta d’AI & Antiquity, volum 2, número 2 (2026), amb una composició de casc d’inspiració antiga',
+        'Artwork by Arturo Galindo García: an ancient-style helmet made from contrasting golden, pale pink and blue sections, against delicate circular geometric patterns': 'Il·lustració d’Arturo Galindo García: casc d’inspiració antiga amb elements daurats, rosats i blaus sobre motius geomètrics circulars',
         'Playing Antiquity panoramic composition evoking historical and fantasy strategy and role-playing video games': 'Panorama de Playing Antiquity amb referències a videojocs històrics i fantàstics d’estratègia i rol',
         'Playing Antiquity confirmed publication information': 'Dades editorials de Playing Antiquity',
         'Academic collaboration': 'Col·laboració acadèmica',
@@ -253,6 +255,9 @@ def localize(source, page, lang):
     if missing:
         raise ValueError(f'{page} [{lang}] has {len(missing)} untranslated visible strings:\n' + '\n'.join(missing))
     html = translate_attributes(html, lang)
+    if lang == 'ca':
+        # Catalan elisions remain attached to an italicised or linked proper name.
+        html = re.sub(r"(?<=d’)\\s+(?=<(?:em|strong|a)\\b)", "", html)
     html = replace_local_links(html, lang, page)
     html = html.replace('<html lang="en">', '<html lang="' + lang + '">', 1)
     # Localised metadata and discoverable alternate versions.
