@@ -22,19 +22,19 @@ PAGE_NAMES = {
 }
 TITLES = {
     'index.html': ('CIAW | Center for Innovation in Ancient Worlds', 'CIAW | Center for Innovation in Ancient Worlds'),
-    'game-studies.html': ('Game Studies y mundos antiguos | CIAW', 'Game Studies i mons antics | CIAW'),
-    'research.html': ('Investigación y resultados | CIAW', 'Recerca i resultats | CIAW'),
+    'game-studies.html': ('Game Studies y Antigüedad | CIAW', 'Game Studies i Antiguitat | CIAW'),
+    'research.html': ('Investigación y publicaciones | CIAW', 'Recerca i publicacions | CIAW'),
     'resources.html': ('Recursos docentes | CIAW', 'Recursos docents | CIAW'),
-    'privacy.html': ('Privacidad e información del sitio web | CIAW', 'Privacitat i informació del lloc web | CIAW'),
+    'privacy.html': ('Privacidad e información sobre la web | CIAW', 'Privacitat i informació sobre el web | CIAW'),
 }
 DESCRIPTIONS = {
     'index.html': (
-        'CIAW es una iniciativa académica independiente con sede en Cataluña dedicada a la investigación sobre la Antigüedad, la publicación en abierto, los Game Studies y la docencia inclusiva.',
-        'El CIAW és una iniciativa acadèmica independent amb seu a Catalunya dedicada a la recerca sobre l’Antiguitat, la publicació en obert, els Game Studies i la docència inclusiva.',
+        'CIAW es una iniciativa académica independiente con sede en Cataluña que impulsa la investigación sobre la Antigüedad, las publicaciones de acceso abierto, los Game Studies y la docencia inclusiva.',
+        'El CIAW és una iniciativa acadèmica independent amb seu a Catalunya que impulsa la recerca sobre l’Antiguitat, les publicacions en accés obert, els Game Studies i la docència inclusiva.',
     ),
     'game-studies.html': (
-        'Cómo analizan los Game Studies en CIAW la autoridad histórica, las simulaciones sociales, la recepción clásica y los videojuegos como interpretaciones del pasado.',
-        'Com analitzen els Game Studies al CIAW l’autoritat històrica, les simulacions socials, la recepció clàssica i els videojocs com a interpretacions del passat.',
+        'Cómo estudia CIAW la representación del pasado en los videojuegos: autoridad histórica, simulación, recepción clásica y memoria cultural.',
+        'Com estudia el CIAW la representació del passat en els videojocs: autoritat històrica, simulació, recepció clàssica i memòria cultural.',
     ),
     'research.html': (
         'Investigaciones, publicaciones y proyectos docentes vinculados a CIAW y sus colaboradores.',
@@ -45,8 +45,8 @@ DESCRIPTIONS = {
         'Infografies docents obertes del CIAW sobre docència inclusiva, Història Antiga i alfabetització crítica en IA.',
     ),
     'privacy.html': (
-        'Información sobre privacidad y contacto del sitio web de CIAW.',
-        'Informació sobre privacitat i contacte del lloc web del CIAW.',
+        'Información sobre privacidad, servicios externos y contacto en la web de CIAW.',
+        'Informació sobre privacitat, serveis externs i contacte al web del CIAW.',
     ),
 }
 ALT = {
@@ -76,7 +76,7 @@ ALT = {
         'Explore CIAW\'s neurodiversity and inclusive teaching work': 'Explorar el trabajo de CIAW sobre neurodiversidad y docencia inclusiva',
         'Cover of AI &amp; Antiquity, Volume 2, Issue 2 (2026), showing a stylised ancient helmet composition': 'Cubierta de AI & Antiquity, volumen 2, número 2 (2026), con una composición de casco de inspiración antigua',
         'Playing Antiquity panoramic composition evoking historical and fantasy strategy and role-playing video games': 'Panorama de Playing Antiquity con referencias a videojuegos históricos y fantásticos de estrategia y rol',
-        'Playing Antiquity confirmed publication information': 'Información editorial confirmada de Playing Antiquity',
+        'Playing Antiquity confirmed publication information': 'Datos editoriales de Playing Antiquity',
         'Academic collaboration': 'Colaboración académica',
         'Teaching infographic about flipped learning and AI-supported classroom practice': 'Infografía docente sobre aula invertida y prácticas de clase apoyadas en IA',
         'Teaching infographic about overlooked historical experiences and cognitive diversity': 'Infografía docente sobre experiencias históricas marginadas y diversidad cognitiva',
@@ -95,7 +95,7 @@ ALT = {
         'Explore CIAW\'s Game Studies research area': 'Explorar la línia de Game Studies del CIAW',
         'Panoramic Playing Antiquity artwork featuring historical and fantasy game worlds': 'Il·lustració panoràmica de Playing Antiquity amb mons de videojocs històrics i fantàstics',
         'Original artwork by Arturo Galindo García: an ancient-style helmet made from contrasting golden, pale pink and blue sections, against delicate circular geometric patterns': 'Il·lustració original d’Arturo Galindo García: casc d’inspiració antiga format per seccions daurades, roses i blaves sobre motius geomètrics',
-        'See the original illustration in AI & Antiquity': 'Veure la il·lustració original a AI & Antiquity',
+        'See the original illustration in AI & Antiquity': 'Consulta la il·lustració original a AI & Antiquity',
         'Open the original seminar poster': 'Obrir el cartell original de les jornades',
         'Poster for the 24 November 2026 seminar on Antiquity, the far right and social networks': 'Cartell de les jornades del 24 de novembre de 2026 sobre Antiguitat, extrema dreta i xarxes socials',
         'Read AI & Antiquity volume 2 issue 2': 'Llegir AI & Antiquity, volum 2, número 2',
@@ -105,12 +105,12 @@ ALT = {
         'Areas of work': 'Àmbits de treball',
         'Three key areas': 'Tres àrees principals',
         'Journal publication details': 'Informació de la revista',
-        'Explore CIAW\'s neurodiversity and inclusive teaching work': 'Explorar la feina del CIAW sobre neurodiversitat i docència inclusiva',
+        'Explore CIAW\'s neurodiversity and inclusive teaching work': 'Consultar els treballs del CIAW sobre neurodiversitat i docència inclusiva',
         'Cover of AI &amp; Antiquity, Volume 2, Issue 2 (2026), showing a stylised ancient helmet composition': 'Coberta d’AI & Antiquity, volum 2, número 2 (2026), amb una composició de casc d’inspiració antiga',
         'Playing Antiquity panoramic composition evoking historical and fantasy strategy and role-playing video games': 'Panorama de Playing Antiquity amb referències a videojocs històrics i fantàstics d’estratègia i rol',
-        'Playing Antiquity confirmed publication information': 'Informació editorial confirmada de Playing Antiquity',
+        'Playing Antiquity confirmed publication information': 'Dades editorials de Playing Antiquity',
         'Academic collaboration': 'Col·laboració acadèmica',
-        'Teaching infographic about flipped learning and AI-supported classroom practice': 'Infografia docent sobre aula invertida i pràctiques de classe assistides per IA',
+        'Teaching infographic about flipped learning and AI-supported classroom practice': 'Infografia docent sobre aula invertida i pràctiques docents amb suport d’IA',
         'Teaching infographic about overlooked historical experiences and cognitive diversity': 'Infografia docent sobre experiències històriques marginades i diversitat cognitiva',
         'Teaching infographic on verifying AI-generated historical information': 'Infografia docent sobre la verificació d’informació històrica generada per IA',
 
