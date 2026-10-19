@@ -257,7 +257,7 @@ def localize(source, page, lang):
     html = translate_attributes(html, lang)
     if lang == 'ca':
         # Catalan elisions remain attached to an italicised or linked proper name.
-        html = re.sub(r"(?<=d’)\\s+(?=<(?:em|strong|a)\\b)", "", html)
+        html = re.sub(r"(?<=d’)\s+(?=<(?:em|strong|a)\b)", "", html)
     html = replace_local_links(html, lang, page)
     html = html.replace('<html lang="en">', '<html lang="' + lang + '">', 1)
     # Localised metadata and discoverable alternate versions.
