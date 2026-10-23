@@ -133,7 +133,7 @@ PRESERVED = {
     'Isaías Arrayás Morales &amp; Carlos Heredia Chimeno,',
     'Carlos Heredia Chimeno,',
     'Forgotten Voices in Antiquity', 'Universitat Autònoma de Barcelona (UAB)',
-    'Universidad Europea de Madrid', 'CH', 'IA', 'SS', 'Sílvia Swan',
+    'Universidad Europea de Madrid', 'CH', 'IA', 'SS', 'M', 'Montserrat Catà Lladó', 'Research Associate', 'Sílvia Swan',
     'Carlos Heredia Chimeno', 'Isaías Arrayás Morales', 'ORCID ↗',
     '24 November 2026 · 10.30–13.15 h',
     'Sala de Graus · Facultat de Filosofia i Lletres (UAB)', 'UOC · UAB · CIAW',
