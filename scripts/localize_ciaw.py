@@ -256,7 +256,7 @@ def localize(source, page, lang):
         raise ValueError(f'{page} [{lang}] has {len(missing)} untranslated visible strings:\n' + '\n'.join(missing))
     if page == 'index.html':
         # Proper names remain unchanged, but doctoral titles agree with each person's gender.
-        miquel_card = re.compile(r'(<h4>Miquel Andraca Vilar</h4>\\s*<p class="person-role">Research Associate</p>\\s*<p class="person-affiliation">)Doctoranda( · Universitat Autònoma de Barcelona</p>)')
+        miquel_card = re.compile(r'(<h4>Miquel Andraca Vilar</h4>\s*<p class="person-role">Research Associate</p>\s*<p class="person-affiliation">)Doctoranda( · Universitat Autònoma de Barcelona</p>)')
         html, count = miquel_card.subn(lambda m: m.group(1) + ('Doctorando' if lang == 'es' else 'Doctorand') + m.group(2), html)
         if count != 1:
             raise AssertionError(f'Expected one Miquel Andraca Vilar associate card for {lang}; found {count}')
