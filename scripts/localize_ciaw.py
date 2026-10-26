@@ -133,7 +133,7 @@ PRESERVED = {
     'Isaías Arrayás Morales &amp; Carlos Heredia Chimeno,',
     'Carlos Heredia Chimeno,',
     'Forgotten Voices in Antiquity', 'Universitat Autònoma de Barcelona (UAB)',
-    'Universidad Europea de Madrid', 'CH', 'IA', 'SS', 'M', 'Montserrat Catà Lladó', 'Research Associate', 'Sílvia Swan',
+    'Universidad Europea de Madrid', 'CH', 'IA', 'SS', 'M', 'Montserrat Catà Lladó', 'Miquel Andraca Vilar', 'Research Associate', 'Sílvia Swan',
     'Carlos Heredia Chimeno', 'Isaías Arrayás Morales', 'ORCID ↗',
     '24 November 2026 · 10.30–13.15 h',
     'Sala de Graus · Facultat de Filosofia i Lletres (UAB)', 'UOC · UAB · CIAW',
@@ -254,6 +254,12 @@ def localize(source, page, lang):
     html, missing = translate_body(source, translations)
     if missing:
         raise ValueError(f'{page} [{lang}] has {len(missing)} untranslated visible strings:\n' + '\n'.join(missing))
+    if page == 'index.html':
+        # Proper names remain unchanged, but doctoral titles agree with each person's gender.
+        miquel_card = re.compile(r'(<h4>Miquel Andraca Vilar</h4>\\s*<p class="person-role">Research Associate</p>\\s*<p class="person-affiliation">)Doctoranda( · Universitat Autònoma de Barcelona</p>)')
+        html, count = miquel_card.subn(lambda m: m.group(1) + ('Doctorando' if lang == 'es' else 'Doctorand') + m.group(2), html)
+        if count != 1:
+            raise AssertionError(f'Expected one Miquel Andraca Vilar associate card for {lang}; found {count}')
     html = translate_attributes(html, lang)
     if lang == 'ca':
         # Catalan elisions remain attached to an italicised or linked proper name.
